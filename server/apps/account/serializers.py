@@ -34,3 +34,5 @@ class UserRegisterSerializer(serializers.ModelSerializer):
         user = User.objects.create_user(**validated_data)
         user.save()
         return user
+
+# TODO: forgot password, change password, resend verification link

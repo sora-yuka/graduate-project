@@ -49,7 +49,7 @@ class VerifyAccountAPIView(APIView):
             user = User.objects.get(verification_code=verification_code)
             user.is_active = True
             user.verification_code = ""
-            UserProfile.objects.create(owner=user, user_email=user.email)
+            UserProfile.objects.create(owner=user)
             user.save()
             return Response({
                 "MESSAGE": "Account activated successfully!",
@@ -60,3 +60,6 @@ class VerifyAccountAPIView(APIView):
                 "MESSAGE": "User with given email doesn't exist",
                 "STATUS": status.HTTP_400_BAD_REQUEST
             }, status=status.HTTP_400_BAD_REQUEST)
+            
+
+# TODO: forgot password, change password, resend verification link

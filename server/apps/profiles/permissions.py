@@ -11,7 +11,8 @@ class IsProfileOwner(BasePermission):
         self, 
         request: HttpRequest, 
         view: APIView, 
-        obj: UserProfile) -> bool:
+        obj: UserProfile
+        ) -> bool:
         if request.method in SAFE_METHOD:
             return True
         return request.user.is_authenticated and request.user == obj.owner
