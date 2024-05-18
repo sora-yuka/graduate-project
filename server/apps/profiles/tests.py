@@ -1,6 +1,4 @@
-from os import getcwd, path
 from typing import Dict
-from pathlib import Path
 from django.test import TestCase
 from django.contrib.auth import get_user_model
 from django.core.files.uploadedfile import SimpleUploadedFile

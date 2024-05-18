@@ -51,6 +51,7 @@ INSTALLED_APPS = [
     # Internal packages
     'apps.account',
     'apps.profiles',
+    'apps.courses',
 ]
 
 MIDDLEWARE = [

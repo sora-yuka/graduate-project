@@ -17,19 +17,21 @@ class AccountTest(APITestCase):
     @property
     def example_bearer_token(self) -> Dict[str, str]:
         user = User.objects.create_user(
-            email = "example@mail.com",
+            email = "notojiwu@tacev.lb",
             password = "qwerty",
             is_active = True,
             )
         refresh = RefreshToken.for_user(user)
         return {"HTTP_AUTHORIZATION": f"Bearer: {refresh.access_token}"}
     
-    def create_user(self, state: bool) -> User:
+    def create_user(self, state: bool = True) -> User:
+        raw_password = "qwerty"
         user = User.objects.create_user(
-            email = "example@mail.com",
-            password = "qwerty",
+            email = "suwabo@gimemi.ki",
+            password = raw_password,
             is_active = state
-        )
+            )
+        user.raw_password = raw_password
         return user
     
     def test_register_account(self) -> None:
@@ -39,20 +41,43 @@ class AccountTest(APITestCase):
             "password": "qwerty",
             "password_confirm": "qwerty"
             })
-        self.assertEqual(response.status_code, status.HTTP_201_CREATED)
+        self.assertEqual(response.status_code, status.HTTP_201_CREATED, response.data)
     
     def test_verify_account(self) -> None:
         user = self.create_user(False)
         url = self.base_url + f"verify/{user.verification_code}/"
         response = self.client.get(path=url)
-        self.assertEqual(response.status_code, status.HTTP_200_OK)
+        self.assertEqual(response.status_code, status.HTTP_200_OK, response.data)
         
     def test_login_account(self) -> None:
-        self.create_user(True)
+        user = self.create_user()
         url = self.base_url + "login/"
         response = self.client.post(path=url, data={
-            "email": "example@mail.com",
-            "password": "qwerty"
+            "email": user.email,
+            "password": user.raw_password,
             })
-        self.assertEqual(response.status_code, status.HTTP_200_OK)
+        self.assertEqual(response.status_code, status.HTTP_200_OK, response.data)
+    
+    def test_forgot_password(self) -> None:
+        user = self.create_user()
+        url = self.base_url + "forgot/"
+        response = self.client.post(path=url, data={
+            "email": user.email
+            })
+        self.assertEqual(response.status_code, status.HTTP_200_OK, response.data)
+
+        url = self.base_url + f"recover/{response.data["verify_code"]}/"
+        response = self.client.post(path=url, data={
+            "email": user.email,
+            "new_password": "business",
+            "new_password_confirm": "business"
+        })
+        self.assertEqual(response.status_code, status.HTTP_200_OK, response.data)
         
+        url = self.base_url + "login/"
+        response = self.client.post(path=url, data={
+            "email": user.email,
+            "password": "business",
+            # "password": user.raw_password => will return 404
+        })
+        self.assertEqual(response.status_code, status.HTTP_200_OK, response.data)

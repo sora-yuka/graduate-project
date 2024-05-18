@@ -13,3 +13,14 @@ def send_verification_code(email: str, verify_code: str) -> None:
         from_email=config("EMAIL_HOST"),
         recipient_list=[email]
     )
+    
+@app.task
+def send_recovery_code(email: str, verify_code: str) -> None:
+    full_link = f"http://{config('SERVER_IP')}/api/v1/user/recover/{verify_code}/"
+    
+    send_mail(
+        subject="Account reset",
+        message=f"Follow the link to reset your account credentials: {full_link}",
+        from_email=config("EMAIL_HOST"),
+        recipient_list=[email]
+    )
