@@ -49,7 +49,7 @@ class VerifyAccountAPIView(APIView):
             user = User.objects.get(verification_code=verification_code)
             user.is_active = True
             user.verification_code = ""
-            UserProfile.objects.create(owner=user)
+            UserProfile.objects.create(owner=user, user_email=user.email)
             user.save()
             return Response({
                 "MESSAGE": "Account activated successfully!",

@@ -32,5 +32,6 @@ schema_view = get_schema_view(openapi.Info(
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('swagger/', schema_view.with_ui('swagger')),
-    path('api/v1/user/', include('apps.account.urls'))
+    path('api/v1/user/', include('apps.account.urls')),
+    path('api/v1/profiles/', include('apps.profiles.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
