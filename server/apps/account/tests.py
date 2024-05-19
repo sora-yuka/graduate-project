@@ -48,8 +48,10 @@ class AccountTest(APITestCase):
     def test_verify_account(self) -> None:
         user = self.create_user(False)
         url = self.base_url + f"verify/{user.verification_code}/"
-        response = self.client.get(path=url)
-        self.assertEqual(response.status_code, status.HTTP_200_OK, response.data)
+        response = self.client.post(path=url, data={
+            "username": "MamieGeorgie93"
+        })
+        self.assertEqual(response.status_code, status.HTTP_201_CREATED, response.data)
         
     def test_login_account(self) -> None:
         user = self.create_user()

@@ -56,7 +56,7 @@ class VerifyAccountAPIView(APIView):
                 "MESSAGE": "Account activated successfully!",
                 "STATUS": status.HTTP_200_OK,
                 "DATA": {"profile_id": profile.id, "username": profile.username}
-            }, status=status.HTTP_200_OK)
+            }, status=status.HTTP_201_CREATED)
         except User.DoesNotExist:
             return Response(data={
                 "MESSAGE": "User with given email doesn't exist or already activated",
