@@ -1,7 +1,11 @@
+import string
+import random
 from typing import Dict
 from django.contrib.auth import get_user_model
 from django.contrib.auth.hashers import make_password
 from rest_framework import serializers
+
+from .models import RecoverySecret
 
 
 User = get_user_model()
@@ -37,8 +41,12 @@ class UserRegisterSerializer(serializers.ModelSerializer):
         return user
     
     
-class ForgotPasswordSerializer(serializers.Serializer):
+class ForgotPasswordSerializer(serializers.ModelSerializer):
     email = serializers.EmailField(required=True, write_only=True)
+    
+    class Meta:
+        model = RecoverySecret
+        fields = ["email"]
     
     def validate_email(self, email: str) -> str:
         user = User.objects.get(email=email)
@@ -46,13 +54,26 @@ class ForgotPasswordSerializer(serializers.Serializer):
         user.save()
         return email
     
+    def create(self, validated_data: Dict[str, str]) -> RecoverySecret:
+        letters = string.ascii_uppercase
+        secret = "".join(random.choice(letters) for i in range(6))
+        email = self.validated_data["email"]
+        recovery = RecoverySecret.objects.create(email=email, secret=secret)
+        return recovery
+    
 
 class RecoverAccountSerializer(serializers.Serializer):
     email = serializers.EmailField(required=True, write_only=True)
+    secret = serializers.CharField(required=True, min_length=6)
     new_password = serializers.CharField(min_length=6)
     new_password_confirm = serializers.CharField(min_length=6)
     
-    def validate_password(self, attrs: Dict[str, str]) -> Dict[str, str]:
+    def validate_secret(self, secret: str) -> str:
+        if not RecoverySecret.objects.filter(secret=secret).exists():
+            raise serializers.ValidationError("Given secret is not valid.")
+        return secret
+    
+    def validate(self, attrs: Dict[str, str]) -> Dict[str, str]:
         password = attrs.get("new_password")
         password_confirm = attrs.pop("new_password_confirm")
         
@@ -63,6 +84,7 @@ class RecoverAccountSerializer(serializers.Serializer):
     def set_new_password(self) -> None:
         user = User.objects.get(email=self.validated_data["email"])
         user.password = make_password(self.validated_data["new_password"])
+        RecoverySecret.objects.get(email=user.email).delete()
         user.verification_code = ""
         user.save()
         

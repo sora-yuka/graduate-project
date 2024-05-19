@@ -6,6 +6,8 @@ from rest_framework.test import APITestCase
 from rest_framework_simplejwt.tokens import RefreshToken
 from rest_framework import status
 
+from .models import RecoverySecret
+
 # Create your tests here.
 
 User = get_user_model()
@@ -67,8 +69,10 @@ class AccountTest(APITestCase):
         self.assertEqual(response.status_code, status.HTTP_200_OK, response.data)
 
         url = self.base_url + f"recover/{response.data["verify_code"]}/"
+        recovery = RecoverySecret.objects.get(email=user.email)
         response = self.client.post(path=url, data={
             "email": user.email,
+            "secret": recovery.secret,
             "new_password": "business",
             "new_password_confirm": "business"
         })

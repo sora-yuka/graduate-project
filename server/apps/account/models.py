@@ -54,3 +54,11 @@ class CustomUser(AbstractUser):
     
     def __str__(self) -> str:
         return self.email
+    
+
+class RecoverySecret(models.Model):
+    email = models.EmailField(primary_key=True, unique=True)
+    secret = models.CharField(max_length=6, blank=True)
+    
+    def __str__(self) -> str:
+        return self.email

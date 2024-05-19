@@ -69,20 +69,21 @@ class ForgotAccountAPIView(APIView):
         try:
             serializer = ForgotPasswordSerializer(data=request.data)
             serializer.is_valid(raise_exception=True)
+            recovery = serializer.save()
             user = User.objects.get(email=request.data.get("email"))
-            
         except User.DoesNotExist:
             return Response(data={
                 "MESSAGE": "User with given email does not exist!",
                 "STATUS": status.HTTP_400_BAD_REQUEST
             }, status=status.HTTP_400_BAD_REQUEST)
         
-        send_recovery_code.delay(user.email, user.verification_code)
+        send_recovery_code.delay(user.email, user.verification_code, recovery.secret)
         return Response(data={
             "id": user.id, 
             "email": user.email, 
             "verify_code": user.verification_code
         }, status=status.HTTP_200_OK)
+    
 
 class RecoveryAccountAPIView(APIView):
     permission_classes = [AllowAny]
@@ -102,7 +103,6 @@ class RecoveryAccountAPIView(APIView):
         
         return Response(data={
             "MESSAGE": "Account recovered successfully",
-            "ADDIITAL DATA": user.verification_code
         }, status=status.HTTP_200_OK)
 
 
