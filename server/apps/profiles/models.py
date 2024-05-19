@@ -9,7 +9,7 @@ User = get_user_model()
 
 class UserProfile(models.Model):
     owner = models.ForeignKey(User, on_delete=models.CASCADE)
-    username = models.CharField(max_length=100, blank=True)
+    username = models.CharField(max_length=100)
     photo = models.ImageField(upload_to="uploads/", blank=True)
     description = models.TextField(blank=True, null=True)
     contacts = models.CharField(max_length=40, blank=True, null=True)

@@ -6,6 +6,7 @@ from django.contrib.auth.hashers import make_password
 from rest_framework import serializers
 
 from .models import RecoverySecret
+from apps.profiles.models import UserProfile
 
 
 User = get_user_model()
@@ -37,9 +38,18 @@ class UserRegisterSerializer(serializers.ModelSerializer):
     
     def create(self, validated_data: Dict[str, str]) -> User:
         user = User.objects.create_user(**validated_data)
-        user.save()
+        # user.save()
         return user
     
+    
+class UserVerificationSerializer(serializers.Serializer):
+    username = serializers.CharField(required=True, write_only=True)
+    
+    def create_profile(self, owner: User, data: str) -> UserProfile:
+        profile = UserProfile.objects.create(owner=owner, username=data.get("username"))
+        profile.save()
+        return profile
+        
     
 class ForgotPasswordSerializer(serializers.ModelSerializer):
     email = serializers.EmailField(required=True, write_only=True)

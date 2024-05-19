@@ -8,7 +8,7 @@ from rest_framework.response import Response
 from rest_framework.permissions import AllowAny
 from rest_framework import status
 
-from .serializers import UserRegisterSerializer, ForgotPasswordSerializer, RecoverAccountSerializer
+from .serializers import UserRegisterSerializer, ForgotPasswordSerializer, RecoverAccountSerializer, UserVerificationSerializer
 from .tasks import send_verification_code, send_recovery_code
 from apps.profiles.models import UserProfile
 
@@ -44,20 +44,22 @@ class RegisterAPIView(APIView):
 class VerifyAccountAPIView(APIView):
     permission_classes = [AllowAny]
     
-    def get(self, request: Request, verification_code: str) -> Response:
+    def post(self, request: Request, verification_code: str) -> Response:
         try:
             user = User.objects.get(verification_code=verification_code)
             user.is_active = True
             user.verification_code = ""
-            UserProfile.objects.create(owner=user)
             user.save()
+            serializer = UserVerificationSerializer(data=request.data)
+            profile = serializer.create_profile(owner=user, data=request.data)
             return Response(data={
                 "MESSAGE": "Account activated successfully!",
-                "STATUS": status.HTTP_200_OK
+                "STATUS": status.HTTP_200_OK,
+                "DATA": {"profile_id": profile.id, "username": profile.username}
             }, status=status.HTTP_200_OK)
         except User.DoesNotExist:
             return Response(data={
-                "MESSAGE": "User with given email doesn't exist",
+                "MESSAGE": "User with given email doesn't exist or already activated",
                 "STATUS": status.HTTP_400_BAD_REQUEST
             }, status=status.HTTP_400_BAD_REQUEST)
             

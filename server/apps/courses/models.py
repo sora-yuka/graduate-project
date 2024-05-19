@@ -23,11 +23,11 @@ class CoursesModel(models.Model):
         return self.title
     
 
-class CourseItem(models.Model):
-    course_id = models.ForeignKey(CoursesModel, on_delete=models.CASCADE)
+class CourseItemModel(models.Model):
+    course = models.ForeignKey(CoursesModel, on_delete=models.CASCADE, related_name="course_item")
     name = models.CharField(max_length=100)
-    file = models.FileField(upload_to="course/")
+    course_file = models.FileField(upload_to="course/")
     description = models.TextField(blank=True, null=True)
     
     def __str__(self) -> str:
-        return self.name
+        return f"{self.course_id} - {self.name}"
