@@ -17,7 +17,7 @@ class AllCourseAPIView(mixins.ListModelMixin, GenericViewSet):
 
 class LatestCourseAPIView(mixins.ListModelMixin, GenericViewSet):
     serializer_class = AllCoursesSerialier
-    queryset = CoursesModel.objects.all()[0:4]
+    queryset = CoursesModel.objects.order_by("-created_at")[:4]
 
     
 class CourseViewSet(

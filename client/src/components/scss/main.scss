@@ -6,4 +6,8 @@
 
 // Import main blocks
 @import "./blocks/nav";
-@import "./blocks/HomeView";
+
+// Import view
+@import "./views/HomeView";
+@import "./views/CoursesView";
+@import "./views/AccountView";

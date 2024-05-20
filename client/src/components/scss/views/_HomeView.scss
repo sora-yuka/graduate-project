@@ -1,0 +1,127 @@
+.header {
+    width: 100vw;
+    height: 90vh;
+    background-image: url('../source/darker-wall.png');
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.preview-section {
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .preview-header {
+        font-size: 80px;
+        text-align: center;
+        font-family: $play-fair;
+        font-weight: bolder;
+    }
+
+    .preview-description {
+        font-size: 18px;
+        text-align: center;
+        margin-top: 20px;
+        margin-bottom: 40px;
+    }
+
+    .explore {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 220px;
+        height: 50px;
+        font-weight: 400;
+        border-radius: 25px;
+        background-color: $rich-green-color;
+        transition: .3s;
+
+        &:hover {
+            background-color: $rich-green-darker;
+        }
+
+        .loupe {
+            width: 20px;
+            height: 20px;
+            margin-left: 10px;
+        }
+    }
+}
+
+.main {
+    display: flex;
+    justify-content: center;
+    margin: 100px 0;
+}
+
+.latest-block {
+
+    .latest-course__header {
+        font-size: 35px;
+        margin-bottom: 15px;
+    }
+
+    .latest-course__list {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 40px;
+    }
+
+    .latest-course__description {
+        font-size: 20px;
+        opacity: .9;
+    }
+
+    .view-all {
+        padding: 10px 20px;
+        color: white;
+        border-radius: 5px;
+        background-color: $rich-green-color;
+        border: 1px $rich-green-color solid;
+        transition: .3s;
+
+        &:hover {
+            background-color: white;
+            border: 1px $rich-green-color solid;
+            color: $rich-green-color;
+        }
+    }
+}
+
+.box {
+    padding: 10px 10px 30px;
+    margin-bottom: 30px;
+    border: 2px $light-gray-color solid;
+    border-radius: 15px;
+
+    &:hover {
+        cursor: pointer;
+    }
+
+    .course-image {
+        height: 140px;
+        width: 280px;
+        object-fit: cover;
+        border-radius: 15px;
+    }
+
+    .author {
+        opacity: .8;
+        margin: 15px 0 15px 5px;
+        font-size: 14px;
+    }
+
+    .title {
+        margin-left: 5px;
+        margin-bottom: 15px;
+    }
+
+    .tag {
+        margin-left: 5px;
+        font-size: 14px;
+        opacity: .8;
+    }
+}

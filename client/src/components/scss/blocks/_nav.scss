@@ -18,38 +18,20 @@
     font-family: $lato;
     letter-spacing: 1.6px;
     transition: .2s;
-
-    &:hover {
-        color: $rich-green-darker;
-        font-size: 21px;
-    }
 }
 
-.login {
+.sign-in__button {
     font-weight: 400;
     font-family: $lato;
     padding: 7px 15px;
     border: 1px $rich-green-color solid;
     border-radius: 5px;
     color: $rich-green-color;
-    transition: .2s;
+    transition: .3s;
 
     &:hover {
-        opacity: .7;
-    }
-}
-
-.register {
-    font-weight: 400;
-    font-family: $lato;
-    padding: 7px 15px;
-    border: 1px $rich-green-color solid;
-    border-radius: 5px;
-    color: $rich-green-color;
-    transition: .2s;
-
-    &:hover {
-        opacity: .7;
+        color: white;
+        background-color: $rich-green-color;
     }
 }
 

@@ -1,0 +1,94 @@
+.register-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+}
+
+.preview-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: $lato;
+
+    .preview-photo {
+        width: 450px;
+        height: 400px;
+        background-image: url(../source/books.jpg);
+        background-size: cover;
+        margin-right: 40px;
+    }
+
+    .preview-text {
+        color: $rich-green-darker;
+        
+        .register-header {
+            font-size: 40px;
+            text-transform: uppercase;
+        }
+    
+        .register-description {
+            font-size: 20px;
+            opacity: .7;
+        }
+    }
+}
+
+.register-fields {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+
+    input {
+        width: 245px;
+        padding: 10px;
+        margin-top: 40px;
+        margin-bottom: 10px;
+        font-size: 14px;
+        opacity: .9;
+        border: 1px #ccc solid;
+        border-radius: 5px;
+    }
+}
+
+.fields-text {
+    margin-top: -80px;
+    margin-left: 300px;
+    font-size: 12px;
+    opacity: .8;
+
+    .email {
+        margin-left: 15px;
+    }
+
+    .password {
+        margin-left: 238px;
+    }
+
+    .confirm {
+        margin-left: 213px;
+    }
+}
+
+.form {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    
+    .submit {
+        color: white;
+        padding: 10px;
+        width: 400px;
+        border-radius: 5px;
+        margin-top: 40px;
+        text-transform: uppercase;
+        border: 1px $rich-green-color solid;
+        background-color: $rich-green-color;
+        transition: .3s;
+
+        &:hover {
+            color: $rich-green-color;
+            background-color: white;
+        }
+    }
+}
