@@ -1,0 +1,9 @@
+// Import base styles
+
+@import "./base/reset";
+@import "./base/vars";
+@import "./base/base";
+
+// Import main blocks
+@import "./blocks/nav";
+@import "./blocks/HomeView";

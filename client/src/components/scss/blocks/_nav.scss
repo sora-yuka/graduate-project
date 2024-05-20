@@ -1,0 +1,76 @@
+.nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 10px 0;
+
+    .container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+}
+
+.home-button {
+    color: $rich-green-color;
+    font-weight: 900;
+    font-size: 20px;
+    font-family: $lato;
+    letter-spacing: 1.6px;
+    transition: .2s;
+
+    &:hover {
+        color: $rich-green-darker;
+        font-size: 21px;
+    }
+}
+
+.login {
+    font-weight: 400;
+    font-family: $lato;
+    padding: 7px 15px;
+    border: 1px $rich-green-color solid;
+    border-radius: 5px;
+    color: $rich-green-color;
+    transition: .2s;
+
+    &:hover {
+        opacity: .7;
+    }
+}
+
+.register {
+    font-weight: 400;
+    font-family: $lato;
+    padding: 7px 15px;
+    border: 1px $rich-green-color solid;
+    border-radius: 5px;
+    color: $rich-green-color;
+    transition: .2s;
+
+    &:hover {
+        opacity: .7;
+    }
+}
+
+.nav-bar {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    font-weight: 600;
+    
+    .nav-bar__item {
+        transition: .3s;
+        color: $chocolate-color;
+
+        &:hover {
+            opacity: .7;
+        }
+    }
+}
+
+.sign-in {
+    display: flex;
+    gap: 10px;
+    padding-left: 60px;
+}

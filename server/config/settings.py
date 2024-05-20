@@ -68,7 +68,7 @@ MIDDLEWARE = [
 # CORS settings
 CORS_ALLOWED_ORIGINS = [
     'http://localhost:8080',
-    'http://192.168.31.169:8080'
+    'http://192.168.31.169:8080',
 ]
 
 ROOT_URLCONF = 'config.urls'
