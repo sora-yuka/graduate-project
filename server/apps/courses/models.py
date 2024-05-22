@@ -21,7 +21,6 @@ class CategoryModel(models.Model):
 
 class CoursesModel(models.Model):
     owner = models.ForeignKey(User, on_delete=models.CASCADE)
-    owner_profile = models.ForeignKey(UserProfile, on_delete=models.CASCADE)
     title = models.CharField(max_length=100)
     description = models.TextField()
     level = models.CharField(max_length=100, choices=LEVEL)

@@ -269,10 +269,12 @@ a {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin-top: 40px;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  margin-top: 40px;
 }
 .latest-block .latest-course__description {
   font-size: 20px;
@@ -296,14 +298,21 @@ a {
 .box {
   padding: 10px 10px 30px;
   margin-bottom: 30px;
-  border: 2px #D3D3D3 solid;
+  border: 2px #eeeeee solid;
   border-radius: 15px;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+.box p {
+  margin-left: 10px;
 }
 .box:hover {
   cursor: pointer;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px;
+          box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px;
 }
 .box .course-image {
-  height: 140px;
+  height: 160px;
   width: 280px;
   -o-object-fit: cover;
      object-fit: cover;
@@ -311,17 +320,20 @@ a {
 }
 .box .author {
   opacity: 0.8;
-  margin: 15px 0 15px 5px;
+  margin: 15px 10px;
   font-size: 14px;
 }
 .box .title {
-  margin-left: 5px;
   margin-bottom: 15px;
 }
 .box .tag {
-  margin-left: 5px;
   font-size: 14px;
   opacity: 0.8;
+}
+.box .level {
+  font-size: 14px;
+  opacity: 0.8;
+  margin-top: 3px;
 }
 
 .all-course-section {
@@ -331,6 +343,31 @@ a {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  margin-top: 50px;
+}
+.all-course-section .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.filters {
+  width: 600px;
+  margin-right: 100px;
+  display: block;
+  border: 1px #eeeeee solid;
+}
+.filters .filter-list .list__item {
+  margin: 10px 0;
+}
+
+.content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 0 40px;
 }
 
 .register-section {

@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     # External packages
     'rest_framework',
     'rest_framework_simplejwt',
+    'django_filters',
     'corsheaders',
     'drf_yasg',
     
@@ -52,6 +53,7 @@ INSTALLED_APPS = [
     'apps.account',
     'apps.profiles',
     'apps.courses',
+    'apps.feedback',
 ]
 
 MIDDLEWARE = [

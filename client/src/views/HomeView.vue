@@ -32,6 +32,7 @@
                         <p class="author">Author: {{ course.owner_profile.profile_username }}</p>
                         <p class="title">{{ course.title }}</p>
                         <p class="tag">Tag: {{ course.category.category }}</p>
+                        <p class="level"> {{ course.level }} </p>
                     </div>
                 </div>
                 <router-link class="view-all" to="/all/">View all</router-link>

@@ -1,37 +1,59 @@
-from django.shortcuts import render
-from rest_framework.viewsets import GenericViewSet, ModelViewSet
 from rest_framework import mixins
+from rest_framework.viewsets import GenericViewSet, ModelViewSet
+from rest_framework.pagination import PageNumberPagination
+from rest_framework.filters import SearchFilter, OrderingFilter
+from rest_framework.decorators import api_view
+from django_filters.rest_framework import DjangoFilterBackend
 
 from .models import CoursesModel, CourseItemModel, CategoryModel
-from .serializers import AllCoursesSerialier, CategorySerializer, CourseSerializer, CourseItemSerializer
+from .serializers import AllCoursesSerialier, CategorySerializer, DetailedCourseSerializer, CourseItemSerializer
 from .permissions import IsCourseOwner
 from apps.profiles.models import UserProfile
 
 # Create your views here.
-        
 
-class AllCourseAPIView(mixins.ListModelMixin, GenericViewSet):
+
+class CoursePagination(PageNumberPagination):
+    page_size = 18
+    max_page_size = 100
+    page_size_query_param = "courses"
+
+
+class AllCourseViewSet(mixins.ListModelMixin, GenericViewSet):
     serializer_class = AllCoursesSerialier
-    queryset = CoursesModel.objects.all()
+    queryset = CoursesModel.objects.order_by("-updated_at")
+    
+    # pagination_class = CoursePagination
+    # filter_backends = [SearchFilter, OrderingFilter, DjangoFilterBackend]
+    # filterset_fields = ["category", "level"]
+    # search_fields = ["title"]
+    # ordering_fields = ["created_at"]
 
 
-class LatestCourseAPIView(mixins.ListModelMixin, GenericViewSet):
+class LatestCourseViewSet(mixins.ListModelMixin, GenericViewSet):
     serializer_class = AllCoursesSerialier
     queryset = CoursesModel.objects.order_by("-created_at")[:4]
 
     
 class CourseViewSet(
     mixins.RetrieveModelMixin,
+    mixins.CreateModelMixin,
     mixins.UpdateModelMixin,
     mixins.DestroyModelMixin,
     GenericViewSet
 ):
     permission_classes = [IsCourseOwner]
-    serializer_class = CourseSerializer
+    serializer_class = DetailedCourseSerializer
     queryset = CoursesModel.objects.all()
+    
+    def perform_create(self, serializer: DetailedCourseSerializer) -> DetailedCourseSerializer:
+        return serializer.save(owner=self.request.user)
     
     
 class CourseItemViewSet(ModelViewSet):
     permission_classes = [IsCourseOwner]
     serializer_class = CourseItemSerializer
     queryset = CourseItemModel.objects.all()
+    
+    def perform_create(self, serializer: CourseItemSerializer) -> CourseItemSerializer:
+        return serializer.save(owner=self.request.user)

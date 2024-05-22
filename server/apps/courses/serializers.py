@@ -12,12 +12,12 @@ class AllCoursesSerialier(serializers.ModelSerializer):
     
     class Meta:
         model = CoursesModel
-        fields = ["id", "owner", "owner_profile", "title", "preview_image", "category"]
+        fields = ["id", "owner", "title", "preview_image", "level", "category"]
         
     def to_representation(self, instance: CoursesModel) -> Dict[str, str]:
         representation = super().to_representation(instance)
         user = User.objects.get(id=representation["owner"])
-        profile = UserProfile.objects.get(id=representation["owner_profile"])
+        profile = UserProfile.objects.get(owner=user)
         category = CategoryModel.objects.get(id=representation["category"])
         representation["owner"] = {"id": user.id, "email": user.email}
         representation["owner_profile"] = {"profile_id": profile.id, "profile_username": profile.username}
@@ -38,19 +38,11 @@ class CategorySerializer(serializers.ModelSerializer):
         return representation
     
 
-class CourseSerializer(serializers.ModelSerializer):
+class DetailedCourseSerializer(serializers.ModelSerializer):
     
     class Meta:
         model = CoursesModel
-        fields = [
-            "id", 
-            "title", 
-            "description",
-            "level",
-            "preview_image",
-            "preview_video",
-            "category",
-        ]
+        fields = "__all__"
         
     def to_representation(self, instance: CoursesModel) -> Dict[str, str]:
         representation = super().to_representation(instance)

@@ -16,8 +16,10 @@
                             <input type="password" v-model="password">
                             <input type="password" v-model="password_confirm">
                         </div>
+                        <router-link>
+                            <button class="submit" type="submit">sign up</button>
+                        </router-link>
                         
-                        <button class="submit" type="submit">sign up</button>
                     </div>
                 </form>
                 <div class="fields-text">
@@ -42,6 +44,9 @@ export default {
             password_confirm: "",
             errors: []
         }
+    },
+    components: {
+
     },
     mounted() {
         document.title = "SIGN UP"
@@ -86,6 +91,6 @@ export default {
                 })
             }
         }
-    }
+    },
 }
 </script>

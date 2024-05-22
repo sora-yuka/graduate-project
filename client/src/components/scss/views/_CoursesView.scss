@@ -1,4 +1,27 @@
 .all-course-section {
     display: flex;
     justify-content: center;
+    margin-top: 50px;
+
+    .container {
+        display: flex;
+    }
+}
+
+.filters {
+    width: 600px;
+    margin-right: 100px;
+    display: block;
+    border: 1px $light-gray-color solid;
+
+    .filter-list .list__item {
+        
+        margin: 10px 0;
+    }
+}
+
+.content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0 40px;
 }

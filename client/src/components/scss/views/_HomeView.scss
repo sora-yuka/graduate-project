@@ -66,8 +66,9 @@
 
     .latest-course__list {
         display: flex;
-        justify-content: space-between;
+        flex-wrap: wrap;
         margin-top: 40px;
+        justify-content: space-between;
     }
 
     .latest-course__description {
@@ -96,13 +97,19 @@
     margin-bottom: 30px;
     border: 2px $light-gray-color solid;
     border-radius: 15px;
+    transition: .2s;
+
+    & p {
+        margin-left: 10px;
+    }
 
     &:hover {
         cursor: pointer;
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px;
     }
 
     .course-image {
-        height: 140px;
+        height: 160px;
         width: 280px;
         object-fit: cover;
         border-radius: 15px;
@@ -110,18 +117,22 @@
 
     .author {
         opacity: .8;
-        margin: 15px 0 15px 5px;
+        margin: 15px 10px;
         font-size: 14px;
     }
 
     .title {
-        margin-left: 5px;
         margin-bottom: 15px;
     }
 
     .tag {
-        margin-left: 5px;
         font-size: 14px;
         opacity: .8;
+    }
+
+    .level {
+        font-size: 14px;
+        opacity: .8;
+        margin-top: 3px;
     }
 }
