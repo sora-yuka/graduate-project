@@ -23,11 +23,11 @@ class AllCourseViewSet(mixins.ListModelMixin, GenericViewSet):
     serializer_class = AllCoursesSerialier
     queryset = CoursesModel.objects.order_by("-updated_at")
     
-    # pagination_class = CoursePagination
-    # filter_backends = [SearchFilter, OrderingFilter, DjangoFilterBackend]
-    # filterset_fields = ["category", "level"]
-    # search_fields = ["title"]
-    # ordering_fields = ["created_at"]
+    pagination_class = CoursePagination
+    filter_backends = [SearchFilter, OrderingFilter, DjangoFilterBackend]
+    filterset_fields = ["category", "level"]
+    search_fields = ["title"]
+    ordering_fields = ["created_at"]
 
 
 class LatestCourseViewSet(mixins.ListModelMixin, GenericViewSet):

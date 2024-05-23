@@ -4,10 +4,8 @@
 @import "./base/vars";
 @import "./base/base";
 
-// Import main blocks
-@import "./blocks/nav";
-
 // Import view
+@import "./views/AppView";
 @import "./views/HomeView";
 @import "./views/CoursesView";
 @import "./views/AccountView";

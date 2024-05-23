@@ -51,14 +51,13 @@
     }
 }
 
-.main {
+.latest-section {
     display: flex;
     justify-content: center;
     margin: 100px 0;
 }
 
 .latest-block {
-
     .latest-course__header {
         font-size: 35px;
         margin-bottom: 15px;
@@ -74,21 +73,6 @@
     .latest-course__description {
         font-size: 20px;
         opacity: .9;
-    }
-
-    .view-all {
-        padding: 10px 20px;
-        color: white;
-        border-radius: 5px;
-        background-color: $rich-green-color;
-        border: 1px $rich-green-color solid;
-        transition: .3s;
-
-        &:hover {
-            background-color: white;
-            border: 1px $rich-green-color solid;
-            color: $rich-green-color;
-        }
     }
 }
 
@@ -134,5 +118,56 @@
         font-size: 14px;
         opacity: .8;
         margin-top: 3px;
+    }
+}
+
+.additional-section {
+    display: flex;
+    padding: 60px 0;
+    justify-content: center;
+    background-color: #F5F5DC;
+
+    .container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .photo {
+        width: 580px;
+        height: 440px;
+        margin-left: 100px;
+        border-radius: 20px;
+        background-size: cover;
+        background-image: url(../source/mac.jpg);
+    }
+}
+
+.description {
+    .description-header {
+        width: 600px;
+        font-size: 40px;
+        font-family: $play-fair;
+        font-weight: 500;
+    }
+
+    .description-subheader {
+        opacity: .7;
+        margin: 10px 0 40px;
+    }
+
+    .view-all {
+        padding: 10px 20px;
+        color: white;
+        border-radius: 5px;
+        background-color: $rich-green-color;
+        border: 1px $rich-green-color solid;
+        transition: .3s;
+
+        &:hover {
+            background-color: white;
+            border: 1px $rich-green-color solid;
+            color: $rich-green-color;
+        }
     }
 }

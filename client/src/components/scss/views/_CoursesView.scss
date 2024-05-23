@@ -1,9 +1,16 @@
 .all-course-section {
     display: flex;
     justify-content: center;
-    margin-top: 50px;
+    margin-top: 80px;
 
-    .container {
+    .results {
+        font-size: 24px;
+        font-family: $lato;
+        margin-left: 340px;
+        margin-bottom: 50px;
+    }
+
+    .main-page {
         display: flex;
     }
 }
@@ -15,12 +22,11 @@
     border: 1px $light-gray-color solid;
 
     .filter-list .list__item {
-        
         margin: 10px 0;
     }
 }
 
-.content {
+.course-cards {
     display: flex;
     flex-wrap: wrap;
     gap: 0 40px;

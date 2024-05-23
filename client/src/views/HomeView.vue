@@ -17,27 +17,40 @@
         </div>
     </header>
     <main class="main">
-        <div class="container">
-            <div class="latest-block">
-                <h2 class="latest-course__header">Get a head start on a degree today</h2>
-                <p class="latest-course__description">
-                    Explore our newest programs, focused on delivering in-demand skills.
-                </p>
-                <div class="latest-course__list">
-                    <div class="box"
-                        v-for="course in latestCourse"
-                        v-bind:key="course.id"
-                    >
-                        <img v-bind:src="course.preview_image" alt="" class="course-image">
-                        <p class="author">Author: {{ course.owner_profile.profile_username }}</p>
-                        <p class="title">{{ course.title }}</p>
-                        <p class="tag">Tag: {{ course.category.category }}</p>
-                        <p class="level"> {{ course.level }} </p>
+        <section class="latest-section">
+            <div class="container">
+                <div class="latest-block">
+                    <h2 class="latest-course__header">Get a head start on a degree today</h2>
+                    <p class="latest-course__description">
+                        Explore our newest programs, focused on delivering in-demand skills.
+                    </p>
+                    <div class="latest-course__list">
+                        <div class="box"
+                            v-for="course in latestCourse"
+                            v-bind:key="course.id"
+                            >
+                            <img v-bind:src="course.preview_image" alt="" class="course-image">
+                            <p class="author">Author: {{ course.owner_profile.profile_username }}</p>
+                            <p class="title">{{ course.title }}</p>
+                            <p class="tag">Tag: {{ course.category.category }}</p>
+                            <p class="level"> {{ course.level }} </p>
+                        </div>
                     </div>
                 </div>
-                <router-link class="view-all" to="/all/">View all</router-link>
             </div>
-        </div>
+        </section>
+        <section class="additional-section">
+            <div class="container">
+                <div class="photo"></div>
+                <div class="description">
+                    <p class="description-header">
+                        Advance to the next stage in achieving your personal and professional aspirations.
+                    </p>
+                    <p class="description-subheader">Sign up now to get personalized recommendations.</p>
+                    <router-link class="view-all" to="/all/">View all</router-link>
+                </div>
+            </div>
+        </section>
     </main>
 </template>
 
