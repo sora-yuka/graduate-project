@@ -1,0 +1,101 @@
+.detailed-section {
+    display: flex;
+    justify-content: center;
+    margin-top: 100px;
+}
+
+.course {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 100px;
+
+    .preview-image {
+        width: 500px;
+        height: 300px;
+        object-fit: cover;
+        border-radius: 25px;
+        box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+    }
+    
+    .course-info {
+        width: 600px;
+        font-family: $lato;
+
+        .course-name {
+            font-size: 40px;
+            font-weight: 600;
+            opacity: 1;
+        }
+
+        .course-description {
+            margin-top: 10px;
+            margin-bottom: 20px;
+            line-height: 1.5em;
+            opacity: .8;
+        }
+
+        .course-author {
+            text-decoration: underline;
+            margin-bottom: 5px;
+        }
+    }
+}
+    
+.additional-info {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 60px 20px;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
+
+    .value {
+        font-size: 20px;
+        font-weight: 500;
+    }
+
+    .hint {
+        opacity: .7;
+        font-size: 14px;
+        margin-top: 10px;
+    }
+}
+
+.splitter {
+    width: 1px;
+    height: 60px;
+    background-color: $dark-gray-color;
+}
+
+.previous {
+    position: fixed;
+    margin-top: 20px;
+    margin-left: 260px;
+
+    img {
+        width: 30px;
+        height: 30px;
+        transition: transform .2s ease;
+
+        &:hover {transform: scale(1.2);}
+    }
+}
+
+.recommendation {
+    margin-top: 60px;
+
+    .recommendation-header {
+        margin-bottom: 40px;
+        font-size: 24px;
+
+        .category {
+            text-transform: capitalize;
+        }
+    }
+
+    .recommendation-list {
+        display: flex;
+        gap: 40px;
+    }
+}

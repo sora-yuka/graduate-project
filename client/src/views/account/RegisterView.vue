@@ -1,7 +1,7 @@
 <template>
     <section class="register-section">
         <div class="container">
-            <div class="register-form">
+            <div class="register-form" v-if="isSubmited">
                 <div class="preview-form">
                     <div class="preview-photo"></div>
                     <div class="preview-text">
@@ -16,10 +16,7 @@
                             <input type="password" v-model="password">
                             <input type="password" v-model="password_confirm">
                         </div>
-                        <router-link>
-                            <button class="submit" type="submit">sign up</button>
-                        </router-link>
-                        
+                        <button class="submit" type="submit">sign up</button>
                     </div>
                 </form>
                 <div class="fields-text">
@@ -27,6 +24,12 @@
                     <span class="password">Password</span>
                     <span class="confirm">Confirm</span>
                 </div>
+            </div>
+            <div class="registered-form" v-else>
+                <p class="response">
+                    You are registered successfully. Please check your email and confirm your account. <br>
+                    You can close this page.
+                </p>
             </div>
         </div>
     </section>
@@ -42,7 +45,8 @@ export default {
             email: "",
             password: "",
             password_confirm: "",
-            errors: []
+            errors: [],
+            isSubmited: false
         }
     },
     components: {
@@ -76,7 +80,10 @@ export default {
 
                 axios
                 .post("api/v1/user/register/", formData)
-                .then(response => {console.log(response.data)})
+                .then(response => {
+                    this.isSubmited = true
+                    console.log(response.data)
+                })
                 .catch(errors => {
                     if (errors.response) {
                         for (const property in errors.response.data) {

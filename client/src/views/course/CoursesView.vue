@@ -14,8 +14,9 @@
                 </div>
                 <div class="course-cards">
                     <div class="box"
-                    v-for="course in allCourse"
-                    v-bind.key="course.id"
+                        v-for="course in allCourse"
+                        v-bind.key="course.id"
+                        @click="redirectToDetail(course.id)"
                     >
                     <img v-bind:src="course.preview_image" alt="" class="course-image">
                     <p class="author">Author: {{ course.owner_profile.profile_username }}</p>
@@ -57,6 +58,9 @@ export default {
             .catch(errors => {
                 console.log("An error occured: ", errors)
             })
+        },
+        redirectToDetail(courseId) {
+            this.$router.push(`/course/${courseId}`)
         }
     }
 }

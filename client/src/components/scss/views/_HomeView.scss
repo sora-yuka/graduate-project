@@ -9,7 +9,7 @@
 }
 
 .preview-section {
-    color: white;
+    color: $ivory-color;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -22,10 +22,11 @@
     }
 
     .preview-description {
-        font-size: 18px;
+        font-size: 20px;
         text-align: center;
         margin-top: 20px;
         margin-bottom: 40px;
+        font-family: $lato;
     }
 
     .explore {
@@ -34,6 +35,7 @@
         justify-content: center;
         width: 220px;
         height: 50px;
+        color: white;
         font-weight: 400;
         border-radius: 25px;
         background-color: $rich-green-color;
@@ -77,11 +79,11 @@
 }
 
 .box {
-    padding: 10px 10px 30px;
     margin-bottom: 30px;
-    border: 2px $light-gray-color solid;
+    padding: 10px 10px 30px;
     border-radius: 15px;
-    transition: .2s;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px;
+    transition: transform .3s ease;
 
     & p {
         margin-left: 10px;
@@ -89,7 +91,7 @@
 
     &:hover {
         cursor: pointer;
-        box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px;
+        transform: scale(1.1);
     }
 
     .course-image {
@@ -125,7 +127,7 @@
     display: flex;
     padding: 60px 0;
     justify-content: center;
-    background-color: #F5F5DC;
+    background-color: $light-yellow-color;
 
     .container {
         display: flex;
@@ -154,6 +156,7 @@
     .description-subheader {
         opacity: .7;
         margin: 10px 0 40px;
+        font-family: $lato;
     }
 
     .view-all {

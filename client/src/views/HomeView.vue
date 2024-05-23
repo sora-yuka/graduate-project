@@ -28,7 +28,8 @@
                         <div class="box"
                             v-for="course in latestCourse"
                             v-bind:key="course.id"
-                            >
+                            @click="redirectToDetail(course.id)"
+                        >
                             <img v-bind:src="course.preview_image" alt="" class="course-image">
                             <p class="author">Author: {{ course.owner_profile.profile_username }}</p>
                             <p class="title">{{ course.title }}</p>
@@ -46,7 +47,7 @@
                     <p class="description-header">
                         Advance to the next stage in achieving your personal and professional aspirations.
                     </p>
-                    <p class="description-subheader">Sign up now to get personalized recommendations.</p>
+                    <p class="description-subheader">Get all courses</p>
                     <router-link class="view-all" to="/all/">View all</router-link>
                 </div>
             </div>
@@ -80,6 +81,9 @@ export default {
             .catch(errors => {
                 console.log("An error occurred: ", errors)
             })
+        },
+        redirectToDetail(courseId) {
+            this.$router.push(`/course/${courseId}`)
         }
     }
 }

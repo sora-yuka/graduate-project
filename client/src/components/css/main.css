@@ -90,7 +90,7 @@ legend {
   display: block;
 }
 
-html {
+html, body {
   font-family: "Roboto", sans-serif;
   height: 100%;
 }
@@ -119,7 +119,8 @@ a {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  padding: 10px 0;
+  padding: 15px 0;
+  border-bottom: 1px #eeeeee solid;
 }
 .nav .container {
   display: -webkit-box;
@@ -198,6 +199,7 @@ a {
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
+  margin-bottom: 60px;
 }
 .app .footer {
   display: -webkit-box;
@@ -211,7 +213,6 @@ a {
           justify-content: center;
   height: 200px;
   margin-top: 100px;
-  padding: 10px 0;
   text-align: center;
   background: #f1f1f1;
 }
@@ -230,8 +231,17 @@ a {
 .app .footer .footer-links img {
   width: 48px;
   height: 48px;
+  -webkit-transition: -webkit-transform 0.3s ease;
+  transition: -webkit-transform 0.3s ease;
+  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, -webkit-transform 0.3s ease;
+}
+.app .footer .footer-links img:hover {
+  -webkit-transform: scale(1.3);
+          transform: scale(1.3);
 }
 .app .footer .policy {
+  font-size: 14px;
   margin-top: 20px;
   opacity: 0.7;
 }
@@ -252,7 +262,7 @@ a {
 }
 
 .preview-section {
-  color: white;
+  color: #FFFFF0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -271,10 +281,11 @@ a {
   font-weight: bolder;
 }
 .preview-section .preview-description {
-  font-size: 18px;
+  font-size: 20px;
   text-align: center;
   margin-top: 20px;
   margin-bottom: 40px;
+  font-family: "Lato", sans-serif;
 }
 .preview-section .explore {
   display: -webkit-box;
@@ -288,6 +299,7 @@ a {
           justify-content: center;
   width: 220px;
   height: 50px;
+  color: white;
   font-weight: 400;
   border-radius: 25px;
   background-color: #097969;
@@ -334,20 +346,23 @@ a {
 }
 
 .box {
-  padding: 10px 10px 30px;
   margin-bottom: 30px;
-  border: 2px #eeeeee solid;
+  padding: 10px 10px 30px;
   border-radius: 15px;
-  -webkit-transition: 0.2s;
-  transition: 0.2s;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px;
+          box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px;
+  -webkit-transition: -webkit-transform 0.3s ease;
+  transition: -webkit-transform 0.3s ease;
+  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, -webkit-transform 0.3s ease;
 }
 .box p {
   margin-left: 10px;
 }
 .box:hover {
   cursor: pointer;
-  -webkit-box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px;
-          box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px;
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
 }
 .box .course-image {
   height: 160px;
@@ -413,6 +428,7 @@ a {
 .description .description-subheader {
   opacity: 0.7;
   margin: 10px 0 40px;
+  font-family: "Lato", sans-serif;
 }
 .description .view-all {
   padding: 10px 20px;
@@ -429,6 +445,121 @@ a {
   color: #097969;
 }
 
+.register-section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 60px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-family: "Lato", sans-serif;
+}
+
+.preview-form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.preview-form .preview-photo {
+  width: 450px;
+  height: 400px;
+  background-image: url(../source/books.jpg);
+  background-size: cover;
+  margin-right: 40px;
+}
+.preview-form .preview-text {
+  color: #096979;
+}
+.preview-form .preview-text .register-header {
+  font-size: 40px;
+  text-transform: uppercase;
+}
+.preview-form .preview-text .register-description {
+  font-size: 20px;
+  opacity: 0.7;
+}
+
+.register-fields {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 20px;
+}
+.register-fields input {
+  width: 245px;
+  padding: 10px;
+  margin-top: 40px;
+  margin-bottom: 10px;
+  font-size: 14px;
+  opacity: 0.9;
+  border: 1px #ccc solid;
+  border-radius: 5px;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.2) 0px 18px 50px -10px;
+          box-shadow: rgba(0, 0, 0, 0.2) 0px 18px 50px -10px;
+}
+
+.fields-text {
+  margin-top: -80px;
+  margin-left: 300px;
+  font-size: 12px;
+  opacity: 0.8;
+}
+.fields-text .email {
+  margin-left: 15px;
+}
+.fields-text .password {
+  margin-left: 238px;
+}
+.fields-text .confirm {
+  margin-left: 213px;
+}
+
+.form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+.form .submit {
+  color: white;
+  padding: 10px;
+  width: 400px;
+  border-radius: 5px;
+  margin-top: 40px;
+  text-transform: uppercase;
+  border: 1px #097969 solid;
+  background-color: #097969;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
+          box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
+  -webkit-transition: 0.2s ease;
+  transition: 0.2s ease;
+}
+.form .submit:hover {
+  background-color: #056961;
+}
+
+.registered-form {
+  text-align: center;
+}
 .all-course-section {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -469,111 +600,117 @@ a {
   gap: 0 40px;
 }
 
-.register-section {
+.detailed-section {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  height: 80vh;
+  margin-top: 100px;
 }
 
-.preview-form {
+.course {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  margin-bottom: 100px;
+}
+.course .preview-image {
+  width: 500px;
+  height: 300px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 25px;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+          box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+}
+.course .course-info {
+  width: 600px;
   font-family: "Lato", sans-serif;
 }
-.preview-form .preview-photo {
-  width: 450px;
-  height: 400px;
-  background-image: url(../source/books.jpg);
-  background-size: cover;
-  margin-right: 40px;
-}
-.preview-form .preview-text {
-  color: #096979;
-}
-.preview-form .preview-text .register-header {
+.course .course-info .course-name {
   font-size: 40px;
-  text-transform: uppercase;
+  font-weight: 600;
+  opacity: 1;
 }
-.preview-form .preview-text .register-description {
-  font-size: 20px;
-  opacity: 0.7;
-}
-
-.register-fields {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  gap: 20px;
-}
-.register-fields input {
-  width: 245px;
-  padding: 10px;
-  margin-top: 40px;
-  margin-bottom: 10px;
-  font-size: 14px;
-  opacity: 0.9;
-  border: 1px #ccc solid;
-  border-radius: 5px;
-}
-
-.fields-text {
-  margin-top: -80px;
-  margin-left: 300px;
-  font-size: 12px;
+.course .course-info .course-description {
+  margin-top: 10px;
+  margin-bottom: 20px;
+  line-height: 1.5em;
   opacity: 0.8;
 }
-.fields-text .email {
-  margin-left: 15px;
-}
-.fields-text .password {
-  margin-left: 238px;
-}
-.fields-text .confirm {
-  margin-left: 213px;
+.course .course-info .course-author {
+  text-decoration: underline;
+  margin-bottom: 5px;
 }
 
-.form {
+.additional-info {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  padding: 60px 20px;
+  border-radius: 10px;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
+          box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
 }
-.form .submit {
-  color: white;
-  padding: 10px;
-  width: 400px;
-  border-radius: 5px;
-  margin-top: 40px;
-  text-transform: uppercase;
-  border: 1px #097969 solid;
-  background-color: #097969;
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
+.additional-info .value {
+  font-size: 20px;
+  font-weight: 500;
 }
-.form .submit:hover {
-  color: #097969;
-  background-color: white;
+.additional-info .hint {
+  opacity: 0.7;
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+.splitter {
+  width: 1px;
+  height: 60px;
+  background-color: #C5C5C5;
+}
+
+.previous {
+  position: fixed;
+  margin-top: 20px;
+  margin-left: 260px;
+}
+.previous img {
+  width: 30px;
+  height: 30px;
+  -webkit-transition: -webkit-transform 0.2s ease;
+  transition: -webkit-transform 0.2s ease;
+  transition: transform 0.2s ease;
+  transition: transform 0.2s ease, -webkit-transform 0.2s ease;
+}
+.previous img:hover {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+}
+
+.recommendation {
+  margin-top: 60px;
+}
+.recommendation .recommendation-header {
+  margin-bottom: 40px;
+  font-size: 24px;
+}
+.recommendation .recommendation-header .category {
+  text-transform: capitalize;
+}
+.recommendation .recommendation-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 40px;
 }

@@ -5,7 +5,7 @@ from decouple import config
 
 @app.task
 def send_verification_code(email: str, verify_code: str) -> None:
-    full_link = f"http://{config('SERVER_IP')}/api/v1/user/verify/{verify_code}/"
+    full_link = f"{config('SERVER_IP')}/{verify_code}/"
     
     send_mail(
         subject="Account verification",
