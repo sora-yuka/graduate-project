@@ -10,14 +10,20 @@
     align-items: center;
     margin-bottom: 100px;
 
-    .preview-image {
-        width: 500px;
-        height: 300px;
-        object-fit: cover;
-        border-radius: 25px;
-        box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+    .image {
+        // filter: blur(2px);
+        // background-position: center;
+        // border-radius: 25px;
+
+        .preview-image {
+            width: 500px;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 25px;
+            box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+        }
     }
-    
+
     .course-info {
         width: 600px;
         font-family: $lato;

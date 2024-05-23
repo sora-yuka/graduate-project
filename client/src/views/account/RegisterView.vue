@@ -1,7 +1,7 @@
 <template>
     <section class="register-section">
         <div class="container">
-            <div class="register-form" v-if="isSubmited">
+            <div class="register-form" v-if="!isSubmited">
                 <div class="preview-form">
                     <div class="preview-photo"></div>
                     <div class="preview-text">
@@ -27,7 +27,7 @@
             </div>
             <div class="registered-form" v-else>
                 <p class="response">
-                    You are registered successfully. Please check your email and confirm your account. <br>
+                    You have successfully registered. Please check your email and confirm your account. <br>
                     You can close this page.
                 </p>
             </div>
@@ -37,6 +37,7 @@
 
 <script>
 import axios from 'axios'
+import { useToast } from 'vue-toast-notification'
 
 export default {
     name: "RegisterView",
@@ -54,6 +55,7 @@ export default {
     },
     mounted() {
         document.title = "SIGN UP"
+        this.$toast = useToast()
     },
     methods: {
         submitForm() {
@@ -61,14 +63,22 @@ export default {
 
             if (this.email === "") {
                 this.errors.push("The email is missing")
+                this.$toast.warning("The 'email' field is empty")
             }
 
             if (this.password === "") {
                 this.errors.push("The password is missing")
+                this.$toast.warning("The 'password' fields is empty")
             }
 
             if (this.password_confirm !== this.password) {
                 this.errors.push("The password does not match")
+                this.$toast.warning("Password didn't match")
+            }
+
+            if (this.password.length < 6) {
+                this.errors.push("The password is too small")
+                this.$toast.warning("Password cannot be less then 6 characters")
             }
 
             if (!this.errors.length) {
@@ -82,6 +92,7 @@ export default {
                 .post("api/v1/user/register/", formData)
                 .then(response => {
                     this.isSubmited = true
+                    this.$toast.success("Account registered successfully!")
                     console.log(response.data)
                 })
                 .catch(errors => {
@@ -95,7 +106,10 @@ export default {
                         this.errors.push("Something went wrong, please try again")
                         console.log(JSON.stringify(errors))
                     }
-                })
+                    this.$toast.error("The given email is already exist!")
+                }) 
+            } else {
+                this.$toast.error("Registration failed")
             }
         }
     },

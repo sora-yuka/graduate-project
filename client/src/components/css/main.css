@@ -99,12 +99,7 @@ html, body {
   width: 1400px;
 }
 
-a {
-  color: #5C3317;
-}
-
 .router-link {
-  color: #5C3317;
   text-transform: uppercase;
 }
 
@@ -157,7 +152,6 @@ a {
 .nav-bar .nav-bar__item {
   -webkit-transition: 0.3s;
   transition: 0.3s;
-  color: #5C3317;
 }
 .nav-bar .nav-bar__item:hover {
   opacity: 0.7;
@@ -560,6 +554,14 @@ a {
 .registered-form {
   text-align: center;
 }
+.registered-form .response {
+  margin-top: 80px;
+  color: #424242;
+  font-family: "Lato", sans-serif;
+  font-weight: 900;
+  font-size: 24px;
+}
+
 .all-course-section {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -621,7 +623,7 @@ a {
           align-items: center;
   margin-bottom: 100px;
 }
-.course .preview-image {
+.course .image .preview-image {
   width: 500px;
   height: 300px;
   -o-object-fit: cover;
