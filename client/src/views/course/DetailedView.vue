@@ -73,7 +73,7 @@ export default {
     },
     mounted() {
         this.getDetailedCourse()
-        document.title = "DETAIL"
+        document.title = "Detail"
     },
     methods: {
         getDetailedCourse() {

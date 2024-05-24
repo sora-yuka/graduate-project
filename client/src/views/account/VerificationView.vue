@@ -1,9 +1,17 @@
 <template>
     <section class="verification-section">
         <div class="container">
-            <form action="" @submit.prevent="submitForm">
-                <input type="text" v-model="username">
-                <button type="submit" class="submit">confirm</button>
+            <div class="photo"></div>
+            <form action="" @submit.prevent="submitForm" class="verification-form">
+                <ul class="form-list">
+                    <li class="form-list__item">
+                        <input type="text" v-model="username"><br>
+                        <label for="username">Username</label>
+                    </li>
+                </ul>
+                <div class="form-button">
+                    <button type="submit" class="confirm">confirm</button>
+                </div>
             </form>
         </div>
     </section>
@@ -22,6 +30,7 @@ export default {
     },
     mounted() {
         this.$toast = useToast()
+        document.title = "Verify"
     },
     methods: {
         submitForm() {

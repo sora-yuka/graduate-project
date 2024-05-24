@@ -2,7 +2,7 @@
     <div class="app">
         <nav class="nav">
         <div class="container">
-            <router-link to="/"><span class="home-button">COURSERA</span></router-link>
+            <router-link to="/"><span class="home-button">KnowledgeHub</span></router-link>
             <ul class="nav-bar">
                 <ul class="sign-in">
                     <li class="sign-in__item"><router-link to="/login" class="sign-in__button">Log In</router-link></li>

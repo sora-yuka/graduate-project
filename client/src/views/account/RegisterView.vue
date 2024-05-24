@@ -54,7 +54,7 @@ export default {
 
     },
     mounted() {
-        document.title = "SIGN UP"
+        document.title = "Sign up"
         this.$toast = useToast()
     },
     methods: {
@@ -63,22 +63,30 @@ export default {
 
             if (this.email === "") {
                 this.errors.push("The email is missing")
-                this.$toast.warning("The 'email' field is empty")
+                this.$toast.open({
+                    message: "The 'email' field is empty", type: "warning", duration: 6000
+                })
             }
 
             if (this.password === "") {
                 this.errors.push("The password is missing")
-                this.$toast.warning("The 'password' fields is empty")
+                this.$toast.open({
+                    message: "The 'password' fields is empty", type: "warning", duration: 6000
+                })
             }
 
             if (this.password_confirm !== this.password) {
                 this.errors.push("The password does not match")
-                this.$toast.warning("Password didn't match")
+                this.$toast.open({
+                    message: "Password didn't match", type: "warning", duration: 6000
+                })
             }
 
             if (this.password.length < 6) {
                 this.errors.push("The password is too small")
-                this.$toast.warning("Password cannot be less then 6 characters")
+                this.$toast.open({
+                    message: "Password cannot be less then 6 characters", type: "warning", duration: 6000
+                })
             }
 
             if (!this.errors.length) {
@@ -109,7 +117,9 @@ export default {
                     this.$toast.error("The given email is already exist!")
                 }) 
             } else {
-                this.$toast.error("Registration failed")
+                this.$toast.open({
+                    message: "Registration failed", type: "error", duration: 5000
+                })
             }
         }
     },

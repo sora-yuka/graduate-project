@@ -2,6 +2,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap");
 * {
   padding: 0px;
   margin: 0px;
@@ -131,12 +132,9 @@ html, body {
 
 .home-button {
   color: #097969;
-  font-weight: 900;
-  font-size: 20px;
-  font-family: "Lato", sans-serif;
-  letter-spacing: 1.6px;
-  -webkit-transition: 0.2s;
-  transition: 0.2s;
+  font-weight: 700;
+  font-size: 24px;
+  font-family: "Nunito", sans-serif;
 }
 
 .nav-bar {
@@ -562,6 +560,119 @@ html, body {
   font-size: 24px;
 }
 
+.verification-section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: 30px;
+  margin-bottom: -120px;
+}
+.verification-section .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 120px;
+}
+
+.verification-section .photo {
+  width: 400px;
+  height: 580px;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+          box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+  border-radius: 10px;
+  background-size: cover;
+  background-image: url(../source/books-winter.jpg);
+}
+
+.form-list {
+  margin-bottom: 40px;
+}
+.form-list .form-list__item input {
+  padding: 10px;
+  width: 400px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  -webkit-box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+          box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}
+.form-list .form-list__item label {
+  font-size: 14px;
+  font-family: "Lato", sans-serif;
+  opacity: 0.8;
+}
+
+.form-button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.form-button .confirm {
+  color: white;
+  padding: 10px;
+  width: 400px;
+  border-radius: 5px;
+  margin-top: 40px;
+  text-transform: uppercase;
+  border: 1px #097969 solid;
+  background-color: #097969;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
+          box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
+  -webkit-transition: 0.2s ease;
+  transition: 0.2s ease;
+}
+.form-button .confirm:hover {
+  background-color: #056961;
+}
+
+.login-section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: 30px;
+  margin-bottom: -120px;
+}
+.login-section .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 120px;
+}
+
+.login-section .photo {
+  width: 400px;
+  height: 580px;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+          box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+  border-radius: 10px;
+  background-size: cover;
+  background-image: url(../source/book-shelf.jpg);
+}
+
+.form-list__item {
+  margin-bottom: 20px;
+}
+
 .all-course-section {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -714,5 +825,27 @@ html, body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  overflow-x: auto;
+  white-space: nowrap;
+  padding: 30px 50px;
   gap: 40px;
+}
+.recommendation .recommendation-list .box {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 auto;
+          flex: 0 0 auto;
+  margin-right: 10px;
+}
+
+.recommendation-list::-webkit-scrollbar {
+  height: 8px; /* Adjust the height of the scrollbar */
+}
+
+.recommendation-list::-webkit-scrollbar-thumb {
+  background-color: #888; /* Adjust the scrollbar color */
+  border-radius: 4px;
+}
+
+.recommendation-list::-webkit-scrollbar-thumb:hover {
+  background-color: #555; /* Adjust the scrollbar color on hover */
 }

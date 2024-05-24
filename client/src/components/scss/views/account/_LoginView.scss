@@ -1,0 +1,27 @@
+.login-section {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+    margin-bottom: -120px;
+
+    .container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 120px;
+        
+    }
+}
+
+.login-section .photo {
+    width: 400px;
+    height: 580px;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+    border-radius: 10px;
+    background-size: cover;
+    background-image: url(../source/book-shelf.jpg);
+}
+
+.form-list__item {
+    margin-bottom: 20px;
+}

@@ -1,7 +1,8 @@
-# WORKING WITH PROJECT
+# RUNNING PROJECT
 r:
 	./manage.py runserver
 
+# MAKING MIGRATIONS
 m:
 	./manage.py makemigrations
 	./manage.py migrate
@@ -18,8 +19,11 @@ su:
 
 # STARTING CELERY
 c:
-	celery -A apps.account.tasks worker -l info
+	celery -A config worker -l info
 
 # WRITING REQUIREMENTS
 req:
 	pip freeze > requirements.txt
+
+d:
+	docker-compose up --build

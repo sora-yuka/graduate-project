@@ -67,7 +67,7 @@ export default {
     },
     mounted() {
         this.getLatestCourse()
-        document.title = "HOME"
+        document.title = "Home"
     },
     methods: {
         getLatestCourse() {

@@ -1,0 +1,63 @@
+.verification-section {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+    margin-bottom: -120px;
+
+    .container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 120px;
+    }
+}
+
+.verification-section .photo {
+    width: 400px;
+    height: 580px;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+    border-radius: 10px;
+    background-size: cover;
+    background-image: url(../source/books-winter.jpg);
+}
+
+.form-list {
+    margin-bottom: 40px;
+
+    .form-list__item input {
+        padding: 10px;
+        width: 400px;
+        margin-bottom: 10px;
+        border-radius: 5px;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+    }
+
+    .form-list__item label {
+        font-size: 14px;
+        font-family: $lato;
+        opacity: .8;
+    }
+}
+
+.form-button {
+    display: flex;
+    justify-content: center;
+
+    .confirm {
+        color: white;
+        padding: 10px;
+        width: 400px;
+        border-radius: 5px;
+        margin-top: 40px;
+        text-transform: uppercase;
+        border: 1px $rich-green-color solid;
+        background-color: $rich-green-color;
+        box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
+        transition: .2s ease;
+    
+        &:hover {
+            background-color: #056961;
+        }
+    }
+}
+
