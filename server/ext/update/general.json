@@ -1,0 +1,1656 @@
+[
+{
+    "model": "admin.logentry",
+    "pk": 1,
+    "fields": {
+        "action_time": "2024-05-19T11:06:15.695Z",
+        "user": 1,
+        "content_type": 8,
+        "object_id": "2",
+        "object_repr": "admin",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 2,
+    "fields": {
+        "action_time": "2024-05-19T11:07:07.972Z",
+        "user": 1,
+        "content_type": 9,
+        "object_id": "1",
+        "object_repr": "Gaming",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 3,
+    "fields": {
+        "action_time": "2024-05-19T11:07:11.729Z",
+        "user": 1,
+        "content_type": 10,
+        "object_id": "1",
+        "object_repr": "aa",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 4,
+    "fields": {
+        "action_time": "2024-05-19T11:11:16.326Z",
+        "user": 1,
+        "content_type": 10,
+        "object_id": "2",
+        "object_repr": "ff",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 5,
+    "fields": {
+        "action_time": "2024-05-19T11:39:29.182Z",
+        "user": 1,
+        "content_type": 9,
+        "object_id": "1",
+        "object_repr": "gaming",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"Category\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 6,
+    "fields": {
+        "action_time": "2024-05-19T11:39:37.597Z",
+        "user": 1,
+        "content_type": 9,
+        "object_id": "2",
+        "object_repr": "study",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 7,
+    "fields": {
+        "action_time": "2024-05-20T16:34:50.071Z",
+        "user": 1,
+        "content_type": 10,
+        "object_id": "6",
+        "object_repr": "About VueJs",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 8,
+    "fields": {
+        "action_time": "2024-05-20T16:40:58.615Z",
+        "user": 1,
+        "content_type": 10,
+        "object_id": "7",
+        "object_repr": "How to make React app",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 9,
+    "fields": {
+        "action_time": "2024-05-20T16:41:16.743Z",
+        "user": 1,
+        "content_type": 10,
+        "object_id": "7",
+        "object_repr": "How to make React app",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"Preview image\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 10,
+    "fields": {
+        "action_time": "2024-05-20T16:41:34.470Z",
+        "user": 1,
+        "content_type": 10,
+        "object_id": "7",
+        "object_repr": "How to make React app",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"Preview image\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 11,
+    "fields": {
+        "action_time": "2024-05-20T16:41:39.173Z",
+        "user": 1,
+        "content_type": 10,
+        "object_id": "7",
+        "object_repr": "How to make React app",
+        "action_flag": 2,
+        "change_message": "[]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 12,
+    "fields": {
+        "action_time": "2024-05-20T16:42:14.586Z",
+        "user": 1,
+        "content_type": 10,
+        "object_id": "5",
+        "object_repr": "Emergency food",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"Title\", \"Preview image\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 13,
+    "fields": {
+        "action_time": "2024-05-20T19:03:45.984Z",
+        "user": 1,
+        "content_type": 7,
+        "object_id": "3",
+        "object_repr": "dmc@mail.com",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"Is active\", \"Verification code\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 14,
+    "fields": {
+        "action_time": "2024-05-22T13:53:31.248Z",
+        "user": 1,
+        "content_type": 9,
+        "object_id": "3",
+        "object_repr": "coding",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 15,
+    "fields": {
+        "action_time": "2024-05-22T13:53:39.953Z",
+        "user": 1,
+        "content_type": 10,
+        "object_id": "7",
+        "object_repr": "How to make React app",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"Category\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 16,
+    "fields": {
+        "action_time": "2024-05-22T13:53:47.770Z",
+        "user": 1,
+        "content_type": 10,
+        "object_id": "6",
+        "object_repr": "About VueJs",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"Category\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 17,
+    "fields": {
+        "action_time": "2024-05-22T13:53:51.467Z",
+        "user": 1,
+        "content_type": 10,
+        "object_id": "7",
+        "object_repr": "How to make React app",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"Level\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 18,
+    "fields": {
+        "action_time": "2024-05-22T13:53:54.644Z",
+        "user": 1,
+        "content_type": 10,
+        "object_id": "5",
+        "object_repr": "Emergency food",
+        "action_flag": 2,
+        "change_message": "[]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 19,
+    "fields": {
+        "action_time": "2024-05-22T13:54:01.867Z",
+        "user": 1,
+        "content_type": 10,
+        "object_id": "3",
+        "object_repr": "How to create django app",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"Level\", \"Category\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 20,
+    "fields": {
+        "action_time": "2024-05-22T14:02:02.441Z",
+        "user": 1,
+        "content_type": 10,
+        "object_id": "6",
+        "object_repr": "About VueJs",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"Level\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 21,
+    "fields": {
+        "action_time": "2024-05-22T14:20:35.822Z",
+        "user": 1,
+        "content_type": 10,
+        "object_id": "3",
+        "object_repr": "How to create django app",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"Preview image\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 22,
+    "fields": {
+        "action_time": "2024-05-22T14:21:37.452Z",
+        "user": 1,
+        "content_type": 10,
+        "object_id": "4",
+        "object_repr": "Introduction to Js",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"Title\", \"Preview image\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 23,
+    "fields": {
+        "action_time": "2024-05-22T14:23:03.704Z",
+        "user": 1,
+        "content_type": 10,
+        "object_id": "5",
+        "object_repr": "GameDev for beginners",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"Title\", \"Preview image\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 24,
+    "fields": {
+        "action_time": "2024-05-22T14:57:37.812Z",
+        "user": 1,
+        "content_type": 10,
+        "object_id": "6",
+        "object_repr": "About VueJs",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"Level\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 25,
+    "fields": {
+        "action_time": "2024-05-22T17:18:47.143Z",
+        "user": 1,
+        "content_type": 11,
+        "object_id": "2",
+        "object_repr": "4 - lesson 5 - Array",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 26,
+    "fields": {
+        "action_time": "2024-05-23T08:34:49.568Z",
+        "user": 1,
+        "content_type": 10,
+        "object_id": "3",
+        "object_repr": "How to create django app",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"Description\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 27,
+    "fields": {
+        "action_time": "2024-05-23T10:15:15.200Z",
+        "user": 1,
+        "content_type": 10,
+        "object_id": "9",
+        "object_repr": "You don't know about js",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"Description\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 28,
+    "fields": {
+        "action_time": "2024-05-23T10:22:08.717Z",
+        "user": 1,
+        "content_type": 7,
+        "object_id": "10",
+        "object_repr": "parry@gmail.com",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 29,
+    "fields": {
+        "action_time": "2024-05-23T10:22:08.719Z",
+        "user": 1,
+        "content_type": 7,
+        "object_id": "9",
+        "object_repr": "parry@mail.com",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 30,
+    "fields": {
+        "action_time": "2024-05-23T10:24:01.207Z",
+        "user": 1,
+        "content_type": 7,
+        "object_id": "11",
+        "object_repr": "parry@gmail.com",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 31,
+    "fields": {
+        "action_time": "2024-05-23T12:37:18.983Z",
+        "user": 1,
+        "content_type": 8,
+        "object_id": "3",
+        "object_repr": "Bridget!!",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 32,
+    "fields": {
+        "action_time": "2024-05-23T12:42:05.515Z",
+        "user": 1,
+        "content_type": 10,
+        "object_id": "10",
+        "object_repr": "Bridget guide",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 33,
+    "fields": {
+        "action_time": "2024-05-23T13:21:04.886Z",
+        "user": 1,
+        "content_type": 10,
+        "object_id": "10",
+        "object_repr": "Bridget guide",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"Preview image\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 34,
+    "fields": {
+        "action_time": "2024-05-23T16:55:20.620Z",
+        "user": 1,
+        "content_type": 10,
+        "object_id": "1",
+        "object_repr": "The Django book",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"Title\", \"Description\", \"Level\", \"Category\", \"Preview image\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 35,
+    "fields": {
+        "action_time": "2024-05-23T16:56:20.723Z",
+        "user": 1,
+        "content_type": 10,
+        "object_id": "5",
+        "object_repr": "GameDev for beginners",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"Category\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 36,
+    "fields": {
+        "action_time": "2024-05-23T17:01:13.023Z",
+        "user": 1,
+        "content_type": 10,
+        "object_id": "11",
+        "object_repr": "How to create horizontal scroll bar",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 1,
+    "fields": {
+        "name": "Can add log entry",
+        "content_type": 1,
+        "codename": "add_logentry"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 2,
+    "fields": {
+        "name": "Can change log entry",
+        "content_type": 1,
+        "codename": "change_logentry"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 3,
+    "fields": {
+        "name": "Can delete log entry",
+        "content_type": 1,
+        "codename": "delete_logentry"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 4,
+    "fields": {
+        "name": "Can view log entry",
+        "content_type": 1,
+        "codename": "view_logentry"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 5,
+    "fields": {
+        "name": "Can add permission",
+        "content_type": 2,
+        "codename": "add_permission"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 6,
+    "fields": {
+        "name": "Can change permission",
+        "content_type": 2,
+        "codename": "change_permission"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 7,
+    "fields": {
+        "name": "Can delete permission",
+        "content_type": 2,
+        "codename": "delete_permission"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 8,
+    "fields": {
+        "name": "Can view permission",
+        "content_type": 2,
+        "codename": "view_permission"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 9,
+    "fields": {
+        "name": "Can add group",
+        "content_type": 3,
+        "codename": "add_group"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 10,
+    "fields": {
+        "name": "Can change group",
+        "content_type": 3,
+        "codename": "change_group"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 11,
+    "fields": {
+        "name": "Can delete group",
+        "content_type": 3,
+        "codename": "delete_group"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 12,
+    "fields": {
+        "name": "Can view group",
+        "content_type": 3,
+        "codename": "view_group"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 13,
+    "fields": {
+        "name": "Can add content type",
+        "content_type": 4,
+        "codename": "add_contenttype"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 14,
+    "fields": {
+        "name": "Can change content type",
+        "content_type": 4,
+        "codename": "change_contenttype"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 15,
+    "fields": {
+        "name": "Can delete content type",
+        "content_type": 4,
+        "codename": "delete_contenttype"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 16,
+    "fields": {
+        "name": "Can view content type",
+        "content_type": 4,
+        "codename": "view_contenttype"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 17,
+    "fields": {
+        "name": "Can add session",
+        "content_type": 5,
+        "codename": "add_session"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 18,
+    "fields": {
+        "name": "Can change session",
+        "content_type": 5,
+        "codename": "change_session"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 19,
+    "fields": {
+        "name": "Can delete session",
+        "content_type": 5,
+        "codename": "delete_session"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 20,
+    "fields": {
+        "name": "Can view session",
+        "content_type": 5,
+        "codename": "view_session"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 21,
+    "fields": {
+        "name": "Can add recovery secret",
+        "content_type": 6,
+        "codename": "add_recoverysecret"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 22,
+    "fields": {
+        "name": "Can change recovery secret",
+        "content_type": 6,
+        "codename": "change_recoverysecret"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 23,
+    "fields": {
+        "name": "Can delete recovery secret",
+        "content_type": 6,
+        "codename": "delete_recoverysecret"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 24,
+    "fields": {
+        "name": "Can view recovery secret",
+        "content_type": 6,
+        "codename": "view_recoverysecret"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 25,
+    "fields": {
+        "name": "Can add user",
+        "content_type": 7,
+        "codename": "add_customuser"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 26,
+    "fields": {
+        "name": "Can change user",
+        "content_type": 7,
+        "codename": "change_customuser"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 27,
+    "fields": {
+        "name": "Can delete user",
+        "content_type": 7,
+        "codename": "delete_customuser"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 28,
+    "fields": {
+        "name": "Can view user",
+        "content_type": 7,
+        "codename": "view_customuser"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 29,
+    "fields": {
+        "name": "Can add user profile",
+        "content_type": 8,
+        "codename": "add_userprofile"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 30,
+    "fields": {
+        "name": "Can change user profile",
+        "content_type": 8,
+        "codename": "change_userprofile"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 31,
+    "fields": {
+        "name": "Can delete user profile",
+        "content_type": 8,
+        "codename": "delete_userprofile"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 32,
+    "fields": {
+        "name": "Can view user profile",
+        "content_type": 8,
+        "codename": "view_userprofile"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 33,
+    "fields": {
+        "name": "Can add category model",
+        "content_type": 9,
+        "codename": "add_categorymodel"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 34,
+    "fields": {
+        "name": "Can change category model",
+        "content_type": 9,
+        "codename": "change_categorymodel"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 35,
+    "fields": {
+        "name": "Can delete category model",
+        "content_type": 9,
+        "codename": "delete_categorymodel"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 36,
+    "fields": {
+        "name": "Can view category model",
+        "content_type": 9,
+        "codename": "view_categorymodel"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 37,
+    "fields": {
+        "name": "Can add courses model",
+        "content_type": 10,
+        "codename": "add_coursesmodel"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 38,
+    "fields": {
+        "name": "Can change courses model",
+        "content_type": 10,
+        "codename": "change_coursesmodel"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 39,
+    "fields": {
+        "name": "Can delete courses model",
+        "content_type": 10,
+        "codename": "delete_coursesmodel"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 40,
+    "fields": {
+        "name": "Can view courses model",
+        "content_type": 10,
+        "codename": "view_coursesmodel"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 41,
+    "fields": {
+        "name": "Can add course item model",
+        "content_type": 11,
+        "codename": "add_courseitemmodel"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 42,
+    "fields": {
+        "name": "Can change course item model",
+        "content_type": 11,
+        "codename": "change_courseitemmodel"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 43,
+    "fields": {
+        "name": "Can delete course item model",
+        "content_type": 11,
+        "codename": "delete_courseitemmodel"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 44,
+    "fields": {
+        "name": "Can view course item model",
+        "content_type": 11,
+        "codename": "view_courseitemmodel"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 45,
+    "fields": {
+        "name": "Can add comment model",
+        "content_type": 12,
+        "codename": "add_commentmodel"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 46,
+    "fields": {
+        "name": "Can change comment model",
+        "content_type": 12,
+        "codename": "change_commentmodel"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 47,
+    "fields": {
+        "name": "Can delete comment model",
+        "content_type": 12,
+        "codename": "delete_commentmodel"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 48,
+    "fields": {
+        "name": "Can view comment model",
+        "content_type": 12,
+        "codename": "view_commentmodel"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 49,
+    "fields": {
+        "name": "Can add like model",
+        "content_type": 13,
+        "codename": "add_likemodel"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 50,
+    "fields": {
+        "name": "Can change like model",
+        "content_type": 13,
+        "codename": "change_likemodel"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 51,
+    "fields": {
+        "name": "Can delete like model",
+        "content_type": 13,
+        "codename": "delete_likemodel"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 52,
+    "fields": {
+        "name": "Can view like model",
+        "content_type": 13,
+        "codename": "view_likemodel"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 53,
+    "fields": {
+        "name": "Can add rating model",
+        "content_type": 14,
+        "codename": "add_ratingmodel"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 54,
+    "fields": {
+        "name": "Can change rating model",
+        "content_type": 14,
+        "codename": "change_ratingmodel"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 55,
+    "fields": {
+        "name": "Can delete rating model",
+        "content_type": 14,
+        "codename": "delete_ratingmodel"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 56,
+    "fields": {
+        "name": "Can view rating model",
+        "content_type": 14,
+        "codename": "view_ratingmodel"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 57,
+    "fields": {
+        "name": "Can add saved model",
+        "content_type": 15,
+        "codename": "add_savedmodel"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 58,
+    "fields": {
+        "name": "Can change saved model",
+        "content_type": 15,
+        "codename": "change_savedmodel"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 59,
+    "fields": {
+        "name": "Can delete saved model",
+        "content_type": 15,
+        "codename": "delete_savedmodel"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 60,
+    "fields": {
+        "name": "Can view saved model",
+        "content_type": 15,
+        "codename": "view_savedmodel"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 1,
+    "fields": {
+        "app_label": "admin",
+        "model": "logentry"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 2,
+    "fields": {
+        "app_label": "auth",
+        "model": "permission"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 3,
+    "fields": {
+        "app_label": "auth",
+        "model": "group"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 4,
+    "fields": {
+        "app_label": "contenttypes",
+        "model": "contenttype"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 5,
+    "fields": {
+        "app_label": "sessions",
+        "model": "session"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 6,
+    "fields": {
+        "app_label": "account",
+        "model": "recoverysecret"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 7,
+    "fields": {
+        "app_label": "account",
+        "model": "customuser"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 8,
+    "fields": {
+        "app_label": "profiles",
+        "model": "userprofile"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 9,
+    "fields": {
+        "app_label": "courses",
+        "model": "categorymodel"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 10,
+    "fields": {
+        "app_label": "courses",
+        "model": "coursesmodel"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 11,
+    "fields": {
+        "app_label": "courses",
+        "model": "courseitemmodel"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 12,
+    "fields": {
+        "app_label": "feedback",
+        "model": "commentmodel"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 13,
+    "fields": {
+        "app_label": "feedback",
+        "model": "likemodel"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 14,
+    "fields": {
+        "app_label": "feedback",
+        "model": "ratingmodel"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 15,
+    "fields": {
+        "app_label": "feedback",
+        "model": "savedmodel"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "8qvxus9dnjhlnnaak8d1sce6m4h1yyco",
+    "fields": {
+        "session_data": ".eJxVjDEOwjAMRe-SGUVK0tQOIztniBzbpQWUSk07VdwdVeoA63_v_d1k2tYxb02XPIm5Gmcuv1shfmk9gDypPmbLc12XqdhDsSdt9j6Lvm-n-3cwUhuPmpmTAED0A3WDEx-L96TQKQljcC4hIvRYXOiHCAk1UuiRfUxQJJjPF_SON8U:1s98IK:Nil-k87JbdHb9iiZjLlq5tetR_45BU2O0d580QxFuoI",
+        "expire_date": "2024-06-03T19:03:36.592Z"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "gm5oymjnuco7yan7ja3vrjckgyxdi9ju",
+    "fields": {
+        "session_data": ".eJxVjDEOwjAMRe-SGUVK0tQOIztniBzbpQWUSk07VdwdVeoA63_v_d1k2tYxb02XPIm5Gmcuv1shfmk9gDypPmbLc12XqdhDsSdt9j6Lvm-n-3cwUhuPmpmTAED0A3WDEx-L96TQKQljcC4hIvRYXOiHCAk1UuiRfUxQJJjPF_SON8U:1s8eMX:xfrIQt12i-LBZrWVpsRuN2QL-Qk51lN0TvLqf1HeGz8",
+        "expire_date": "2024-06-02T11:05:57.719Z"
+    }
+},
+{
+    "model": "account.customuser",
+    "pk": 1,
+    "fields": {
+        "last_login": "2024-05-20T19:03:36.590Z",
+        "is_superuser": true,
+        "first_name": "",
+        "last_name": "",
+        "is_staff": true,
+        "date_joined": "2024-05-19T11:05:09.955Z",
+        "email": "admin@mail.com",
+        "password": "pbkdf2_sha256$720000$U1AzzJC1JHfc4cbYbZ8qfw$wHI9u4RgSY9lKCDJagATEztAjSt7S/6OEIyly8DFx0A=",
+        "is_active": true,
+        "verification_code": "3755abac-6f22-4c28-9684-b23a43726ce6",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "account.customuser",
+    "pk": 2,
+    "fields": {
+        "last_login": null,
+        "is_superuser": false,
+        "first_name": "",
+        "last_name": "",
+        "is_staff": false,
+        "date_joined": "2024-05-23T10:26:37.978Z",
+        "email": "user@mail.com",
+        "password": "pbkdf2_sha256$720000$6QNQYVgUKVCN0aKJZetbBO$5i0xOEASh6e428UZQVzM7shD0bSpt/7qbx17iPfREJs=",
+        "is_active": false,
+        "verification_code": "f9d42c8f-6a37-49a0-bf5a-47ca6fe86cab",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "account.customuser",
+    "pk": 3,
+    "fields": {
+        "last_login": null,
+        "is_superuser": false,
+        "first_name": "",
+        "last_name": "",
+        "is_staff": false,
+        "date_joined": "2024-05-23T10:26:37.978Z",
+        "email": "es@mail.com",
+        "password": "pbkdf2_sha256$720000$eE33x8UzENBywTshxAdz5m$mlQB0tzWi/O5GnKtlOr8V5mTO6IaxyVvClffNkMlzUY=",
+        "is_active": false,
+        "verification_code": "",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "account.customuser",
+    "pk": 4,
+    "fields": {
+        "last_login": null,
+        "is_superuser": false,
+        "first_name": "",
+        "last_name": "",
+        "is_staff": false,
+        "date_joined": "2024-05-22T11:29:08.998Z",
+        "email": "some@gmail.com",
+        "password": "pbkdf2_sha256$720000$pFFoMtzTE4LTDGyKhnNhMs$L3y76lZP3vciNFD8TucmRjX6OEOz/v+AxhF2fejcstM=",
+        "is_active": false,
+        "verification_code": "4190d249-49cc-4bc3-823c-952672499b64",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "account.customuser",
+    "pk": 5,
+    "fields": {
+        "last_login": null,
+        "is_superuser": false,
+        "first_name": "",
+        "last_name": "",
+        "is_staff": false,
+        "date_joined": "2024-05-22T11:37:49.296Z",
+        "email": "qwerty@gmail.com",
+        "password": "pbkdf2_sha256$720000$BPMq2eHv8lsTkaHPa8A4Ed$kpip+hcX5v2XHrH/MLE9RqDkBC4BEjPkTtojta9wbfg=",
+        "is_active": false,
+        "verification_code": "c4d13a9f-ece0-43b5-898e-d0e589f979a7",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "account.customuser",
+    "pk": 6,
+    "fields": {
+        "last_login": null,
+        "is_superuser": false,
+        "first_name": "",
+        "last_name": "",
+        "is_staff": false,
+        "date_joined": "2024-05-22T11:42:06.875Z",
+        "email": "mcos@mail.com",
+        "password": "pbkdf2_sha256$720000$aNyAuEQzyIa6DhlKYdo7ED$9Y7VNQ0QVv9pZONpeNHOUYhJonL0CkbHdQa8+3r6zNw=",
+        "is_active": false,
+        "verification_code": "5899b5ef-10aa-431f-b727-c4a9911c75e8",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "account.customuser",
+    "pk": 7,
+    "fields": {
+        "last_login": null,
+        "is_superuser": false,
+        "first_name": "",
+        "last_name": "",
+        "is_staff": false,
+        "date_joined": "2024-05-22T11:44:05.923Z",
+        "email": "scs@maill.com",
+        "password": "pbkdf2_sha256$720000$gBt4rvOJApc80XMKq1UpoU$C60IUv+2SconLosUwBIH1BDf8bMAS1nOmVcvDMo8I1g=",
+        "is_active": false,
+        "verification_code": "93bab55d-e723-4a22-aad6-f7db52ef6b9f",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "account.customuser",
+    "pk": 8,
+    "fields": {
+        "last_login": null,
+        "is_superuser": false,
+        "first_name": "",
+        "last_name": "",
+        "is_staff": false,
+        "date_joined": "2024-05-22T11:45:08.981Z",
+        "email": "email@mail.com",
+        "password": "pbkdf2_sha256$720000$IcWQf30MT7RxWDye7uIrjn$DgSShIVGSmEUYmawasf0m9HM67NiIFDgLWsE9fuK3/g=",
+        "is_active": false,
+        "verification_code": "2690295f-e278-4c97-9eb0-a0ed0e28178e",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "account.customuser",
+    "pk": 12,
+    "fields": {
+        "last_login": null,
+        "is_superuser": false,
+        "first_name": "",
+        "last_name": "",
+        "is_staff": false,
+        "date_joined": "2024-05-23T10:24:53.851Z",
+        "email": "brisket@mail.com",
+        "password": "pbkdf2_sha256$720000$sTnFLTEPNrJ8XZyLyZbGoP$oCb7/D8f9RFHkg5YiMDm0Ck2hDxMPA7EJRrE9PQn8Ns=",
+        "is_active": false,
+        "verification_code": "80575bbd-f74f-4760-ab71-e9d19574cb0b",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "account.customuser",
+    "pk": 13,
+    "fields": {
+        "last_login": null,
+        "is_superuser": false,
+        "first_name": "",
+        "last_name": "",
+        "is_staff": false,
+        "date_joined": "2024-05-23T10:26:37.978Z",
+        "email": "ddj@mail.com",
+        "password": "pbkdf2_sha256$720000$A07Dnt4bfNXY51Ck2rcmZV$WMOG1uox97O2FFVAyScZrbNkwew3swEuSOlbCwZ9qfE=",
+        "is_active": false,
+        "verification_code": "f9d42c8f-6a37-49a0-bf5a-47ca6fe86cab",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "account.customuser",
+    "pk": 14,
+    "fields": {
+        "last_login": null,
+        "is_superuser": false,
+        "first_name": "",
+        "last_name": "",
+        "is_staff": false,
+        "date_joined": "2024-05-23T14:26:50.666Z",
+        "email": "asdf@mail.com",
+        "password": "pbkdf2_sha256$720000$f63cE6QsxKvODdpTWZS2l4$QTkxRtC3qeJOya3l8oKqY0PzRUTTqw9HdkzlfkxYP1E=",
+        "is_active": true,
+        "verification_code": "",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "account.customuser",
+    "pk": 15,
+    "fields": {
+        "last_login": null,
+        "is_superuser": false,
+        "first_name": "",
+        "last_name": "",
+        "is_staff": false,
+        "date_joined": "2024-05-23T14:52:27.622Z",
+        "email": "sabyrkulov.nurmuhammed@gmail.com",
+        "password": "pbkdf2_sha256$720000$LWSMrcPPgIIoeOlbwtYf0p$/ZcSggKFYmnHJUHDxjClOk4p0QUCYINDo6jmMpeqlJo=",
+        "is_active": true,
+        "verification_code": "",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "account.customuser",
+    "pk": 16,
+    "fields": {
+        "last_login": null,
+        "is_superuser": false,
+        "first_name": "",
+        "last_name": "",
+        "is_staff": false,
+        "date_joined": "2024-05-23T16:47:00.565Z",
+        "email": "qr@mail.com",
+        "password": "pbkdf2_sha256$720000$4dhhOJUYXNymo7vfKvce2o$NYfwEZC+aOsFCMIL85ZUEbjFGw282XgGLTXN57R0Plg=",
+        "is_active": false,
+        "verification_code": "fc0b45b5-0df3-4e1f-a8d5-fec9ae22741b",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "profiles.userprofile",
+    "pk": 1,
+    "fields": {
+        "owner": 2,
+        "username": "Alan",
+        "photo": "",
+        "description": null,
+        "contacts": null,
+        "youtube_url": null,
+        "linkedin_url": null,
+        "github_url": null
+    }
+},
+{
+    "model": "profiles.userprofile",
+    "pk": 2,
+    "fields": {
+        "owner": 3,
+        "username": "Micheal",
+        "photo": "",
+        "description": null,
+        "contacts": null,
+        "youtube_url": null,
+        "linkedin_url": null,
+        "github_url": null
+    }
+},
+{
+    "model": "profiles.userprofile",
+    "pk": 3,
+    "fields": {
+        "owner": 12,
+        "username": "Bridget!!",
+        "photo": "",
+        "description": "",
+        "contacts": null,
+        "youtube_url": null,
+        "linkedin_url": null,
+        "github_url": null
+    }
+},
+{
+    "model": "profiles.userprofile",
+    "pk": 4,
+    "fields": {
+        "owner": 14,
+        "username": "fasdf",
+        "photo": "",
+        "description": null,
+        "contacts": null,
+        "youtube_url": null,
+        "linkedin_url": null,
+        "github_url": null
+    }
+},
+{
+    "model": "profiles.userprofile",
+    "pk": 5,
+    "fields": {
+        "owner": 15,
+        "username": "sorayuki",
+        "photo": "",
+        "description": null,
+        "contacts": null,
+        "youtube_url": null,
+        "linkedin_url": null,
+        "github_url": null
+    }
+},
+{
+    "model": "courses.categorymodel",
+    "pk": 1,
+    "fields": {
+        "category": "Code"
+    }
+},
+{
+    "model": "courses.categorymodel",
+    "pk": 2,
+    "fields": {
+        "category": "General"
+    }
+},
+{
+    "model": "courses.categorymodel",
+    "pk": 3,
+    "fields": {
+        "category": "Game"
+    }
+},
+{
+    "model": "courses.coursesmodel",
+    "pk": 1,
+    "fields": {
+        "owner": 2,
+        "title": "The Django book",
+        "description": "You’re reading The Django Book, first published in December 2007 (and updated in 2009) by Apress as The Definitive Guide to Django: Web Development Done Right.\r\n\r\nWe’ve released this book freely for a couple of reasons. First, we love Django and we want it to be as accessible as possible. Many programmers learn their craft from well-written technical material, so we set out to create a top-notch guide and reference to Django.\r\n\r\nSecond, it turns out that writing books about technology is fundamentally difficult: your words are often outdated before the book even reaches the printer. On the web, however, “the ink is never dry” — we can (and will!) keep the book updated.",
+        "level": "Any",
+        "category": 2,
+        "preview_image": "blanks/django.jpg",
+        "preview_video": "",
+        "created_at": "2024-05-19T11:07:11.728Z",
+        "updated_at": "2024-05-23T16:55:20.619Z"
+    }
+},
+{
+    "model": "courses.coursesmodel",
+    "pk": 2,
+    "fields": {
+        "owner": 2,
+        "title": "How to cook",
+        "description": "How to cook awesome food",
+        "level": "Beginner",
+        "category": 2,
+        "preview_image": "preview/images/Screenshot_from_2024-05-19_02-14-27_8r2IX0R.png",
+        "preview_video": "",
+        "created_at": "2024-05-19T11:11:16.325Z",
+        "updated_at": "2024-05-19T14:01:13.004Z"
+    }
+},
+{
+    "model": "courses.coursesmodel",
+    "pk": 3,
+    "fields": {
+        "owner": 2,
+        "title": "How to create django app",
+        "description": "Django is a high-level Python web framework that encourages rapid development and clean, pragmatic design. Built by experienced developers, it takes care of much of the hassle of web development, so you can focus on writing your app without needing to reinvent the wheel. It’s free and open source.",
+        "level": "Intermediate",
+        "category": 1,
+        "preview_image": "blanks/python.png",
+        "preview_video": "",
+        "created_at": "2024-05-19T12:18:22.359Z",
+        "updated_at": "2024-05-23T08:34:49.566Z"
+    }
+},
+{
+    "model": "courses.coursesmodel",
+    "pk": 4,
+    "fields": {
+        "owner": 2,
+        "title": "Introduction to Js",
+        "description": "JavaScript is a versatile, high-level programming language that enables dynamic and interactive web development. Widely used by developers, it seamlessly integrates with HTML and CSS to create rich, engaging user interfaces. JavaScript supports both client-side and server-side development, allowing you to build full-stack applications with ease. Its vast ecosystem of libraries and frameworks, such as React, Angular, and Node.js, helps streamline the development process. JavaScript is free to use, open source, and continues to evolve with contributions from a vibrant global community.",
+        "level": "Beginner",
+        "category": 1,
+        "preview_image": "blanks/js.png",
+        "preview_video": "",
+        "created_at": "2024-05-19T12:21:08.383Z",
+        "updated_at": "2024-05-22T14:21:37.451Z"
+    }
+},
+{
+    "model": "courses.coursesmodel",
+    "pk": 5,
+    "fields": {
+        "owner": 3,
+        "title": "GameDev for beginners",
+        "description": "GameDev for Beginners is an accessible and comprehensive guide to game development, designed to introduce aspiring developers to the fundamentals of creating video games. Whether you're new to coding or have some programming experience, this resource breaks down complex concepts into manageable steps, covering everything from basic game mechanics to more advanced topics like physics and AI. With practical examples and hands-on projects, GameDev for Beginners helps you build your first game from scratch while fostering creativity and problem-solving skills. It’s free and open source, supported by a community of passionate game developers eager to help you succeed.",
+        "level": "Beginner",
+        "category": 3,
+        "preview_image": "preview/images/barbara.jpg",
+        "preview_video": "",
+        "created_at": "2024-05-19T12:21:58.166Z",
+        "updated_at": "2024-05-23T16:56:20.722Z"
+    }
+},
+{
+    "model": "courses.coursesmodel",
+    "pk": 6,
+    "fields": {
+        "owner": 2,
+        "title": "About VueJs",
+        "description": "Vue.js is a progressive JavaScript framework for building user interfaces. Designed to be incrementally adoptable, it can function as a simple library to enhance a webpage or as a full-fledged framework to power complex single-page applications. Vue.js focuses on an approachable and versatile architecture, making it easy to integrate with other projects and libraries. It provides reactive data binding and a component-based model, enabling developers to create reusable, maintainable, and efficient code. With a strong community, extensive documentation, and a growing ecosystem of tools and plugins, Vue.js is a powerful and flexible solution for modern web development. It's free and open source.",
+        "level": "Any",
+        "category": 1,
+        "preview_image": "blanks/vue-js.png",
+        "preview_video": "",
+        "created_at": "2024-05-20T16:34:50.068Z",
+        "updated_at": "2024-05-22T14:57:37.809Z"
+    }
+},
+{
+    "model": "courses.coursesmodel",
+    "pk": 7,
+    "fields": {
+        "owner": 2,
+        "title": "How to make React app",
+        "description": "React is a powerful JavaScript library for building user interfaces, primarily used for creating dynamic and responsive single-page applications. Developed and maintained by Facebook, it emphasizes a component-based architecture, allowing developers to build encapsulated components that manage their own state. This modular approach facilitates the creation of complex UIs by combining simple, reusable components. React’s virtual DOM ensures high performance by efficiently updating and rendering only the components that change. Its extensive ecosystem, including tools like React Router and Redux, and its strong community support make React a versatile and reliable choice for modern web development. React is free and open source.",
+        "level": "Intermediate",
+        "category": 1,
+        "preview_image": "blanks/react.png",
+        "preview_video": "",
+        "created_at": "2024-05-20T16:40:58.614Z",
+        "updated_at": "2024-05-22T13:53:51.466Z"
+    }
+},
+{
+    "model": "courses.coursesmodel",
+    "pk": 9,
+    "fields": {
+        "owner": 3,
+        "title": "You don't know about js",
+        "description": "It seems like there's never been as much widespread desire before for a better way to deeply learn the fundamentals of JavaScript. But with a million blogs, books, and videos out there, just where do you START? Look no further!The worldwide best selling \"You Don't Know JS\" book series is back for a 2nd edition: \"You Don't Know JS Yet\". All 6 books are brand new, rewritten to cover all sides of JS for 2020 and beyond.\"Get Started\" prepares you for the journey ahead, first surveying the language then detailing how the rest of the You Don't Know JS Yet book series guides you to knowing JS more deeply.",
+        "level": "Any",
+        "category": 2,
+        "preview_image": "preview/images/macos-mojave-night-wallpaper-33048d6dbcf8413fb105175654ac0812_AWSszpY.jpg",
+        "preview_video": "",
+        "created_at": "2024-05-22T17:10:23.055Z",
+        "updated_at": "2024-05-23T10:15:15.198Z"
+    }
+},
+{
+    "model": "courses.coursesmodel",
+    "pk": 10,
+    "fields": {
+        "owner": 3,
+        "title": "Bridget guide",
+        "description": "Some people might call a yo-yo a poor choice of weapon, but they just don't have enough creativity! With speed, range, and dizzying mix-ups, this girl can run circles around any opponent!\r\n\r\nBridget is a well-rounded character who is easy to pick up and play, with high range, good mobility, a meterless reversal, and simple combos that lead into strong pressure situations. However, don't be fooled into thinking that means she's simple! Her Stop and Dash setplay projectile and Rolling Movement can be layered together and combined with her other tools in countless ways, giving her a uniquely expressive flair in her offence!\r\n\r\nTo complement this, Bridget has a fantastic suite of neutral tools. f.S and 5H reach very far, and possess both slightly disjointed hitboxes as well as follow-ups with fantastic corner carry that allow Bridget to start her offence on hit. Paired with her multi-hitting 2S to catch movement and help shore up the weakness to 6Ps and similar low profile options, she has the ability to assert dominant control over the ground. Her air control is similarly extremely strong, with j.H being one of the rare air normals to possess a significant disjoint, as well as her wide and high striking 2H.",
+        "level": "Beginner",
+        "category": 3,
+        "preview_image": "preview/images/c50382006ca10f2ac2a1b1fbb4ac1c98.jpg",
+        "preview_video": "",
+        "created_at": "2024-05-23T12:42:05.513Z",
+        "updated_at": "2024-05-23T13:21:04.885Z"
+    }
+},
+{
+    "model": "courses.coursesmodel",
+    "pk": 11,
+    "fields": {
+        "owner": 2,
+        "title": "How to create horizontal scroll bar",
+        "description": "div.scrollmenu {\r\n  background-color: #333;\r\n  overflow: auto;\r\n  white-space: nowrap;\r\n}\r\n\r\ndiv.scrollmenu a {\r\n  display: inline-block;\r\n  color: white;\r\n  text-align: center;\r\n  padding: 14px;\r\n  text-decoration: none;\r\n}\r\n\r\ndiv.scrollmenu a:hover {\r\n  background-color: #777;\r\n}",
+        "level": "Beginner",
+        "category": 1,
+        "preview_image": "preview/images/background.png",
+        "preview_video": "",
+        "created_at": "2024-05-23T17:01:13.022Z",
+        "updated_at": "2024-05-23T17:01:13.022Z"
+    }
+},
+{
+    "model": "courses.coursesmodel",
+    "pk": 12,
+    "fields": {
+        "owner": 2,
+        "title": "Java is ease",
+        "description": "Java is a versatile, high-level programming language renowned for its portability, performance, and security. Originally developed by Sun Microsystems, now owned by Oracle, Java is designed to be platform-independent, allowing applications to run on any device with the Java Virtual Machine (JVM). It follows an object-oriented programming model, promoting modular, reusable code. Java is widely used in various domains, from web and mobile applications to enterprise solutions and large-scale systems. Its extensive standard library and robust ecosystem of frameworks and tools, such as Spring and Hibernate, streamline development and enhance productivity. Java is free to use and open source, with a strong community and continuous updates ensuring its relevance in modern software development.",
+        "level": "Beginner",
+        "category": 1,
+        "preview_image": "blanks/java.png",
+        "preview_video": "",
+        "created_at": "2024-05-23T17:01:13.022Z",
+        "updated_at": "2024-05-23T17:01:13.022Z"
+    }
+},
+{
+    "model": "courses.courseitemmodel",
+    "pk": 1,
+    "fields": {
+        "course": 4,
+        "name": "Some",
+        "course_file": "course/Screencast_from_2024-05-19_20-00-24.webm",
+        "description": null
+    }
+},
+{
+    "model": "courses.courseitemmodel",
+    "pk": 2,
+    "fields": {
+        "course": 4,
+        "name": "lesson 5 - Array",
+        "course_file": "course/1311796.png",
+        "description": ""
+    }
+}
+]

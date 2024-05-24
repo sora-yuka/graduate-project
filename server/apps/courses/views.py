@@ -57,3 +57,7 @@ class CourseItemViewSet(ModelViewSet):
     
     def perform_create(self, serializer: CourseItemSerializer) -> CourseItemSerializer:
         return serializer.save(owner=self.request.user)
+    
+    def get_queryset(self) -> CourseItemModel:
+        course = self.kwargs["course_pk"]
+        return CourseItemModel.objects.filter(course=course)

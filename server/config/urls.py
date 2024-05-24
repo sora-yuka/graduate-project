@@ -35,5 +35,5 @@ urlpatterns = [
     path('api/v1/user/', include('apps.account.urls')),
     path('api/v1/profiles/', include('apps.profiles.urls')),
     path('api/v1/courses/', include('apps.courses.urls')),
-    path('api/v1/saved/', include('apps.feedback.urls'))
+    path('api/v1/', include('apps.feedback.urls'))
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

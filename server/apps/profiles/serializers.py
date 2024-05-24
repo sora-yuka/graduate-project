@@ -17,8 +17,10 @@ class UserProfileSerializer(serializers.ModelSerializer):
         
     def to_representation(self, instance: UserProfile) -> Dict[str, str | int]:
         representation = super().to_representation(instance)
-        courses_object = CoursesModel.objects.filter(owner_profile=instance.id)
+        courses_object = CoursesModel.objects.filter(owner=instance.owner)
         user = User.objects.get(id=instance.owner.id)
-        representation["owner"] = {"id": user.id, "email": user.email}
-        representation["courses"] = AllCoursesSerialier(courses_object, many=True).data
+        representation.update({
+            "owner": {"id": user.id, "email": user.email},
+            "courses": AllCoursesSerialier(courses_object, many=True).data
+        })
         return representation

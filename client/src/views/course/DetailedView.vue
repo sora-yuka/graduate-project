@@ -80,7 +80,7 @@ export default {
             const courseId = this.$route.params.id
 
             axios
-            .get(`/api/v1/courses/detailed/${courseId}/`)
+            .get(`/api/v1/courses/page/${courseId}/`)
             .then(response => {
                 this.course = response.data
                 this.category = response.data.category

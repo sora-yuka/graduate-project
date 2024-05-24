@@ -451,6 +451,14 @@ html, body {
   font-family: "Lato", sans-serif;
 }
 
+.form-list__item input {
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  -webkit-box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+          box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}
+
 .preview-form {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -481,45 +489,7 @@ html, body {
   opacity: 0.7;
 }
 
-.register-fields {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  gap: 20px;
-}
-.register-fields input {
-  width: 245px;
-  padding: 10px;
-  margin-top: 40px;
-  margin-bottom: 10px;
-  font-size: 14px;
-  opacity: 0.9;
-  border: 1px #ccc solid;
-  border-radius: 5px;
-  -webkit-box-shadow: rgba(0, 0, 0, 0.2) 0px 18px 50px -10px;
-          box-shadow: rgba(0, 0, 0, 0.2) 0px 18px 50px -10px;
-}
-
-.fields-text {
-  margin-top: -80px;
-  margin-left: 300px;
-  font-size: 12px;
-  opacity: 0.8;
-}
-.fields-text .email {
-  margin-left: 15px;
-}
-.fields-text .password {
-  margin-left: 238px;
-}
-.fields-text .confirm {
-  margin-left: 213px;
-}
-
-.form {
+.register-form {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -531,22 +501,22 @@ html, body {
       -ms-flex-direction: column;
           flex-direction: column;
 }
-.form .submit {
-  color: white;
-  padding: 10px;
-  width: 400px;
-  border-radius: 5px;
-  margin-top: 40px;
-  text-transform: uppercase;
-  border: 1px #097969 solid;
-  background-color: #097969;
-  -webkit-box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
-          box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
-  -webkit-transition: 0.2s ease;
-  transition: 0.2s ease;
+
+.form-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 60px;
+  gap: 40px;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
 }
-.form .submit:hover {
-  background-color: #056961;
+.form-list .form-list__item {
+  width: 250px;
+}
+.form-list .form-list__item input {
+  font-size: 15px;
+  width: 250px;
 }
 
 .registered-form {
@@ -593,32 +563,22 @@ html, body {
   background-image: url(../source/books-winter.jpg);
 }
 
-.form-list {
+.verification-form .form-list {
   margin-bottom: 40px;
 }
-.form-list .form-list__item input {
-  padding: 10px;
+.verification-form .form-list .form-list__item {
   width: 400px;
-  margin-bottom: 10px;
-  border-radius: 5px;
-  -webkit-box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
-          box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
 }
-.form-list .form-list__item label {
+.verification-form .form-list .form-list__item input {
+  width: 400px;
+}
+.verification-form .form-list .form-list__item label {
   font-size: 14px;
   font-family: "Lato", sans-serif;
   opacity: 0.8;
 }
 
-.form-button {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-.form-button .confirm {
+.confirm {
   color: white;
   padding: 10px;
   width: 400px;
@@ -632,7 +592,7 @@ html, body {
   -webkit-transition: 0.2s ease;
   transition: 0.2s ease;
 }
-.form-button .confirm:hover {
+.confirm:hover {
   background-color: #056961;
 }
 
@@ -669,8 +629,21 @@ html, body {
   background-image: url(../source/book-shelf.jpg);
 }
 
-.form-list__item {
+.login-form .form-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+.login-form .form-list .form-list__item {
+  width: 400px;
   margin-bottom: 20px;
+}
+.login-form .form-list .form-list__item input {
+  width: 400px;
 }
 
 .all-course-section {

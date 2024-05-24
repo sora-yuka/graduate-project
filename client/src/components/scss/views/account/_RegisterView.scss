@@ -6,6 +6,13 @@
     font-family: $lato;
 }
 
+.form-list__item input {
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}
+
 .preview-form {
     display: flex;
     justify-content: center;
@@ -34,62 +41,25 @@
     }
 }
 
-.register-fields {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
 
-    input {
-        width: 245px;
-        padding: 10px;
-        margin-top: 40px;
-        margin-bottom: 10px;
-        font-size: 14px;
-        opacity: .9;
-        border: 1px #ccc solid;
-        border-radius: 5px;
-        box-shadow: rgba(0, 0, 0, 0.2) 0px 18px 50px -10px;
-    }
-}
-
-.fields-text {
-    margin-top: -80px;
-    margin-left: 300px;
-    font-size: 12px;
-    opacity: .8;
-
-    .email {
-        margin-left: 15px;
-    }
-
-    .password {
-        margin-left: 238px;
-    }
-
-    .confirm {
-        margin-left: 213px;
-    }
-}
-
-.form {
+.register-form {
     display: flex;
     align-items: center;
     flex-direction: column;
-    
-    .submit {
-        color: white;
-        padding: 10px;
-        width: 400px;
-        border-radius: 5px;
-        margin-top: 40px;
-        text-transform: uppercase;
-        border: 1px $rich-green-color solid;
-        background-color: $rich-green-color;
-        box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
-        transition: .2s ease;
+}
 
-        &:hover {
-            background-color: #056961;
+.form-list {
+    display: flex;
+    margin-top: 60px;
+    gap: 40px;
+    justify-content: space-around;
+
+    .form-list__item {
+        width: 250px;
+
+        input {
+            font-size: 15px;
+            width: 250px;
         }
     }
 }

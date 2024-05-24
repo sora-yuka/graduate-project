@@ -1,0 +1,30 @@
+[
+{
+    "model": "profiles.userprofile",
+    "pk": 1,
+    "fields": {
+        "owner": 2,
+        "username": "Alan",
+        "photo": "",
+        "description": null,
+        "contacts": null,
+        "youtube_url": null,
+        "linkedin_url": null,
+        "github_url": null
+    }
+},
+{
+    "model": "profiles.userprofile",
+    "pk": 2,
+    "fields": {
+        "owner": 3,
+        "username": "Micheal",
+        "photo": "",
+        "description": null,
+        "contacts": null,
+        "youtube_url": null,
+        "linkedin_url": null,
+        "github_url": null
+    }
+}
+]

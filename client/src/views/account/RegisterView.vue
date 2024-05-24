@@ -9,21 +9,23 @@
                         <p class="register-description">Register to our paltform</p>
                     </div>
                 </div>
-                <form @submit.prevent="submitForm">
-                    <div class="form">
-                        <div class="register-fields">
-                            <input type="text" v-model="email">
-                            <input type="password" v-model="password">
-                            <input type="password" v-model="password_confirm">
-                        </div>
-                        <button class="submit" type="submit">sign up</button>
-                    </div>
+                <form @submit.prevent="submitForm" class="register-form">
+                    <ul class="form-list">
+                        <li class="form-list__item">
+                            <input type="text" v-model="email"><br>
+                            <label for="email">Email</label>
+                        </li>
+                        <li class="form-list__item">
+                            <input type="password" v-model="password"><br>
+                            <label for="password">Password</label>
+                        </li>
+                        <li class="form-list__item">
+                            <input type="password" v-model="password_confirm"><br>
+                            <label for="password_confirm">Confirm</label>
+                        </li>
+                    </ul>
+                    <button class="confirm" type="submit">sign up</button>
                 </form>
-                <div class="fields-text">
-                    <span class="email">Email</span>
-                    <span class="password">Password</span>
-                    <span class="confirm">Confirm</span>
-                </div>
             </div>
             <div class="registered-form" v-else>
                 <p class="response">

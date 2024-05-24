@@ -87,5 +87,5 @@ class CourseItemSerializer(serializers.ModelSerializer):
         
     def to_representation(self, instance: CourseItemModel) -> Dict[str, str]:
         representation = super().to_representation(instance)
-        representation["course"] = {"id": instance.id, "name": instance.name}
+        representation["course"] = {"id": instance.course.id, "name": instance.course.title}
         return representation

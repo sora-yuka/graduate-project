@@ -6,11 +6,11 @@
                 <ul class="form-list">
                     <li class="form-list__item">
                         <input type="text" v-model="email"><br>
-                        <label for="email">email</label>
+                        <label for="email">Email</label>
                     </li>
                     <li class="form-list__item">
                         <input type="password" v-model="password"><br>
-                        <label for="password">password</label>
+                        <label for="password">Password</label>
                     </li>
                 </ul>
                 <div class="form-button">
@@ -23,7 +23,7 @@
 
 <script>
 import axios from 'axios'
-import {useToast} from 'vue-toast-notification'
+import { useToast } from 'vue-toast-notification'
 
 export default {
     name: "LoginView",
