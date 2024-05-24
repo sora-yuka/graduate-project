@@ -1,37 +1,31 @@
 from typing import Dict
 from rest_framework import serializers
+from django.contrib.auth import get_user_model
+from apps.courses.models import CoursesModel
 from .models import RatingModel, SavedModel, CommentModel, LikeModel
 
-from apps.courses.models import CoursesModel
+User = get_user_model()
 
 
 class RatingSerializer(serializers.ModelSerializer):
     
     class Meta:
         model = RatingModel
-        fields = "__all__"
-        
-    def to_representation(self, instance: RatingModel) -> Dict[str, str]:
-        representation = super().to_representation(instance)
-        user = User.objects.get(id=representation["owner"])
-        course = CoursesModel.objects.get(id=representation["course"])
-        representation["owner"] = {"id": user.id, "email": user.email}
-        representation["course"] = {"id": course.id, "name": course.title}
-        return representation
+        fields = ["rating"]
         
 
 class SavedSerializer(serializers.ModelSerializer):
     
     class Meta:
         model = SavedModel
-        fields = "__all__"
+        exclude = ["owner"]
         
     def to_representation(self, instance: SavedModel) -> Dict[str, str]:
         representation = super().to_representation(instance)
-        user = User.objects.get(id=representation["owner"])
-        course = CoursesModel.objects.get(id=representation["course"])
-        representation["owner"] = {"id": user.id, "email": user.email}
-        representation["course"] = {"id": course.id, "name": course.title}
+        
+        representation.update({
+            "course": {"id": instance.course.id, "name": instance.course.title},
+        })
         return representation
         
 
@@ -43,10 +37,11 @@ class CommentSerializer(serializers.ModelSerializer):
         
     def to_representation(self, instance: CommentModel) -> Dict[str, str]:
         representation = super().to_representation(instance)
-        user = User.objects.get(id=representation["owner"])
-        course = CoursesModel.objects.get(id=representation["course"])
-        representation["owner"] = {"id": user.id, "email": user.email}
-        representation["course"] = {"id": course.id, "name": course.title}
+        course = CoursesModel.objects.get(id=instance.course.id)
+        representation.update({
+            "owner": {"id": instance.owner.id, "email": instance.owner.email},
+            "course": {"id": course.id, "name": course.title}
+        })
         return representation
         
 
@@ -58,8 +53,9 @@ class LikeSerializer(serializers.ModelSerializer):
         
     def to_representation(self, instance: LikeModel) -> Dict[str, str]:
         representation = super().to_representation(instance)
-        user = User.objects.get(id=representation["owner"])
-        comment = CommentModel.objects.get(id=representation["comment"])
-        representation["owner"] = {"id": user.id, "email": user.email}
-        representation["comment"] = {"id": comment.id, "comment": comment.comment[:20]}
+        comment = CommentModel.objects.get(id=instance.comment.id)
+        representation.update({
+            "owner": {"id": instance.owner.id, "email": instance.owner.email},
+            "comment": {"id": comment.id, "comment": comment.comment[:20]}
+        })
         return representation

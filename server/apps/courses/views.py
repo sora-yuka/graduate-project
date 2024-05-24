@@ -9,6 +9,7 @@ from .models import CoursesModel, CourseItemModel, CategoryModel
 from .serializers import AllCoursesSerialier, CategorySerializer, DetailedCourseSerializer, CourseItemSerializer
 from .permissions import IsCourseOwner
 from apps.profiles.models import UserProfile
+from apps.feedback.views import FeedbackMixin
 
 # Create your views here.
 
@@ -40,7 +41,8 @@ class CourseViewSet(
     mixins.CreateModelMixin,
     mixins.UpdateModelMixin,
     mixins.DestroyModelMixin,
-    GenericViewSet
+    GenericViewSet,
+    FeedbackMixin
 ):
     permission_classes = [IsCourseOwner]
     serializer_class = DetailedCourseSerializer
@@ -48,6 +50,9 @@ class CourseViewSet(
     
     def perform_create(self, serializer: DetailedCourseSerializer) -> DetailedCourseSerializer:
         return serializer.save(owner=self.request.user)
+    
+    def get_queryset(self):
+        return super().get_queryset()
     
     
 class CourseItemViewSet(ModelViewSet):

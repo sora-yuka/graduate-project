@@ -26,6 +26,7 @@ class RatingModel(models.Model):
 class SavedModel(models.Model):
     owner = models.ForeignKey(User, on_delete=models.CASCADE)
     course = models.ForeignKey(CoursesModel, on_delete=models.CASCADE)
+    is_saved = models.BooleanField(default=False)
     
     def __str__(self) -> str:
         return f"{self.owner} saved '{self.course.title}' course"
@@ -35,6 +36,7 @@ class CommentModel(models.Model):
     owner = models.ForeignKey(User, on_delete=models.CASCADE)
     course = models.ForeignKey(CoursesModel, on_delete=models.CASCADE)
     comment = models.TextField(help_text="Users comment")
+    created_at = models.DateTimeField(auto_now_add=True)
     
     def __str__(self) -> str:
         return f"{self.owner} leaved comment under {self.course}"

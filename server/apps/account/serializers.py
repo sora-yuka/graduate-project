@@ -38,7 +38,6 @@ class UserRegisterSerializer(serializers.ModelSerializer):
     
     def create(self, validated_data: Dict[str, str]) -> User:
         user = User.objects.create_user(**validated_data)
-        # user.save()
         return user
     
     

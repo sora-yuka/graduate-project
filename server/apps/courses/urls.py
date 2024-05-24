@@ -18,6 +18,8 @@ item_router = NestedDefaultRouter(parent_router=router, parent_prefix="page", lo
 item_router.register("item", CourseItemViewSet)
 
 urlpatterns = [
+    path("saves/", CourseViewSet.as_view({"get": "get_saves"})),
+    path("page/<int:pk>/save/", CourseViewSet.as_view({"post": "save_course"})),
     path("", include(router.urls)),
     path("", include(item_router.urls)),
 ]
