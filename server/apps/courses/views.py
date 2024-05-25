@@ -1,3 +1,4 @@
+from django.db.models import Avg
 from rest_framework import mixins
 from rest_framework.viewsets import GenericViewSet, ModelViewSet
 from rest_framework.pagination import PageNumberPagination
@@ -22,13 +23,14 @@ class CoursePagination(PageNumberPagination):
 
 class AllCourseViewSet(mixins.ListModelMixin, GenericViewSet):
     serializer_class = AllCoursesSerialier
-    queryset = CoursesModel.objects.order_by("-updated_at")
+    queryset = CoursesModel.objects.order_by("-updated_at").distinct()
+    
     
     pagination_class = CoursePagination
     filter_backends = [SearchFilter, OrderingFilter, DjangoFilterBackend]
     filterset_fields = ["category", "level"]
     search_fields = ["title"]
-    ordering_fields = ["created_at"]
+    ordering_fields = ["created_at", "ratingmodel__rating"]
 
 
 class LatestCourseViewSet(mixins.ListModelMixin, GenericViewSet):

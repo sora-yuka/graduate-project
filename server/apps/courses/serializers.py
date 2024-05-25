@@ -61,6 +61,7 @@ class DetailedCourseSerializer(serializers.ModelSerializer):
             "title": recommended_course.title,
             "level": recommended_course.level,
             "preview_image": "http://localhost:8000/" + recommended_course.preview_image.url,
+            "rating": instance.ratingmodel_set.all().aggregate(Avg("rating"))["rating__avg"],
             "category": {
                 "id": recommended_course.category.id,
                 "category": recommended_course.category.category
