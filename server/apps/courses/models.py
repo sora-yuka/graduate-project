@@ -35,8 +35,9 @@ class CoursesModel(models.Model):
     
 
 class CourseItemModel(models.Model):
+    owner = models.ForeignKey(User, on_delete=models.CASCADE)
     course = models.ForeignKey(CoursesModel, on_delete=models.CASCADE, related_name="course_item")
-    name = models.CharField(max_length=100, unique=True)
+    name = models.CharField(max_length=100)
     course_file = models.FileField(upload_to="course/")
     description = models.TextField(blank=True, null=True)
     

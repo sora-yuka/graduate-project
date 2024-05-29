@@ -177,6 +177,41 @@ html, body {
   background-color: #097969;
 }
 
+.control {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 80px;
+}
+.control .control__button {
+  font-family: "Lato", sans-serif;
+  border: 1px #097969 solid;
+  border-radius: 5px;
+  padding: 7px 15px;
+  color: #097969;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+.control .control__button:hover {
+  color: white;
+  background-color: #097969;
+}
+.control .user-func {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.control .user-func .user-func__button {
+  color: #097969;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  -webkit-transition: 0.3s ease;
+  transition: 0.3s ease;
+}
+.control .user-func .user-func__button:hover {
+  opacity: 0.8;
+}
+
 .app {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -821,4 +856,14 @@ html, body {
 
 .recommendation-list::-webkit-scrollbar-thumb:hover {
   background-color: #555; /* Adjust the scrollbar color on hover */
+}
+
+.saved-section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: 50px;
 }

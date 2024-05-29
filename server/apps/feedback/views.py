@@ -1,12 +1,12 @@
 from rest_framework import status
 from rest_framework.response import Response
 from rest_framework.request import Request
-from django.shortcuts import get_object_or_404
-from django.utils.datastructures import MultiValueDictKeyError
+from rest_framework.decorators import api_view
 
 from .serializers import RatingSerializer, SavedSerializer, CommentSerializer, LikeSerializer
 from .models import RatingModel, SavedModel, CommentModel, LikeModel
 from .permissions import IsFeedBackOwner
+from apps.courses.models import CoursesModel
 
 # Create your views here.
 
@@ -45,21 +45,26 @@ class FeedbackMixin:
         except Exception as error:
             print(error)
             return Response("Something went wrong while getting saves")
-        
-    def rate(
-        self,
-        request: Request,
-        pk: int = None,
-        *args, **kwargs
-    ) -> Response:
+
+
+
+@api_view(["POST", "DELETE"])
+def rating_view(request: Request) -> Response:
+    if request.method == "POST":
         serializer = RatingSerializer(data=request.data)
-        serializer.is_valid(raise_exception=True)
         
-        try:
-            rating_obj, _ = RatingModel.objects.get_or_create(owner=request.user, course_id=pk)
-            rating_obj.rating = request.data["rating"]
-            rating_obj.save()
-            return Response(f"You rate this course {rating_obj.rating} stars")
-        except Exception as error:
-            print(error)
-            return Response("Something went wrong while rating course")
+        if serializer.is_valid():
+            owner = request.user
+            serializer.validated_data["owner"] = owner
+            course = serializer.validated_data["course"]
+            rating = serializer.validated_data["rating"]
+            existing = RatingModel.objects.filter(course=course, owner=owner).first()
+            
+            if existing:
+                existing.rating = rating
+                existing.save()
+                return Response("Rating updated", status.HTTP_200_OK)
+            else:
+                serializer.save()
+                return Response("Created", status.HTTP_201_CREATED)
+        return Response("Wrong", status.HTTP_400_BAD_REQUEST)

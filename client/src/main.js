@@ -7,8 +7,11 @@ import ToastPlugin from 'vue-toast-notification'
 
 import 'vue-toast-notification/dist/theme-sugar.css'
 
+import setupInterceptors from './service/authHeader'
+
 
 axios.defaults.baseURL = 'http://127.0.0.1:8000'
+setupInterceptors(store)
 
 const app = createApp(App)
 

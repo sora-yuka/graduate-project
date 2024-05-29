@@ -3,10 +3,24 @@
         <nav class="nav">
         <div class="container">
             <router-link to="/"><span class="home-button">KnowledgeHub</span></router-link>
-            <ul class="nav-bar">
-                <ul class="sign-in">
-                    <li class="sign-in__item"><router-link to="/login" class="sign-in__button">Log In</router-link></li>
-                    <li class="sign-in__item"><router-link to="/register" class="sign-in__button">Register</router-link></li>
+            <ul class="nav-bar" v-if="this.$route.path !== '/register' && this.$route.path !== '/login'">
+                <ul class="sign-in" v-if="!isAuthenticated">
+                    <li class="sign-in__item">
+                        <router-link to="/login" class="sign-in__button">Log In</router-link>
+                    </li>
+                    <li class="sign-in__item">
+                        <router-link to="/register" class="sign-in__button">Register</router-link>
+                    </li>
+                </ul>
+                <ul class="control" v-else>
+                    <ul class="user-func">
+                        <li class="user-func__item">
+                            <router-link to="/saved" class="user-func__button">Saved</router-link>
+                        </li>
+                    </ul>
+                    <li class="control__item">
+                        <router-link to="/" class="control__button" @click="logout">Log Out</router-link>
+                    </li>
                 </ul>
             </ul>
         </div>
@@ -47,3 +61,27 @@
 <style>
 @import "./components/css/main.css";
 </style>
+
+<script>
+import { mapGetters } from 'vuex'
+import { useToast } from 'vue-toast-notification'
+
+export default {
+    mounted() {
+        this.$toast = useToast()
+    },
+    computed: {
+        ...mapGetters({
+            isAuthenticated: "isAuthenticated"
+        })
+    },
+    methods: {
+        logout() {
+            this.$store.dispatch("logout")
+            this.$toast.open({
+                message: "You've successfully logged out.", type: "success", duration: 2000
+            })
+        }
+    }
+}
+</script>

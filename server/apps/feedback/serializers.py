@@ -11,7 +11,7 @@ class RatingSerializer(serializers.ModelSerializer):
     
     class Meta:
         model = RatingModel
-        fields = ["rating"]
+        exclude = ["owner"]
         
 
 class SavedSerializer(serializers.ModelSerializer):

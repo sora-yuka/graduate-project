@@ -73,7 +73,6 @@ export default {
     },
     mounted() {
         this.getDetailedCourse()
-        document.title = "Detail"
     },
     methods: {
         getDetailedCourse() {
@@ -85,7 +84,8 @@ export default {
                 this.course = response.data
                 this.category = response.data.category
                 this.recommendedCourse = response.data.recommendation
-                
+                document.title = "K.Hub | " + this.course.title
+
                 console.log("Detail data: ", response.data)
                 console.log("Recommendation: ", response.data.recommendation)
             })

@@ -184,25 +184,5 @@
         "created_at": "2024-05-23T17:01:13.022Z",
         "updated_at": "2024-05-23T17:01:13.022Z"
     }
-},
-{
-    "model": "courses.courseitemmodel",
-    "pk": 1,
-    "fields": {
-        "course": 4,
-        "name": "Just a coffee",
-        "course_file": "course/jakub-dziubak-XtUd5SiX464-unsplash.jpg",
-        "description": null
-    }
-},
-{
-    "model": "courses.courseitemmodel",
-    "pk": 2,
-    "fields": {
-        "course": 4,
-        "name": "lesson 5 - Array",
-        "course_file": "course/1311796.png",
-        "description": ""
-    }
 }
 ]

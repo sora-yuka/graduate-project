@@ -55,6 +55,40 @@
     }
 }
 
+.control {
+    display: flex;
+    gap: 80px;
+
+    .control__button {
+        font-family: $lato;
+        border: 1px $rich-green-color solid;
+        border-radius: 5px;
+        padding: 7px 15px;
+        color: $rich-green-color;
+        transition: .3s;
+
+        &:hover {
+            color: white;
+            background-color: $rich-green-color;
+        }
+    }
+    
+    .user-func {
+        display: flex;
+
+        .user-func__button {
+            color: $rich-green-color;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            transition: .3s ease;
+
+            &:hover {
+                opacity: .8;
+            }
+        }
+    }
+}
+
 .app {
     display: flex;
     flex-direction: column;
