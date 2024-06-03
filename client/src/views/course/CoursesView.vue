@@ -7,9 +7,16 @@
             <div class="main-page">
                 <div class="filters">
                     <ul class="filter-list">
-                        <li class="list__item">Some filter</li>
-                        <li class="list__item">Some filter</li>
-                        <li class="list__item">Some filter</li>
+                        <li class="list__item">
+                            <input type="radio" id="Game" value="game" name="category">
+                            <label for="Game" class="radio">Game</label><br>
+                            <input type="radio" id="Code" value="code" name="category">
+                            <label for="Code" class="radio">Code</label><br>
+                            <input type="radio" id="General" value="general" name="category">
+                            <label for="General" class="radio">General</label><br>
+                            <input type="radio" id="Any" value="any" name="category">
+                            <label for="Any" class="radio">Any</label>
+                        </li>
                     </ul>
                 </div>
                 <div class="course-cards">
@@ -19,7 +26,7 @@
                         @click="redirectToDetail(course.id)"
                     >
                     <img v-bind:src="course.preview_image" alt="" class="course-image">
-                    <p class="author">Author: {{ course.owner_profile.profile_username }}</p>
+                    <p class="author">Author: {{ course.owner_profile.profile_userid }}</p>
                     <p class="title">{{ course.title }}</p>
                     <p class="tag">Tag: {{ course.category.category }}</p>
                     <p class="level">{{ course.level }}</p>
@@ -34,7 +41,7 @@
 import axios from 'axios'
 
 export default {
-    name: "CourseView",
+    id: "CourseView",
     data() {
         return {
             allCourse: [],

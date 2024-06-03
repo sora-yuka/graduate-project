@@ -52,6 +52,7 @@ export default {
                     type: "success", 
                     duration: 3000,
                 })
+                this.redirect()
             })
             .catch(errors => {
                 console.log(errors),
@@ -60,7 +61,6 @@ export default {
                     type: "warning", duration: 6000
                 })
             })
-            this.redirect()
         },
         redirect() {
             setTimeout(() => {

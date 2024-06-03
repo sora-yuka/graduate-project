@@ -19,15 +19,23 @@
     width: 600px;
     margin-right: 100px;
     display: block;
-    border: 1px $light-gray-color solid;
-
-    .filter-list .list__item {
-        margin: 10px 0;
-    }
+    font-family: $lato;
+    font-size: 18px;
 }
 
 .course-cards {
     display: flex;
     flex-wrap: wrap;
     gap: 0 40px;
+}
+
+
+.filter-list .list__item {
+    input {
+        margin-top: 10px;
+    }
+
+    label {
+        margin-left: 10px;
+    }
 }

@@ -706,10 +706,8 @@ html, body {
   width: 600px;
   margin-right: 100px;
   display: block;
-  border: 1px #eeeeee solid;
-}
-.filters .filter-list .list__item {
-  margin: 10px 0;
+  font-family: "Lato", sans-serif;
+  font-size: 18px;
 }
 
 .course-cards {
@@ -719,6 +717,13 @@ html, body {
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   gap: 0 40px;
+}
+
+.filter-list .list__item input {
+  margin-top: 10px;
+}
+.filter-list .list__item label {
+  margin-left: 10px;
 }
 
 .detailed-section {
