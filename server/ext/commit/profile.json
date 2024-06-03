@@ -18,11 +18,11 @@
     "pk": 2,
     "fields": {
         "owner": 3,
-        "username": "Micheal",
+        "username": "Jerome",
         "photo": "",
         "description": null,
-        "contacts": null,
-        "youtube_url": null,
+        "contacts": "+996 557 555 555",
+        "youtube_url": "youtube link",
         "linkedin_url": null,
         "github_url": null
     }

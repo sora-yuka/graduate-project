@@ -7,6 +7,7 @@ from django.db.models import Avg
 
 from .models import CoursesModel, CourseItemModel, CategoryModel
 from apps.profiles.models import UserProfile
+from apps.feedback.models import RatingModel
 
 User = get_user_model()
 
@@ -21,11 +22,14 @@ class AllCoursesSerialier(serializers.ModelSerializer):
         representation = super().to_representation(instance)
         
         profile = UserProfile.objects.get(owner=instance.owner.id)
+        rating = RatingModel.objects.filter(course=instance).aggregate(Avg("rating"))["rating__avg"]
+        print(rating)
+        
         representation.update({
             "owner": {"id": instance.owner.id, "email": instance.owner.email},
             "owner_profile": {"profile_id": profile.id, "profile_username": profile.username},
             "category": {"id": instance.category.id, "category": instance.category.category},
-            "rating": instance.ratingmodel_set.all().aggregate(Avg("rating"))["rating__avg"]
+            # "rating": rating
         })
         return representation
     

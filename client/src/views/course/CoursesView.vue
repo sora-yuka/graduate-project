@@ -43,7 +43,7 @@ export default {
     },
     mounted() {
         this.getDetailCourse()
-        document.title = "VIEW"
+        document.title = "K.Hub | courses"
     },
     methods: {
         getDetailCourse() {

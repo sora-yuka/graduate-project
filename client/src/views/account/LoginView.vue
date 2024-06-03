@@ -22,7 +22,7 @@
 </template>
 
 <script>
-import axios from 'axios'
+import AuthService from '@/service/authService'
 import { useToast } from 'vue-toast-notification'
 
 export default {
@@ -44,12 +44,15 @@ export default {
                 password: this.password
             }
 
-            axios
-            .post("api/v1/user/login/", formData)
+            AuthService.login(formData)
             .then(response => {
-                console.log(response.data), 
-                this.$toast.success("Loged successfully!")}
-            )
+                console.log(response.data)
+                this.$toast.open({
+                    message: "Logged in successfully!", 
+                    type: "success", 
+                    duration: 3000,
+                })
+            })
             .catch(errors => {
                 console.log(errors),
                 this.$toast.open({
@@ -57,6 +60,12 @@ export default {
                     type: "warning", duration: 6000
                 })
             })
+            this.redirect()
+        },
+        redirect() {
+            setTimeout(() => {
+                window.location.href = "/"
+            }, 1500)
         }
     }
 }

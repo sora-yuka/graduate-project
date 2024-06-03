@@ -9,7 +9,7 @@
                     <i>"Advance your skills and achieve your professional goals with our comprehensive courses."</i>
                 </p>
 
-                <button class="explore">
+                <button class="explore" @click="redirectToAll">
                     Explore Programs 
                     <img src="../components/source/loupe.png" class="loupe" alt="">
                 </button>
@@ -67,7 +67,7 @@ export default {
     },
     mounted() {
         this.getLatestCourse()
-        document.title = "Home"
+        document.title = "K.Hub | Home"
     },
     methods: {
         getLatestCourse() {
@@ -84,6 +84,9 @@ export default {
         },
         redirectToDetail(courseId) {
             this.$router.push(`/course/${courseId}`)
+        },
+        redirectToAll() {
+            this.$router.push("/all/")
         }
     }
 }
