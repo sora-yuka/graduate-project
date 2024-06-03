@@ -1,0 +1,33 @@
+.content {
+    display: flex;
+    justify-content: center;
+    margin-top: 80px;
+    margin-left: 100px;
+}
+
+.container {
+    width: 350px;
+    font-size: 14px;
+    text-align: center;
+}
+
+.logo {
+    padding: 10px;
+    color: white;
+    font-size: 18px;
+    background-color: #097969;
+}
+
+.help-text {
+    color: rgb(22, 22, 22);
+    margin-top: 60px;
+}
+
+.confirmation {
+    font-size: 16px;
+}
+
+.link {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}

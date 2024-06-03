@@ -36,7 +36,16 @@
                     <div class="hint">Learn at your own pace</div>
                 </div>
             </div>
-            <div class="recommendation">
+            <div class="lessons">
+                <h3 class="lesson-header" v-if="course !== 0">
+                    Module
+                </h3>
+                <div class="course-lesson"
+                >
+                    {{ course.course_item }}
+                </div>
+            </div>
+            <div class="recommendation" v-if="recommendedCourse.length !== 0">
                 <h3 class="recommendation-header">
                     Recommended if you're interested in "<span class="category">{{ category.category }}"</span>
                 </h3>
@@ -50,9 +59,15 @@
                         <p class="author">Author: {{ recommandation.owner }}</p>
                         <p class="title">{{ recommandation.title }}</p>
                         <p class="tag">Tag: {{ recommandation.category.category }}</p>
-                        <p class="level"> {{ recommandation.level }} </p>
+                        <p class="level">{{ recommandation.level }}</p>
+                        <p>{{ typeof(recommendedCourse) }}</p>
                     </div>
                 </div>
+            </div>
+            <div class="recommendation" v-else>
+                <h3 class="recommendation-header">
+                    Empty for now
+                </h3>
             </div>
         </div>
     </section>

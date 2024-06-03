@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Approve message</title>
+        <link rel="stylesheet" href="email.css">
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+            .content {
+                margin-top: 60px;
+                padding-top: 20px;
+                margin-left: 400px;
+                height: 100%;
+                display: flex;
+                justify-content: center;
+                font-family: "Montserrat", sans-serif;
+                box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px;
+                border-radius: 5px;
+            }
+            
+            .container {
+                width: 350px;
+                font-size: 14px;
+                text-align: center;
+            }
+            
+            .logo {
+                padding: 10px;
+                color: white;
+                font-size: 18px;
+                background-color: #097969;
+            }
+            
+            .help-text {
+                color: rgb(22, 22, 22);
+                margin-top: 60px;
+            }
+            
+            .confirmation {
+                font-size: 16px;
+            }
+            
+            .link {
+                padding-top: 20px;
+                padding-bottom: 20px;
+            }
+        </style>
+    </head>
+    <body>
+        <section class="content">
+            <div class="container">
+                <span class="logo">
+                    Knowledge Hub
+                </span>
+                <div class="help-text">
+                    <p>
+                        Help us keep your account safe by approving your sign-in on.
+                    </p>
+                </div>
+                <div class="confirmation">
+                    <p>
+                        If yes, here is your confirmation link:
+                    </p>
+                </div>
+                <div class="link">
+                    <a href={{ full_link }}>click here</a>
+                </div>
+                <div class="support">
+                    <p>
+                        For more info, visit our support.
+                    </p>
+                </div>
+            </div>
+        </section>
+    </body>
+</html>

@@ -86,7 +86,7 @@
 }
 
 .recommendation {
-    margin-top: 60px;
+    margin-top: 80px;
 
     .recommendation-header {
         margin-bottom: 40px;
@@ -122,4 +122,14 @@
 
 .recommendation-list::-webkit-scrollbar-thumb:hover {
     background-color: #555; /* Adjust the scrollbar color on hover */
+}
+
+.lessons {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 60px 20px;
+    margin-top: 80px;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
 }

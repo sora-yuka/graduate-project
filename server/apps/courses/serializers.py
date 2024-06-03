@@ -88,7 +88,7 @@ class CourseItemSerializer(serializers.ModelSerializer):
     
     class Meta:
         model = CourseItemModel
-        exclude = ["owner"]
+        fields = "__all__"
         
     def to_representation(self, instance: CourseItemModel) -> Dict[str, str]:
         representation = super().to_representation(instance)

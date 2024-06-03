@@ -2,7 +2,7 @@
     <section class="saved-section">
         <div class="container">
             <div class="saved">
-                <h2 class="saved-header">
+                <h2 class="saved-header" @click="getUserProfile">
                     Saves
                 </h2>
             </div>
@@ -34,6 +34,19 @@ export default {
             })
             .catch(errors => {
                 console.log("An error occured: ", errors)
+            })
+        },
+        getUserProfile() {
+            const token = JSON.parse(localStorage.getItem("token"));
+
+            return axios.get("http://localhost:8000/api/v1/profiles/me/", {
+                headers: {
+                    "Authorization": "Bearer " + token.access
+                }
+            })
+            .then(response => {
+                localStorage.setItem("user", JSON.stringify(response.data))
+                console.log("Profile data: ", response.data)
             })
         }
     }

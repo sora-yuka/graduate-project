@@ -12,6 +12,7 @@ class UserService {
         })
         .then(response => {
             localStorage.setItem("user", JSON.stringify(response.data))
+            console.log("TOKEN: ", token)
         })
     }
 }
