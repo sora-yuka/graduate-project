@@ -56,3 +56,21 @@
     }
 }
 
+.verification-failed {
+    display: flex;
+    justify-content: center;
+
+    .container {
+        height: 400px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .info {
+            font-family: $lato;
+            font-size: 24px;
+            color: #056961;
+            opacity: .9;
+        }
+    }
+}

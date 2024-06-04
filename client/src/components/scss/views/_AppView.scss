@@ -57,6 +57,7 @@
 
 .control {
     display: flex;
+    align-items: center;
     gap: 80px;
 
     .control__button {
@@ -75,15 +76,16 @@
     
     .user-func {
         display: flex;
+        align-items: center;
+        margin-right: 900px;
+        font-family: $poppins;
 
         .user-func__button {
             color: $rich-green-color;
-            letter-spacing: 0.5px;
-            text-transform: uppercase;
-            transition: .3s ease;
+            font-weight: 500;
 
             &:hover {
-                opacity: .8;
+                text-decoration: underline;
             }
         }
     }

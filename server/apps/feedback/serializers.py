@@ -2,17 +2,10 @@ from typing import Dict
 from rest_framework import serializers
 from django.contrib.auth import get_user_model
 from apps.courses.models import CoursesModel
-from .models import RatingModel, SavedModel, CommentModel, LikeModel
+from .models import SavedModel, CommentModel, LikeModel
 
 User = get_user_model()
 
-
-class RatingSerializer(serializers.ModelSerializer):
-    
-    class Meta:
-        model = RatingModel
-        exclude = ["owner"]
-        
 
 class SavedSerializer(serializers.ModelSerializer):
     

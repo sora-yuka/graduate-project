@@ -3,6 +3,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 * {
   padding: 0px;
   margin: 0px;
@@ -181,6 +182,9 @@ html, body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   gap: 80px;
 }
 .control .control__button {
@@ -200,16 +204,18 @@ html, body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-right: 900px;
+  font-family: "Poppins", sans-serif;
 }
 .control .user-func .user-func__button {
   color: #097969;
-  letter-spacing: 0.5px;
-  text-transform: uppercase;
-  -webkit-transition: 0.3s ease;
-  transition: 0.3s ease;
+  font-weight: 500;
 }
 .control .user-func .user-func__button:hover {
-  opacity: 0.8;
+  text-decoration: underline;
 }
 
 .app {
@@ -631,6 +637,33 @@ html, body {
   background-color: #056961;
 }
 
+.verification-failed {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.verification-failed .container {
+  height: 400px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.verification-failed .container .info {
+  font-family: "Lato", sans-serif;
+  font-size: 24px;
+  color: #056961;
+  opacity: 0.9;
+}
+
 .login-section {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -864,19 +897,66 @@ html, body {
 }
 
 .lessons {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
   padding: 60px 20px;
   margin-top: 80px;
   border-radius: 10px;
   -webkit-box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
           box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
+}
+.lessons .lesson-header {
+  font-size: 24px;
+  margin-left: 40px;
+  margin-bottom: 20px;
+  color: #097969;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+}
+
+.accordion {
+  margin-left: 40px;
+}
+.accordion .fade-enter-active, .accordion .fade-leave-active {
+  -webkit-transition: opacity 0.5s;
+  transition: opacity 0.5s;
+}
+.accordion .accordion-button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+  padding: 30px 30px;
+  border-radius: 3px;
+  font-size: 18px;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  width: 100%;
+}
+.accordion .accordion-button:hover {
+  background-color: #F5F5DC;
+}
+.accordion .accordion-button::after {
+  content: "";
+}
+.accordion .transition {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-top: 10px;
+}
+.accordion .transition .description {
+  margin: 40px 0;
 }
 
 .saved-section {

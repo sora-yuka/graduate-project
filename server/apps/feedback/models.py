@@ -7,20 +7,6 @@ from apps.courses.models import CoursesModel
 # Create your models here.
 
 User = get_user_model()
-
-
-class RatingModel(models.Model):
-    owner = models.ForeignKey(User, on_delete=models.CASCADE)
-    course = models.ForeignKey(CoursesModel, on_delete=models.CASCADE)
-    rating = models.SmallIntegerField(
-        validators=[
-            MinValueValidator(1),
-            MaxValueValidator(5)
-            ]
-        )
-    
-    def __str__(self) -> str:
-        return f"{self.owner} -> {self.rating}"
     
     
 class SavedModel(models.Model):

@@ -1,5 +1,5 @@
 <template>
-    <section class="verification-section">
+    <section class="verification-section" v-if="!isAuthenticated">
         <div class="container">
             <div class="photo"></div>
             <form action="" @submit.prevent="submitForm" class="verification-form">
@@ -15,10 +15,18 @@
             </form>
         </div>
     </section>
+    <section class="verification-failed" v-else>
+        <div class="container">
+            <p class="info">
+                You already have account in this platform
+            </p>
+        </div>
+    </section>
 </template>
 
 <script>
 import axios from 'axios'
+import { mapGetters } from 'vuex'
 import {useToast} from 'vue-toast-notification'
 
 export default {
@@ -31,6 +39,11 @@ export default {
     mounted() {
         this.$toast = useToast()
         document.title = "Verify"
+    },
+    computed: {
+        ...mapGetters({
+            isAuthenticated: "isAuthenticated"
+        })
     },
     methods: {
         submitForm() {

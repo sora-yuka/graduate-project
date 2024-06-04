@@ -37,12 +37,31 @@
                 </div>
             </div>
             <div class="lessons">
-                <h3 class="lesson-header" v-if="course !== 0">
+                <h3 class="lesson-header">
                     Module
                 </h3>
-                <div class="course-lesson"
-                >
-                    {{ course.course_item }}
+                <div class="accordion" v-if="courseItem.length !== 0">
+                    <div class="accordion-item"
+                    v-for="(lesson, index) in courseItem"
+                    v-bind:key="lesson.id"
+                    >
+                        <button @click="toggleLesson(index)" class="accordion-button">
+                            {{ lesson.name }}
+                        </button>
+                        <transition name="fade" class="transition">
+                            <div v-show="activeLesson === index">
+                                <video width="1200" class="video" ref="video" controls="true">
+                                    <source v-bind:src="lesson.course_file" type="video/mp4">
+                                </video>
+                                <p class="description">
+                                    {{ lesson.description }}
+                                </p>
+                            </div>
+                        </transition>
+                    </div>
+                </div>
+                <div class="accordion" v-else>
+                    <p>Empty for now</p>
                 </div>
             </div>
             <div class="recommendation" v-if="recommendedCourse.length !== 0">
@@ -60,7 +79,6 @@
                         <p class="title">{{ recommandation.title }}</p>
                         <p class="tag">Tag: {{ recommandation.category.category }}</p>
                         <p class="level">{{ recommandation.level }}</p>
-                        <p>{{ typeof(recommendedCourse) }}</p>
                     </div>
                 </div>
             </div>
@@ -82,12 +100,19 @@ export default {
     data() {
         return {
             course: {},
+            courseItem: {},
             category: {},
+            activeLesson: null,
             recommendedCourse: [],
         }
     },
     mounted() {
         this.getDetailedCourse()
+    },
+    computed: {
+        videoElement() {
+            return this.$refs.video
+        }
     },
     methods: {
         getDetailedCourse() {
@@ -97,6 +122,7 @@ export default {
             .get(`/api/v1/courses/page/${courseId}/`)
             .then(response => {
                 this.course = response.data
+                this.courseItem = response.data.course_items
                 this.category = response.data.category
                 this.recommendedCourse = response.data.recommendation
                 document.title = "K.Hub | " + this.course.title
@@ -114,6 +140,13 @@ export default {
         previous() {
             this.$router.go(-1)
         },
+        toggleLesson(index) {
+            if (this.activeLesson === index) {
+                this.activeLesson = null
+            } else {
+                this.activeLesson = index
+            }
+        }
     }
 }
 </script>
