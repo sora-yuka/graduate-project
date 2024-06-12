@@ -10,6 +10,9 @@
                     <p class="course-description">{{ course.description }}</p>
                     <p class="course-author">Author: {{ course.owner }}</p>
                     <p class="course-tags">Tag: {{ category.category }}</p>
+                    <button class="save-button" v-if="isAuthenticated" @click="save">
+                        {{ isSaved ? "unsave" : "save" }}
+                    </button>
                 </div>
                 <div class="image">
                     <img v-bind:src="course.preview_image" alt="" class="preview-image">
@@ -48,7 +51,7 @@
                         <button @click="toggleLesson(index)" class="accordion-button">
                             {{ lesson.name }}
                         </button>
-                        <transition name="fade" class="transition">
+                        <transition class="transition">
                             <div v-show="activeLesson === index">
                                 <video width="1200" class="video" ref="video" controls="true">
                                     <source v-bind:src="lesson.course_file" type="video/mp4">
@@ -94,6 +97,9 @@
 
 <script>
 import axios from 'axios'
+import { mapGetters } from 'vuex';
+import { useToast } from 'vue-toast-notification';
+import { resolveComponent } from 'vue';
 
 export default {
     name: "DetailedView",
@@ -104,18 +110,25 @@ export default {
             category: {},
             activeLesson: null,
             recommendedCourse: [],
+            savedCollection: [],
+            isSaved: false,
         }
     },
     mounted() {
         this.getDetailedCourse()
+        this.$toast = useToast()
     },
     computed: {
         videoElement() {
             return this.$refs.video
-        }
+        },
+        ...mapGetters({
+            isAuthenticated: "isAuthenticated"
+        })
     },
     methods: {
         getDetailedCourse() {
+            const checkSaved = "api/v1/courses/saves/"
             const courseId = this.$route.params.id
 
             axios
@@ -133,6 +146,16 @@ export default {
             .catch(errors => {
                 console.log("An error occured: ", errors)
             })
+
+            axios
+            .get(checkSaved)
+            .then(response => {
+                const savedCourses = response.data;
+                this.isSaved = savedCourses.some(savedCourse => savedCourse.course.id === parseInt(courseId));
+            })
+            .catch(errors => {
+                console.log("An error occured while checking saved courses: ", errors)
+            })
         },
         redirectToDetail(courseId) {
             window.location.href = courseId
@@ -146,6 +169,22 @@ export default {
             } else {
                 this.activeLesson = index
             }
+        },
+        save() {
+            this.isSaved = !this.isSaved
+            const url = `api/v1/courses/page/${this.course.id}/save/`
+
+            axios
+            .post(url)
+            .then(this.$toast.open({
+                    "message": (!this.isSaved ? "Removed from saved" : "Added to saved"),
+                    "duration": 6000,
+                    "type": "info"
+                })
+            )
+            .catch(errors => {
+                console.log("An error occured, while saving course: ", errors)
+            })
         }
     }
 }

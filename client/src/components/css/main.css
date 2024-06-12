@@ -915,10 +915,6 @@ html, body {
 .accordion {
   margin-left: 40px;
 }
-.accordion .fade-enter-active, .accordion .fade-leave-active {
-  -webkit-transition: opacity 0.5s;
-  transition: opacity 0.5s;
-}
 .accordion .accordion-button {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -934,7 +930,7 @@ html, body {
   width: 100%;
 }
 .accordion .accordion-button:hover {
-  background-color: #F5F5DC;
+  background-color: #eeeeee;
 }
 .accordion .accordion-button::after {
   content: "";
@@ -959,6 +955,21 @@ html, body {
   margin: 40px 0;
 }
 
+.save-button {
+  margin-top: 10px;
+  padding: 10px 40px;
+  text-transform: capitalize;
+  color: #097969;
+  border: 1px #097969 solid;
+  border-radius: 3px;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+.save-button:hover {
+  color: white;
+  background-color: #097969;
+}
+
 .saved-section {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -967,4 +978,35 @@ html, body {
       -ms-flex-pack: center;
           justify-content: center;
   margin-top: 50px;
+}
+.saved-section .container {
+  width: 800px;
+}
+.saved-section .saved-header {
+  color: #097969;
+  font-size: 24px;
+  font-weight: 500;
+  margin-bottom: 50px;
+}
+.saved-section .saved-box {
+  padding: 20px;
+  margin-top: 40px;
+  border-radius: 10px;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px;
+          box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px;
+}
+.saved-section .saved-box img {
+  border-radius: 10px;
+}
+.saved-section .saved-box .course-name {
+  margin: 20px;
+  font-size: 24px;
+  font-weight: 600;
+  color: #096979;
+}
+.saved-section .saved-box .course-name:hover {
+  cursor: pointer;
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 5px;
 }

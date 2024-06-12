@@ -2,4 +2,40 @@
     display: flex;
     justify-content: center;
     margin-top: 50px;
+    
+    .container {
+        width: 800px;
+    }
+
+    .saved-header {
+        color: $rich-green-color;
+        font-size: 24px;
+        font-weight: 500;
+        margin-bottom: 50px;
+    }
+
+    .saved-box {
+        padding: 20px;
+        margin-top: 40px;
+        border-radius: 10px;
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px;
+
+        img {
+            border-radius: 10px;
+        }
+
+        .course-name {
+            margin: 20px;
+            font-size: 24px;
+            font-weight: 600;
+            color: $rich-green-darker;
+
+            &:hover {
+                cursor: pointer;
+                text-decoration: underline;
+                text-decoration-thickness: 2px;
+                text-underline-offset: 5px;
+            }
+        }
+    }
 }

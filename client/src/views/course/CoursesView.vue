@@ -41,7 +41,7 @@
 import axios from 'axios'
 
 export default {
-    id: "CourseView",
+    name: "CourseView",
     data() {
         return {
             allCourse: [],

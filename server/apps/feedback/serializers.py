@@ -18,6 +18,7 @@ class SavedSerializer(serializers.ModelSerializer):
         
         representation.update({
             "course": {"id": instance.course.id, "name": instance.course.title},
+            "preview_image": "http://localhost:8000" + instance.course.preview_image.url
         })
         return representation
         

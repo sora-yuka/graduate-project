@@ -143,10 +143,6 @@
 .accordion {
     margin-left: 40px;
 
-    .fade-enter-active, .fade-leave-active {
-        transition: opacity 0.5s;
-    }
-
     .accordion-button {
         display: flex;
         justify-content: start;
@@ -157,7 +153,7 @@
         width: 100%;
         
         &:hover {
-            background-color: $light-yellow-color;
+            background-color: $light-gray-color;
         }
 
         &::after {
@@ -176,5 +172,20 @@
         .description {
             margin: 40px 0;
         }
+    }
+}
+
+.save-button {
+    margin-top: 10px;
+    padding: 10px 40px;
+    text-transform: capitalize;
+    color: $rich-green-color;
+    border: 1px $rich-green-color solid;
+    border-radius: 3px;
+    transition: .3s;
+
+    &:hover {
+        color: white;
+        background-color: $rich-green-color;
     }
 }
