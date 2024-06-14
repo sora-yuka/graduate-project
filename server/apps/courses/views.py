@@ -1,4 +1,3 @@
-from django.db.models import Avg
 from rest_framework import mixins
 from rest_framework.viewsets import GenericViewSet, ModelViewSet
 from rest_framework.pagination import PageNumberPagination
@@ -16,7 +15,7 @@ from apps.feedback.views import FeedbackMixin
 
 
 class CoursePagination(PageNumberPagination):
-    page_size = 18
+    page_size = 9
     max_page_size = 100
     page_size_query_param = "courses"
 
@@ -30,7 +29,7 @@ class AllCourseViewSet(mixins.ListModelMixin, GenericViewSet):
     filter_backends = [SearchFilter, OrderingFilter, DjangoFilterBackend]
     filterset_fields = ["category", "level"]
     search_fields = ["title"]
-    ordering_fields = ["created_at", "ratingmodel__rating"]
+    ordering_fields = ["created_at"]
 
 
 class LatestCourseViewSet(mixins.ListModelMixin, GenericViewSet):
