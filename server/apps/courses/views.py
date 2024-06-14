@@ -3,6 +3,7 @@ from rest_framework.viewsets import GenericViewSet, ModelViewSet
 from rest_framework.pagination import PageNumberPagination
 from rest_framework.filters import SearchFilter, OrderingFilter
 from rest_framework.decorators import api_view
+from rest_framework.response import Response
 from django_filters.rest_framework import DjangoFilterBackend
 
 from .models import CoursesModel, CourseItemModel, CategoryModel
@@ -18,6 +19,18 @@ class CoursePagination(PageNumberPagination):
     page_size = 9
     max_page_size = 100
     page_size_query_param = "courses"
+    
+    def get_paginated_response(self, data) -> Response:
+        return Response({
+            "links": {
+                "next": self.get_next_link(),
+                "previous": self.get_previous_link()
+            },
+            "count": self.page.paginator.count,
+            "total_pages": self.page.paginator.num_pages,
+            "current_page": self.page.number,
+            "results": data
+        })
 
 
 class AllCourseViewSet(mixins.ListModelMixin, GenericViewSet):

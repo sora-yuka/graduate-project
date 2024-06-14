@@ -35,7 +35,6 @@
             color: $gray-color;
             border-radius: 5px;
             background-color: $rich-green-color;
-            box-shadow: $rich-green-color 0px 2px 6px 0px;
             transition: .3s;
 
             img {
@@ -81,8 +80,7 @@
         display: flex;
 
         .filters {
-            width: 600px;
-            margin-right: 100px;
+            width: 280px;
             font-family: $lato;
             font-size: 18px;
 
@@ -90,6 +88,10 @@
                 margin-bottom: 20px;
                 font-size: 24px;
                 color: $rich-green-color;
+            }
+
+            .level {
+                margin-top: 60px;
             }
 
             .label-container {
@@ -131,9 +133,39 @@
         }
 
         .course-cards {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 40px;
+            display: grid;
+            width: 1000px;
+            grid-template-columns: 300px 300px 300px;
+            gap: 60px;
+        }
+
+    }
+    .page-control {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 40px;
+
+        .page-button {
+            padding: 10px 15px;
+            margin-right: 5px;
+            color: white;
+            background-color: $rich-green-color;
+            border: 1px solid $rich-green-color;
+            border-radius: 3px;
+            transition: .5s;
+
+            &:hover {
+                color: $rich-green-color;
+                background-color: white;
+                text-decoration: underline;
+                text-underline-offset: 5px;
+            }
+        }
+
+        .info {
+            margin: 0 25px 0 20px;
+            cursor: default;
         }
     }
 }

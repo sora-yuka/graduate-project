@@ -99,7 +99,6 @@
 import axios from 'axios'
 import { mapGetters } from 'vuex';
 import { useToast } from 'vue-toast-notification';
-import { resolveComponent } from 'vue';
 
 export default {
     name: "DetailedView",

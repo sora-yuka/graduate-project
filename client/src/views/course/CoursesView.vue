@@ -18,25 +18,52 @@
             </div>
             <div class="main-page">
                 <div class="filters">
-                    <p class="filters-tags">Tags</p>
-                    <div class="label-container">
-
-                        <label class="label">
-                            <input type="radio" id="Code" value="code" name="category" @click="filterCoursesByCategory(1)"/>
-                            Code
+                    <div class="tags">
+                        <p class="filters-tags">Tags</p>
+                        <div class="label-container">
+                            <label class="label">
+                                <input type="radio" id="Code" value="code" name="category" @click="filterCourses(1, selectedLevel)"/>
+                                Code
                             </label>
-                        <label for="General" class="label">
-                            <input type="radio" id="General" value="general" name="category" @click="filterCoursesByCategory(2)">
-                            General
+                            <label for="General" class="label">
+                                <input type="radio" id="General" value="general" name="category" @click="filterCourses(2, selectedLevel)">
+                                General
                             </label>
                             <label for="Game" class="label">
-                            <input type="radio" id="Game" value="game" name="category" @click="filterCoursesByCategory(3)">
-                            Game
-                        </label>
-                        <label for="Any" class="label">
-                            <input type="radio" id="Any" value="any" name="category" @click="filterCoursesByCategory()">
-                            Any
-                        </label>
+                                <input type="radio" id="Game" value="game" name="category" @click="filterCourses(3, selectedLevel)">
+                                Game
+                            </label>
+                            <label for="Any" class="label">
+                                <input type="radio" id="Any" value="any" name="category" @click="filterCourses(undefined, selectedLevel)">
+                                Any
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="level">
+                        <p class="filters-tags">Level</p>
+                        <div class="label-container">
+                            <label for="All" class="label">
+                                <input type="radio" id="All" value="" name="level" @click="filterCourses(selectedCategory, '')">
+                                All
+                            </label>
+                            <label for="Beginner" class="label">
+                                <input type="radio" id="Beginner" value="beginner" name="level" @click="filterCourses(selectedCategory, 'Beginner')"/>
+                                Beginner
+                            </label>
+                            <label for="Intermediate" class="label">
+                                <input type="radio" id="Intermediate" value="intermediate" name="level" @click="filterCourses(selectedCategory, 'Intermediate')">
+                                Intermediate
+                            </label>
+                            <label for="Advanced" class="label">
+                                <input type="radio" id="Advanced" value="advanced" name="level" @click="filterCourses(selectedCategory, 'Advanced')">
+                                Advanced
+                            </label>
+                            <label for="Any-level" class="label">
+                                <input type="radio" id="Any-level" value="any" name="level" @click="filterCourses(selectedCategory, 'Any')">
+                                Any
+                            </label>
+                        </div>
                     </div>
                 </div>
                 <div class="course-cards">
@@ -52,9 +79,15 @@
                     <p class="level">{{ course.level }}</p>
                     </div>
                 </div>
-                <!-- <div class="page-control">
-                    
-                </div> -->
+            </div>
+            <div class="page-control">
+                <button class="page-button" @click="handlePage(links.previous)">
+                    previous
+                </button>
+                <p class="info">{{ currentPage }} of {{ pageNums }} pages</p>
+                <button class="page-button" @click="handlePage(links.next)">
+                    next
+                </button>
             </div>
         </div>
     </section>
@@ -73,6 +106,14 @@ export default {
             filteredSuggestions: [],
             showSuggestions: false,
             suggestionsLimit: 8,
+            links: {
+                previous: null,
+                next: null,
+            },
+            pageNums: [],
+            currentPage: '',
+            selectedCategory: '',
+            selectedLevel: ''
         }
     },
     mounted() {
@@ -92,6 +133,9 @@ export default {
                 .then(response => {
                     this.allCourse = response.data.results
                     this.courseCount = response.data.count
+                    this.pageNums = response.data.total_pages
+                    this.currentPage = response.data.current_page
+                    this.links = response.data.links
                     console.log("CoursesView response: ", response.data);
                 })
                 .catch(errors => {
@@ -101,21 +145,37 @@ export default {
         redirectToDetail(courseId) {
             this.$router.push(`/course/${courseId}`)
         },
-        filterCoursesByCategory(categoryId) {
-            if (categoryId !== undefined) {
-                const filterUrl = `/api/v1/courses/?category=${categoryId}`
-                axios
-                    .get(filterUrl)
-                    .then(response => {
-                        this.allCourse = response.data.results
-                        this.courseCount = response.data.count
-                    })
-                    .catch(errors => {
-                        console.log("An error occured: ", errors)
-                    })
-            } else {
-                this.getDetailCourse();
+        filterCourses(categoryId, levelId) {
+            this.selectedCategory = categoryId;
+            this.selectedLevel = levelId;
+
+            let filterUrl = `/api/v1/courses/?`;
+
+            if (this.selectedCategory !== undefined) {
+                filterUrl += `category=${this.selectedCategory}`;
             }
+
+            if (this.selectedLevel !== '') {
+                if (this.selectedCategory !== undefined) {
+                    filterUrl += `&level=${this.selectedLevel}`;
+                } else {
+                    filterUrl += `level=${this.selectedLevel}`;
+                }
+            }
+                
+            axios
+            .get(filterUrl)
+            .then(response => {
+                this.allCourse = response.data.results
+                this.courseCount = response.data.count
+                this.currentPage = response.data.current_page
+                this.pageNums = response.data.total_pages
+                this.links = response.data.links
+                console.log("Filter: ", response.data)
+            })
+            .catch(errors => {
+                console.log("An error occured: ", errors)
+            })
         },
         filterSuggestions() {
             const query = this.searchQuery.toLowerCase()
@@ -153,7 +213,22 @@ export default {
                 this.showSuggestions = false
             }
         },
+        handlePage(link) {
+            if (!link) return
 
+            axios
+            .get(link)
+            .then(response => {
+                this.allCourse = response.data.results
+                this.courseCount = response.data.count
+                this.currentPage = response.data.current_page
+                this.pageNums = response.data.total_pages
+                this.links = response.data.links
+            })
+            .catch(errors => {
+                console.log("An error occured: ", errors)
+            })
+        }
     }
 }
 </script>
