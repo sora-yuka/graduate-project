@@ -77,8 +77,8 @@
     .user-func {
         display: flex;
         align-items: center;
-        margin-right: 900px;
         font-family: $poppins;
+        gap: 40px;
 
         .user-func__button {
             color: $rich-green-color;

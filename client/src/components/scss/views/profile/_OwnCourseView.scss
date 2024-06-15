@@ -1,0 +1,84 @@
+.my-course__section {
+    display: flex;
+    justify-content: center;
+    margin-top: 60px;
+
+    .container {
+        width: 1000px;
+
+        .users-courses {
+            .users-box {
+                display: flex;
+                margin-bottom: 60px;
+                border-radius: 5px;
+                box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px;
+                transition: .3s;
+
+                &:hover {
+                    // cursor: pointer;
+                    transform: scale(1.1);
+                }
+
+                .box-photo {
+                    height: 200px;
+                    width: 350px;
+                    object-fit: cover;
+                    border-radius: 5px 0 0 5px;
+                }
+
+                .box-info {
+                    margin-top: 40px;
+                    margin-left: 80px;
+                    color: $rich-green-color;
+
+                    .box-header {
+                        margin-bottom: 5px;
+                    }
+
+                    .courses-button {
+                        margin-top: 30px;
+                        
+                        button {
+                            padding: 10px 20px;
+                            border-radius: 3px;
+                            margin-right: 40px;
+                            color: white;
+                            text-transform: uppercase;
+                            transition: .5s;
+                        }
+
+                        .button-get {
+                            border: 1px solid #4CBB17;
+                            background-color:  #4CBB17;
+
+                            &:hover {
+                                color: #4CBB17;
+                                background-color: white;
+                            }
+                        }
+
+                        .button-edit {
+                            border: 1px solid #46A2DA;
+                            background-color: #46A2DA;
+
+                            &:hover {
+                                color: #46A2DA;
+                                background-color: white;
+                            }
+                        }
+
+                        .button-delete {
+                            border: 1px solid #D81522;
+                            background-color: #D81522;
+
+                            &:hover {
+                                color: #D81522;
+                                background-color: white;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -31,7 +31,7 @@ export default {
     },
     mounted() {
         this.getSavedCollection()
-        document.title = "Saved"
+        document.title = "K.Hub | saved"
     },
     methods: {
         getSavedCollection() {

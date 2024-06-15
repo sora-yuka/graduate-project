@@ -15,6 +15,12 @@
                 <ul class="control" v-else>
                     <ul class="user-func">
                         <li class="user-func__item">
+                            <router-link to="/my-course" class="user-func__button">My courses</router-link>
+                        </li>
+                        <li class="user-func__item">
+                            <router-link to="/add" class="user-func__button">Add course</router-link>
+                        </li>
+                        <li class="user-func__item">
                             <router-link to="/saved" class="user-func__button">Saved</router-link>
                         </li>
                     </ul>

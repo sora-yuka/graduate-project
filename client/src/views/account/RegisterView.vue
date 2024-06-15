@@ -52,11 +52,8 @@ export default {
             isSubmited: false
         }
     },
-    components: {
-
-    },
     mounted() {
-        document.title = "Sign up"
+        document.title = "K.Hub | sign up"
         this.$toast = useToast()
     },
     methods: {

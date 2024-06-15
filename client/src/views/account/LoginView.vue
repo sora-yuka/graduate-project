@@ -35,7 +35,7 @@ export default {
     },
     mounted() {
         this.$toast = useToast()
-        document.title = "Login"
+        document.title = "K.Hub | sign in"
     },
     methods: {
         submitForm() {

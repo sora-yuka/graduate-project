@@ -10,4 +10,4 @@ class IsCourseOwner(BasePermission):
     def has_object_permission(self, request: HttpRequest, view, obj) -> bool:
         if request.method in SAFE_METHODS:
             return True
-        return request.user.is_authenticated and request.user == obj.course.owner
+        return request.user.is_authenticated and request.user == obj.owner

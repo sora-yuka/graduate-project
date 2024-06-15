@@ -5,7 +5,9 @@ import VerificationView from '@/views/account/VerificationView.vue'
 import LoginView from '@/views/account/LoginView.vue'
 import CoursesView from '@/views/course/CoursesView.vue'
 import DetailedView from '@/views/course/DetailedView.vue'
+import AddCourseView from '@/views/course/AddCourseView.vue'
 import SavedCourseView from '@/views/profile/SavedCourseView.vue'
+import MyCourseView from '@/views/profile/MyCourseView.vue'
 
 
 const routes = [
@@ -43,6 +45,16 @@ const routes = [
         path: '/saved',
         name: 'saved',
         component: SavedCourseView
+    },
+    {
+        path: '/add',
+        name: 'add',
+        component: AddCourseView
+    },
+    {
+        path: '/my-course',
+        name: 'my-course',
+        component: MyCourseView
     }
 ]
 

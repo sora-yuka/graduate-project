@@ -12,7 +12,7 @@
                     <p class="course-tags">Tag: {{ category.category }}</p>
                     <button class="save-button" v-if="isAuthenticated" @click="save">
                         {{ isSaved ? "unsave" : "save" }}
-                    </button>
+                    </button> <br>
                 </div>
                 <div class="image">
                     <img v-bind:src="course.preview_image" alt="" class="preview-image">

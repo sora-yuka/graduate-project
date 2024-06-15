@@ -2,7 +2,7 @@ from rest_framework import mixins
 from rest_framework.viewsets import GenericViewSet, ModelViewSet
 from rest_framework.pagination import PageNumberPagination
 from rest_framework.filters import SearchFilter, OrderingFilter
-from rest_framework.decorators import api_view
+from rest_framework.generics import ListAPIView
 from rest_framework.response import Response
 from django_filters.rest_framework import DjangoFilterBackend
 
@@ -13,6 +13,11 @@ from apps.profiles.models import UserProfile
 from apps.feedback.views import FeedbackMixin
 
 # Create your views here.
+
+
+class CategoryListView(mixins.ListModelMixin, GenericViewSet):
+    serializer_class = CategorySerializer
+    queryset = CategoryModel.objects.all()
 
 
 class CoursePagination(PageNumberPagination):
@@ -67,6 +72,14 @@ class CourseViewSet(
     
     def get_queryset(self):
         return super().get_queryset()
+    
+
+class MyCoursesListView(ListAPIView):
+    serializer_class = AllCoursesSerialier
+    
+    def get_queryset(self):
+        queryset = CoursesModel.objects.filter(owner=self.request.user.id)
+        return queryset
     
     
 class CourseItemViewSet(ModelViewSet):
