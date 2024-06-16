@@ -1042,7 +1042,18 @@ html, body {
   -webkit-box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
           box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
 }
-.lessons .lesson-header {
+.lessons .header-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.lessons .header-container .lesson-header {
   font-size: 24px;
   margin-left: 40px;
   margin-bottom: 20px;
@@ -1050,11 +1061,40 @@ html, body {
   font-family: "Poppins", sans-serif;
   font-weight: 500;
 }
+.lessons .header-container .add-item {
+  margin-right: 70px;
+  padding: 5px 15px;
+  font-family: "Poppins", sans-serif;
+  border-radius: 5px;
+  -webkit-box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);
+          box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+.lessons .header-container .add-item .add-item-link {
+  color: #22C55E;
+}
+.lessons .header-container .add-item:hover {
+  background-color: #F0FDF4;
+}
 
-.accordion {
+.accordion .accordion-empty {
   margin-left: 40px;
 }
-.accordion .accordion-button {
+.accordion .button-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 0 60px 0 30px;
+  padding-right: 10px;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.accordion .button-container .accordion-button {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1063,16 +1103,49 @@ html, body {
           justify-content: start;
   padding: 30px 30px;
   border-radius: 3px;
-  font-size: 18px;
   -webkit-transition: 0.3s;
   transition: 0.3s;
-  width: 100%;
+  width: 80%;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-family: "Poppins", sans-serif;
+  font-size: 18px;
+  color: #333333;
 }
-.accordion .accordion-button:hover {
-  background-color: #eeeeee;
+.accordion .button-container .accordion-button:hover {
+  -webkit-text-decoration: underline 2px;
+          text-decoration: underline 2px;
+  text-underline-offset: 2px;
 }
-.accordion .accordion-button::after {
+.accordion .button-container .accordion-button::after {
   content: "";
+}
+.accordion .button-container .accordion-control {
+  font-family: "Poppins", sans-serif;
+}
+.accordion .button-container .accordion-control button {
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  padding: 5px 20px;
+  border-radius: 5px;
+  background-color: white;
+}
+.accordion .button-container .accordion-control .accordion-edit {
+  margin-right: 20px;
+  color: #0EA5E9;
+  -webkit-box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);
+          box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);
+}
+.accordion .button-container .accordion-control .accordion-edit:hover {
+  background-color: #F0F9FF;
+}
+.accordion .button-container .accordion-control .accordion-delete {
+  color: #EF4444;
+  -webkit-box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);
+          box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);
+}
+.accordion .button-container .accordion-control .accordion-delete:hover {
+  background-color: #FEF2F2;
 }
 .accordion .transition {
   display: -webkit-box;
@@ -1096,7 +1169,7 @@ html, body {
 
 .save-button {
   margin-top: 10px;
-  padding: 10px 40px;
+  padding: 10px 30px;
   text-transform: capitalize;
   color: #097969;
   border: 1px #097969 solid;
@@ -1117,6 +1190,7 @@ html, body {
       -ms-flex-pack: center;
           justify-content: center;
   margin-top: 60px;
+  margin-bottom: -100%;
 }
 .add-course__section .container {
   width: 800px;
@@ -1218,6 +1292,246 @@ html, body {
   background-color: #095c51;
 }
 
+.update-course__section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: 60px;
+  margin-bottom: -100%;
+}
+.update-course__section .container {
+  width: 800px;
+}
+.update-course__section .container .update-course__header {
+  font-size: 32px;
+  font-weight: bold;
+  color: #097969;
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #C5C5C5;
+}
+.update-course__section .container .require-desc {
+  font-size: 14px;
+  font-family: "Poppins", sans-serif;
+  color: #333333;
+}
+.update-course__section .container .update-form {
+  margin-top: 20px;
+}
+.update-course__section .container .update-form .update-form__list {
+  display: grid;
+  grid-template-columns: auto auto;
+  font-family: "Poppins", sans-serif;
+}
+.update-course__section .container .update-form .update-form__list .update-form__item {
+  margin-bottom: 25px;
+}
+.update-course__section .container .update-form .update-form__list .update-form__item input {
+  margin-top: 8px;
+  padding: 5px 10px;
+  font-size: 14px;
+  border-radius: 3px;
+  width: 350px;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+          box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+.update-course__section .container .update-form .update-form__list .update-form__item select {
+  padding: 5px 10px;
+  margin-top: 8px;
+  width: 200px;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em, rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
+          box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em, rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
+  border-radius: 3px;
+}
+.update-course__section .container .update-form .update-form__list .update-form__upload {
+  width: 170px;
+  padding: 5px 0px;
+  margin-bottom: 25px;
+  border-radius: 5px;
+  background-color: #097969;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+.update-course__section .container .update-form .update-form__list .update-form__upload:hover {
+  background-color: #095c51;
+}
+.update-course__section .container .update-form .update-form__list .update-form__upload label {
+  margin-left: 20px;
+  color: white;
+}
+.update-course__section .container .update-form .update-form__list .update-form__upload input {
+  opacity: 0;
+  display: none;
+}
+.update-course__section .container .update-form .form-additional {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  opacity: 0.9;
+  margin: 20px 0;
+  padding: 20px 10px;
+  border-top: 2px solid #C5C5C5;
+  border-bottom: 2px solid #C5C5C5;
+}
+.update-course__section .container .update-form .form-additional img {
+  width: 40px;
+  height: 40px;
+  margin-right: 20px;
+}
+.update-course__section .container .update-form .update-button-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+.update-course__section .container .update-form .update-button-container .update-form__button {
+  margin-left: 20px;
+  padding: 10px 25px;
+  color: white;
+  border-radius: 5px;
+  background-color: #097969;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+.update-course__section .container .update-form .update-button-container .update-form__button:hover {
+  background-color: #095c51;
+}
+
+.update-course-item__section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: 40px;
+  margin-bottom: -5%;
+}
+.update-course-item__section .container {
+  width: 1000px;
+  font-family: "Poppins", sans-serif;
+}
+.update-course-item__section .container .course-item__form {
+  padding: 40px 80px;
+  border-radius: 10px;
+  -webkit-box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+          box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+}
+.update-course-item__section .container .course-item__form .course-item__header {
+  font-size: 24px;
+  font-weight: bold;
+  color: #097969;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+  border-bottom: 2px solid #C5C5C5;
+}
+.update-course-item__section .container .course-item__form .form-container {
+  padding-bottom: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  border-bottom: 2px solid #C5C5C5;
+}
+.update-course-item__section .container .course-item__form .form-container .label-container .course-item__label {
+  color: #097969;
+  font-size: 18px;
+}
+.update-course-item__section .container .course-item__form .form-container .label-container .course-item__label .course-item__input {
+  width: 400px;
+  padding: 5px 10px;
+  margin: 20px 0;
+  color: #333333;
+  font-size: 14px;
+  border-radius: 5px;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em, rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
+          box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em, rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
+}
+.update-course-item__section .container .course-item__form .form-container .label-container .desc-container {
+  margin: 10px 0 20px;
+}
+.update-course-item__section .container .course-item__form .form-container .label-container .desc-container textarea {
+  width: 400px;
+  height: 200px;
+  padding: 5px 7px;
+  color: #333333;
+  font-size: 14px;
+  border-radius: 3px;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em, rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
+          box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em, rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
+}
+.update-course-item__section .container .course-item__form .form-container .label-container .upload-container p {
+  margin-bottom: 20px;
+  color: #097969;
+  font-size: 18px;
+}
+.update-course-item__section .container .course-item__form .form-container .label-container .upload-container .course-item__label-upload {
+  padding: 5px 10px;
+  color: white;
+  border: 1px solid #097969;
+  border-radius: 5px;
+  background-color: #097969;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+.update-course-item__section .container .course-item__form .form-container .label-container .upload-container .course-item__label-upload .course-item__upload {
+  display: none;
+}
+.update-course-item__section .container .course-item__form .form-container .label-container .upload-container .course-item__label-upload:hover {
+  background-color: #095c51;
+}
+.update-course-item__section .container .course-item__form .form-container .course-container {
+  width: 400px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.update-course-item__section .container .course-item__form .form-container .course-container .short-info .photo {
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+.update-course-item__section .container .course-item__form .form-container .course-container .short-info .accent {
+  margin-left: 10px;
+  color: #097969;
+}
+.update-course-item__section .container .course-item__form .form-container .course-container .short-info .accent .value {
+  color: #333333;
+}
+.update-course-item__section .container .course-item__form .button-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+.update-course-item__section .container .course-item__form .button-container .course-item__button {
+  margin-top: 20px;
+  margin-left: 10px;
+  padding: 5px 15px;
+  color: white;
+  background-color: #097969;
+  border-radius: 5px;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+.update-course-item__section .container .course-item__form .button-container .course-item__button:hover {
+  background-color: #095c51;
+}
+
 .saved-section {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1271,20 +1585,29 @@ html, body {
 .my-course__section .container {
   width: 1000px;
 }
+.my-course__section .container .users-courses .users-courses__header {
+  margin-bottom: 40px;
+  font-size: 32px;
+  color: #097969;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+}
 .my-course__section .container .users-courses .users-box {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   margin-bottom: 60px;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+          box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
   border-radius: 5px;
-  -webkit-box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px;
-          box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px;
   -webkit-transition: 0.3s;
   transition: 0.3s;
 }
 .my-course__section .container .users-courses .users-box:hover {
-  -webkit-transform: scale(1.1);
-          transform: scale(1.1);
+  -webkit-box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+          box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+  -webkit-transform: scale(1.03);
+          transform: scale(1.03);
 }
 .my-course__section .container .users-courses .users-box .box-photo {
   height: 200px;
@@ -1306,34 +1629,34 @@ html, body {
 }
 .my-course__section .container .users-courses .users-box .box-info .courses-button button {
   padding: 10px 20px;
-  border-radius: 3px;
-  margin-right: 40px;
+  border-radius: 6px;
+  margin-right: 20px;
   color: white;
-  text-transform: uppercase;
+  font-family: "Poppins", sans-serif;
   -webkit-transition: 0.5s;
   transition: 0.5s;
 }
 .my-course__section .container .users-courses .users-box .box-info .courses-button .button-get {
-  border: 1px solid #4CBB17;
-  background-color: #4CBB17;
+  color: #22C55E;
+  -webkit-box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);
+          box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);
 }
 .my-course__section .container .users-courses .users-box .box-info .courses-button .button-get:hover {
-  color: #4CBB17;
-  background-color: white;
+  background-color: #F0FDF4;
 }
 .my-course__section .container .users-courses .users-box .box-info .courses-button .button-edit {
-  border: 1px solid #46A2DA;
-  background-color: #46A2DA;
+  color: #0EA5E9;
+  -webkit-box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);
+          box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);
 }
 .my-course__section .container .users-courses .users-box .box-info .courses-button .button-edit:hover {
-  color: #46A2DA;
-  background-color: white;
+  background-color: #F0F9FF;
 }
 .my-course__section .container .users-courses .users-box .box-info .courses-button .button-delete {
-  border: 1px solid #D81522;
-  background-color: #D81522;
+  color: #EF4444;
+  -webkit-box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);
+          box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);
 }
 .my-course__section .container .users-courses .users-box .box-info .courses-button .button-delete:hover {
-  color: #D81522;
-  background-color: white;
+  background-color: #FEF2F2;
 }

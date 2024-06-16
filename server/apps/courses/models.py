@@ -42,4 +42,4 @@ class CourseItemModel(models.Model):
     description = models.TextField()
     
     def __str__(self) -> str:
-        return f"{self.course_id} - {self.name}"
+        return f"Course id: {self.course.id} - {self.course.title} | Item id: {self.id} - {self.name} | owner: {self.owner.email}"

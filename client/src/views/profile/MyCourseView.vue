@@ -2,6 +2,7 @@
     <section class="my-course__section">
         <div class="container">
             <div class="users-courses">
+                <h3 class="users-courses__header">Course ever created by you</h3>
                 <div class="users-box"
                     v-for="course in courses"
                     v-bind:key="course.id"
@@ -14,7 +15,7 @@
 
                         <div class="courses-button">
                             <button class="button-get" @click="getCourse(course.id)">Get</button>
-                            <button class="button-edit">Edit</button>
+                            <button class="button-edit" @click="redirectToUpdate(course.id)">Edit</button>
                             <button class="button-delete" @click="deleteCourse(course.id)">Delete</button>
                         </div>
                     </div>
@@ -70,6 +71,9 @@ export default {
             .catch(error => {
                 console.log("An error occured while deleting course: ", error)
             })
+        },
+        redirectToUpdate(courseId) {
+            this.$router.push(`edit/${courseId}`)
         }
     }
 }

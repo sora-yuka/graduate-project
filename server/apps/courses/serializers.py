@@ -68,7 +68,8 @@ class DetailedCourseSerializer(serializers.ModelSerializer):
             ]
             
         representation.update({
-            "owner": profile.username,
+            "profile_username": profile.username,
+            "owner": {"owner_id": instance.owner.id, "owner_email": instance.owner.email},
             "created_at": instance.created_at.strftime("%d.%m.%Y"),
             "updated_at": instance.updated_at.strftime("%d.%m.%Y"),
             "category": {"id": instance.category.id, "category": instance.category.category},
@@ -82,7 +83,8 @@ class CourseItemSerializer(serializers.ModelSerializer):
     
     class Meta:
         model = CourseItemModel
-        fields = "__all__"
+        # fields = "__all__"
+        exclude = ["owner"]
         
     def to_representation(self, instance: CourseItemModel) -> Dict[str, str]:
         representation = super().to_representation(instance)

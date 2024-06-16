@@ -146,6 +146,7 @@ export default {
                     }
                 })
                 .then(response => {
+                    console.log("Server response for course creating: ", response.data)
                     this.$toast.open({
                         message: "Published successfully", type: "success", // duration: 2000
                     })

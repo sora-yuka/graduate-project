@@ -130,36 +130,104 @@
     border-radius: 10px;
     box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
 
-    .lesson-header {
-        font-size: 24px;
-        margin-left: 40px;
-        margin-bottom: 20px;
-        color: $rich-green-color;
-        font-family: $poppins;
-        font-weight: 500;
+    .header-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .lesson-header {
+            font-size: 24px;
+            margin-left: 40px;
+            margin-bottom: 20px;
+            color: $rich-green-color;
+            font-family: $poppins;
+            font-weight: 500;
+        }
+
+        .add-item {
+            margin-right: 70px;
+            padding: 5px 15px;
+            font-family: $poppins;
+            border-radius: 5px;
+            box-shadow: 0px 3px 1px -2px rgba(0,0,0,0.2), 0px 2px 2px 0px rgba(0,0,0,0.14), 0px 1px 5px 0px rgba(0,0,0,0.12);
+            transition: .3s;
+
+            .add-item-link {
+                color: #22C55E;
+            }
+
+            &:hover {
+                background-color: #F0FDF4;
+            }
+        }
     }
 }
 
 .accordion {
-    margin-left: 40px;
+    .accordion-empty {
+        margin-left: 40px;
+    }
 
-    .accordion-button {
+    .button-container {
         display: flex;
-        justify-content: start;
-        padding: 30px 30px;
-        border-radius: 3px;
-        font-size: 18px;
-        transition: .3s;
-        width: 100%;
-        
-        &:hover {
-            background-color: $light-gray-color;
+        margin: 0 60px 0 30px;
+        padding-right: 10px;
+        justify-content: space-between;
+        align-items: center;
+
+        .accordion-button {
+            display: flex;
+            justify-content: start;
+            padding: 30px 30px;
+            border-radius: 3px;
+            transition: .3s;
+            width: 80%;
+            
+            text-transform: uppercase;
+            font-weight: 600;
+            font-family: $poppins;
+            font-size: 18px;
+            color: $black-gray-color;
+
+            &:hover {
+                text-decoration: underline 2px;
+                text-underline-offset: 2px;
+            }
+    
+            &::after {
+                content: "";
+            }
         }
 
-        &::after {
-            content: "";
+            .accordion-control {
+                font-family: $poppins;
 
-        }
+                button {
+                    transition: .3s;
+                    padding: 5px 20px;
+                    border-radius: 5px;
+                    background-color: white;
+                }
+
+                .accordion-edit {
+                    margin-right: 20px;
+                    color: #0EA5E9;
+                    box-shadow: 0px 3px 1px -2px rgba(0,0,0,0.2), 0px 2px 2px 0px rgba(0,0,0,0.14), 0px 1px 5px 0px rgba(0,0,0,0.12);
+
+                    &:hover {
+                        background-color: #F0F9FF;
+                    }
+                }
+
+                .accordion-delete {
+                    color: #EF4444;
+                    box-shadow:  0px 3px 1px -2px rgba(0,0,0,0.2), 0px 2px 2px 0px rgba(0,0,0,0.14), 0px 1px 5px 0px rgba(0,0,0,0.12);
+
+                    &:hover {
+                        background-color: #FEF2F2;
+                    }
+                }
+            }
     }
 
     .transition {
@@ -177,7 +245,7 @@
 
 .save-button {
     margin-top: 10px;
-    padding: 10px 40px;
+    padding: 10px 30px;
     text-transform: capitalize;
     color: $rich-green-color;
     border: 1px $rich-green-color solid;

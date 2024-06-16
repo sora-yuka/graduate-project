@@ -6,6 +6,8 @@ import LoginView from '@/views/account/LoginView.vue'
 import CoursesView from '@/views/course/CoursesView.vue'
 import DetailedView from '@/views/course/DetailedView.vue'
 import AddCourseView from '@/views/course/AddCourseView.vue'
+import UpdateCourseView from '@/views/course/UpdateCourseView.vue'
+import UpdateCourseItemView from '@/views/course/UpdateCourseItemView.vue'
 import SavedCourseView from '@/views/profile/SavedCourseView.vue'
 import MyCourseView from '@/views/profile/MyCourseView.vue'
 
@@ -55,6 +57,16 @@ const routes = [
         path: '/my-course',
         name: 'my-course',
         component: MyCourseView
+    },
+    {
+        path: '/edit/:id',
+        name: 'edit',
+        component: UpdateCourseView
+    },
+    {
+        path: '/course/page/:id',
+        name: 'update-item',
+        component: UpdateCourseItemView
     }
 ]
 

@@ -1,4 +1,4 @@
-.add-course__section {
+.update-course__section {
     display: flex;
     justify-content: center;
     margin-top: 60px;
@@ -7,7 +7,7 @@
     .container {
         width: 800px;
 
-        .add-course__header {
+        .update-course__header {
             font-size: 32px;
             font-weight: bold;
             color: $rich-green-color;
@@ -22,15 +22,15 @@
             color: $black-gray-color;
         }
 
-        .create-form {
+        .update-form {
             margin-top: 20px;
 
-            .create-form__list {
+            .update-form__list {
                 display: grid;
                 grid-template-columns: auto auto;
                 font-family: $poppins;
 
-                .create-form__item {
+                .update-form__item {
                     margin-bottom: 25px;
     
                     input {
@@ -51,7 +51,7 @@
                     }
                 }
 
-                .create-form__upload {
+                .update-form__upload {
                     width: 170px;
                     padding: 5px 0px;
                     margin-bottom: 25px;
@@ -91,12 +91,13 @@
                 }
             }
 
-            .create-button-container {
+            .update-button-container {
                 display: flex;
+                justify-content: flex-end;
 
-                .create-form__button {
+                .update-form__button {
+                    margin-left: 20px;
                     padding: 10px 25px;
-                    margin-left: auto;
                     color: white;
                     border-radius: 5px;
                     background-color: $rich-green-color;

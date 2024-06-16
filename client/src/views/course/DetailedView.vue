@@ -8,7 +8,7 @@
                 <div class="course-info">
                     <h2 class="course-name">{{ course.title }}</h2>
                     <p class="course-description">{{ course.description }}</p>
-                    <p class="course-author">Author: {{ course.owner }}</p>
+                    <p class="course-author">Author: {{ course.profile_username }}</p>
                     <p class="course-tags">Tag: {{ category.category }}</p>
                     <button class="save-button" v-if="isAuthenticated" @click="save">
                         {{ isSaved ? "unsave" : "save" }}
@@ -40,17 +40,36 @@
                 </div>
             </div>
             <div class="lessons">
-                <h3 class="lesson-header">
-                    Module
-                </h3>
+                <div class="header-container">
+                    <h3 class="lesson-header">Module</h3>
+
+                    <button class="add-item" v-if="ownerData.owner_email === userData.email">
+                        <router-link class="add-item-link" :to="'page/' + course.id">+ add lesson</router-link>
+                    </button>
+                </div>
                 <div class="accordion" v-if="courseItem.length !== 0">
                     <div class="accordion-item"
                     v-for="(lesson, index) in courseItem"
                     v-bind:key="lesson.id"
                     >
-                        <button @click="toggleLesson(index)" class="accordion-button">
-                            {{ lesson.name }}
-                        </button>
+                        <div class="button-container">
+                            <button @click="toggleLesson(index)" class="accordion-button">
+                                {{ lesson.name }}
+                            </button>
+                            
+                            <div class="accordion-control" v-if="ownerData.owner_email === userData.email">
+                                <button class="accordion-edit"
+                                    @click="editItem(lesson)"
+                                >
+                                    Edit
+                                </button>
+                                <button class="accordion-delete" 
+                                    @click="deleteItem(lesson)"
+                                >
+                                    Delete
+                                </button>
+                            </div>
+                        </div>
                         <transition class="transition">
                             <div v-show="activeLesson === index">
                                 <video width="1200" class="video" ref="video" controls="true">
@@ -64,7 +83,7 @@
                     </div>
                 </div>
                 <div class="accordion" v-else>
-                    <p>Empty for now</p>
+                    <p class="accordion-empty">Empty for now</p>
                 </div>
             </div>
             <div class="recommendation" v-if="recommendedCourse.length !== 0">
@@ -105,12 +124,14 @@ export default {
     data() {
         return {
             course: {},
-            courseItem: {},
+            courseItem: [],
             category: {},
             activeLesson: null,
             recommendedCourse: [],
             savedCollection: [],
             isSaved: false,
+            userData: {},
+            ownerData: {}
         }
     },
     mounted() {
@@ -134,9 +155,11 @@ export default {
             .get(`/api/v1/courses/page/${courseId}/`)
             .then(response => {
                 this.course = response.data
+                this.ownerData = response.data.owner
                 this.courseItem = response.data.course_items
                 this.category = response.data.category
                 this.recommendedCourse = response.data.recommendation
+                this.userData = JSON.parse(localStorage.getItem("user")).owner
                 document.title = "K.Hub | " + this.course.title
 
                 console.log("Detail data: ", response.data)
@@ -184,6 +207,25 @@ export default {
             .catch(errors => {
                 console.log("An error occured, while saving course: ", errors)
             })
+        },
+        deleteItem(lesson) {
+            let itemId = lesson.id
+            
+            axios
+            .delete(`api/v1/courses/page/${this.course.id}/item/${itemId}/`)
+            .then(response => {
+                console.log("Server log due to deleting lesson: ", response.data)
+                this.$toast.success("Lesson deleted successfully")
+                setTimeout(() => {
+                    this.$router.go()
+                }, 1500)
+            })
+            .catch(error => {
+                console.log("An error occured while deleting lesson: ", error)
+            })
+        },
+        editItem(lesson) {
+            this.$toast.default(lesson.name)
         }
     }
 }
