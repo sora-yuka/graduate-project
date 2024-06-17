@@ -6,6 +6,8 @@ from django.contrib.auth import get_user_model
 
 from .models import CoursesModel, CourseItemModel, CategoryModel
 from apps.profiles.models import UserProfile
+from apps.feedback.models import LikeModel, CommentModel
+from apps.feedback.serializers import CommentSerializer
 
 User = get_user_model()
 
@@ -66,7 +68,10 @@ class DetailedCourseSerializer(serializers.ModelSerializer):
                 }
             } for recommended_course in recommendations if recommended_course.id != instance.id
             ]
-            
+        
+        like_count = LikeModel.objects.filter(course=instance).count()
+        comments = CommentModel.objects.filter(course=instance).order_by("-id")
+        
         representation.update({
             "profile_username": profile.username,
             "owner": {"owner_id": instance.owner.id, "owner_email": instance.owner.email},
@@ -74,6 +79,8 @@ class DetailedCourseSerializer(serializers.ModelSerializer):
             "updated_at": instance.updated_at.strftime("%d.%m.%Y"),
             "category": {"id": instance.category.id, "category": instance.category.category},
             "course_items": CourseItemSerializer(courses_item, many=True).data,
+            "comments": CommentSerializer(comments, many=True).data,
+            "likes": like_count,
             "recommendation": recommendation_data
         })
         return representation
@@ -83,7 +90,6 @@ class CourseItemSerializer(serializers.ModelSerializer):
     
     class Meta:
         model = CourseItemModel
-        # fields = "__all__"
         exclude = ["owner"]
         
     def to_representation(self, instance: CourseItemModel) -> Dict[str, str]:

@@ -3,6 +3,7 @@ import random
 from typing import Dict
 from django.contrib.auth import get_user_model
 from django.contrib.auth.hashers import make_password
+from django.utils import timezone
 from rest_framework import serializers
 
 from .models import RecoverySecret
@@ -43,6 +44,12 @@ class UserRegisterSerializer(serializers.ModelSerializer):
     
 class UserVerificationSerializer(serializers.Serializer):
     username = serializers.CharField(required=True, write_only=True)
+    
+    def validate(self, attrs):
+        request_time = timezone.now() - User.created_at
+        if request_time.total_second() > 24 * 60 * 60:
+            raise serializers.ValidationError("Link has expired")
+        return attrs
     
     def create_profile(self, owner: User, data: str) -> UserProfile:
         profile = UserProfile.objects.create(owner=owner, username=data.get("username"))

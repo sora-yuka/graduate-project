@@ -89,7 +89,6 @@ export default {
             this.$router.go(-1)
         },
         submitForm() {
-            let courseId = this.$route.params.id
             this.errors = []
 
             if (this.title === "") {

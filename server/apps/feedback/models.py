@@ -30,8 +30,8 @@ class CommentModel(models.Model):
     
 class LikeModel(models.Model):
     owner = models.ForeignKey(User, on_delete=models.CASCADE)
-    comment = models.ForeignKey(CommentModel, on_delete=models.CASCADE)
+    course = models.ForeignKey(CoursesModel, on_delete=models.CASCADE)
     like = models.BooleanField(default=False)
     
     def __str__(self) -> str:
-        return f"{self.owner} - liked {self.comment.owner}s comment"
+        return f"{self.owner} - liked {self.course.title}"

@@ -16,7 +16,10 @@
                 </div>
                 <div class="image">
                     <img class="preview-image" v-bind:src="course.preview_image" alt="">
-                    <span class="like"><img class="like-icon" src="../../components/source/non-active-like.png" alt=""></span>
+                    <div class="like">
+                        <p class="count">{{ course.likes }}</p>
+                        <img class="like-icon" src="../../components/source/non-active-like.png" @click="like(course.is_liked)">
+                    </div>
                 </div>
             </div>
             <div class="additional-info">
@@ -59,10 +62,8 @@
                             </button>
                             
                             <div class="accordion-control" v-if="ownerData.owner_email === userData.email">
-                                <button class="accordion-edit"
-                                    @click="editItem(lesson)"
-                                >
-                                    Edit
+                                <button class="accordion-edit">
+                                    <router-link class="edit-item-link" :to="'page/' + course.id + '/item/' + lesson.id">Edit</router-link>
                                 </button>
                                 <button class="accordion-delete" 
                                     @click="deleteItem(lesson)"
@@ -110,6 +111,32 @@
                     Empty for now
                 </h3>
             </div>
+            <div class="comments">
+                <div class="comment-header-container">
+                    <h3 class="comment-header">Comments</h3>
+                    <img class="comment-header-photo" src="../../components/source/chat.png" alt="">
+                </div>
+                <div class="comment-form">
+                    <form @submit.prevent="commentForm">
+                        <textarea class="comment-input" v-model="commentContent" placeholder="Write comment here..."></textarea>
+                        <button class="comment-confirm" type="confirm">Send</button>
+                    </form>
+                </div>
+                <div class="comment-box"
+                v-for="com in course.comments"
+                v-bind:key="com.id"
+                >
+                    <div class="comment-owner-info">
+                        <img class="owner-photo" src="../../components/source/user.png" alt="">
+                        
+                        <div class="owner-container">
+                            <p class="comment-owner">{{ com.username }}</p>
+                            <p class="comment-created">{{ com.created_at }}</p>
+                        </div>
+                    </div>
+                    <p class="comment-content">{{ com.comment }}</p>
+                </div>
+            </div>
         </div>
     </section>
 </template>
@@ -130,9 +157,10 @@ export default {
             activeLesson: null,
             recommendedCourse: [],
             savedCollection: [],
+            commentContent: "",
             isSaved: false,
             userData: {},
-            ownerData: {}
+            ownerData: {},
         }
     },
     mounted() {
@@ -226,7 +254,35 @@ export default {
             })
         },
         editItem(lesson) {
-            this.$toast.default(lesson.name)
+            this.$route.path = `/some`
+            this.$toast.default(lesson)
+        },
+        like(like) {
+            this.$toast.default(like)
+        },
+        commentForm() {
+            let courseId = this.$route.params.id
+
+            if (this.commentContent === "") {
+                this.$toast.open({
+                    message: "Comment cannot be blank", type: "warning", duration: 2000
+                })
+            } else {
+                const formData = {
+                    comment: this.commentContent,
+                    course: courseId
+                }
+
+                axios
+                .post("api/v1/feedback/comment/", formData)
+                .then(response => {
+                    console.log("Server log for comment posting: ", response.data)
+                    this.course.comments.push(formData)
+                })
+                .catch(error => {
+                    console.log("An error occured while posting comment: ", error)
+                })
+            }
         }
     }
 }
