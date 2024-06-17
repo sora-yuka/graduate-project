@@ -7,7 +7,7 @@ import CoursesView from '@/views/course/CoursesView.vue'
 import DetailedView from '@/views/course/DetailedView.vue'
 import AddCourseView from '@/views/course/AddCourseView.vue'
 import UpdateCourseView from '@/views/course/UpdateCourseView.vue'
-import AddCourseItemView from '@/views/course/AddCourseItemView.vue'
+import ChangeCourseItemView from '@/views/course/ChangeCourseItemView.vue'
 import SavedCourseView from '@/views/profile/SavedCourseView.vue'
 import MyCourseView from '@/views/profile/MyCourseView.vue'
 
@@ -66,7 +66,7 @@ const routes = [
     {
         path: '/course/page/:courseId/item/:id',
         name: 'add-item',
-        component: AddCourseItemView
+        component: ChangeCourseItemView
     }
 ]
 

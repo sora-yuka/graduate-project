@@ -1652,6 +1652,133 @@ html, body {
   background-color: #095c51;
 }
 
+.edit-course-item__section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: 40px;
+  margin-bottom: -5%;
+}
+.edit-course-item__section .container {
+  width: 1000px;
+  font-family: "Poppins", sans-serif;
+}
+.edit-course-item__section .container .edit-item__form {
+  padding: 40px 80px;
+  border-radius: 10px;
+  -webkit-box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+          box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+}
+.edit-course-item__section .container .edit-item__form .edit-item__header {
+  font-size: 24px;
+  font-weight: bold;
+  color: #097969;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+  border-bottom: 2px solid #C5C5C5;
+}
+.edit-course-item__section .container .edit-item__form .form-container {
+  padding-bottom: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  border-bottom: 2px solid #C5C5C5;
+}
+.edit-course-item__section .container .edit-item__form .form-container .label-container .course-item__label {
+  color: #097969;
+  font-size: 18px;
+}
+.edit-course-item__section .container .edit-item__form .form-container .label-container .course-item__label .course-item__input {
+  width: 400px;
+  padding: 5px 10px;
+  margin: 20px 0;
+  color: #333333;
+  font-size: 14px;
+  border-radius: 5px;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em, rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
+          box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em, rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
+}
+.edit-course-item__section .container .edit-item__form .form-container .label-container .desc-container {
+  margin: 10px 0 20px;
+}
+.edit-course-item__section .container .edit-item__form .form-container .label-container .desc-container textarea {
+  width: 400px;
+  height: 200px;
+  padding: 5px 7px;
+  color: #333333;
+  font-size: 14px;
+  border-radius: 3px;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em, rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
+          box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em, rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
+}
+.edit-course-item__section .container .edit-item__form .form-container .label-container .upload-container p {
+  margin-bottom: 20px;
+  color: #097969;
+  font-size: 18px;
+}
+.edit-course-item__section .container .edit-item__form .form-container .label-container .upload-container .course-item__label-upload {
+  padding: 5px 10px;
+  color: white;
+  border: 1px solid #097969;
+  border-radius: 5px;
+  background-color: #097969;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+.edit-course-item__section .container .edit-item__form .form-container .label-container .upload-container .course-item__label-upload .course-item__upload {
+  display: none;
+}
+.edit-course-item__section .container .edit-item__form .form-container .label-container .upload-container .course-item__label-upload:hover {
+  background-color: #095c51;
+}
+.edit-course-item__section .container .edit-item__form .form-container .course-container {
+  width: 400px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.edit-course-item__section .container .edit-item__form .form-container .course-container .short-info .photo {
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+.edit-course-item__section .container .edit-item__form .form-container .course-container .short-info .accent {
+  margin-left: 10px;
+  color: #097969;
+}
+.edit-course-item__section .container .edit-item__form .form-container .course-container .short-info .accent .value {
+  color: #333333;
+}
+.edit-course-item__section .container .edit-item__form .button-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+.edit-course-item__section .container .edit-item__form .button-container .course-item__button {
+  margin-top: 20px;
+  margin-left: 10px;
+  padding: 5px 15px;
+  color: white;
+  background-color: #097969;
+  border-radius: 5px;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+.edit-course-item__section .container .edit-item__form .button-container .course-item__button:hover {
+  background-color: #095c51;
+}
+
 .saved-section {
   display: -webkit-box;
   display: -ms-flexbox;

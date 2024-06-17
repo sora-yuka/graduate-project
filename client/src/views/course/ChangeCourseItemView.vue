@@ -1,22 +1,22 @@
 <template>
-    <section class="update-course-item__section">
+    <section class="edit-course-item__section">
         <div class="container">
-            <form class="course-item__form" @submit.prevent="submitForm">
-                <h3 class="course-item__header">
-                    Uploading your lessons
+            <form class="edit-item__form" @submit.prevent="submitForm">
+                <h3 class="edit-item__header">
+                    Editing your lessons
                 </h3>
                 <div class="form-container">
                     <div class="label-container">
                         <div class="title-container">
                         <label class="course-item__label">
                             Lesson's title <br>
-                            <input class="course-item__input" type="text" v-model="title" placeholder="Write lesson title">
+                            <input class="course-item__input" type="text" v-model="title" :placeholder="courseItem.name">
                         </label>
                         </div>
                         <div class="desc-container">
                             <label class="course-item__label">
                                 Description <br>
-                                <textarea v-model="description" placeholder="Write some description"></textarea>
+                                <textarea v-model="description" :placeholder="courseItem.description"></textarea>
                             </label>
                         </div>
                         <div class="upload-container">
@@ -51,19 +51,21 @@ import axios from "axios"
 import { useToast } from "vue-toast-notification"
 
 export default {
-    name: "UpdateCourseItemView",
+    name: "ChangeCourseItemView",
     data() {
         return {
             title: "",
             description: "",
             video: null,
             course: {},
+            courseItem: {},
             courseCategory: "",
             errors: []
         }
     },
     mounted() {
         this.getCourseInfo()
+        this.getCourseItemInfo()
         this.$toast = useToast()
         document.title = "K.Hub | upload lesson"
     },
@@ -76,10 +78,23 @@ export default {
             .then(response => {
                 this.course = response.data
                 this.courseCategory = response.data.category
-                console.log("Getting course data for lesson uploading: ", response.data)
             })
             .catch(error => {
                 console.log("An error occured while getting course data: ", error)
+            })
+        },
+        getCourseItemInfo() {
+            const courseId = this.$route.params.courseId
+            const id = this.$route.params.id
+
+            axios
+            .get(`api/v1/courses/page/${courseId}/item/${id}/`)
+            .then(response => {
+                console.log("Server log for course item getting: ", response.data)
+                this.courseItem = response.data
+            })
+            .catch(error => {
+                console.log("An error occured while getting data for course item: ", error)
             })
         },
         handleVideo(event) {
