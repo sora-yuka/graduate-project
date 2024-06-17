@@ -11,13 +11,21 @@
     margin-bottom: 100px;
 
     .image {
-
         .preview-image {
             width: 500px;
             height: 300px;
             object-fit: cover;
             border-radius: 25px;
-            box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+            box-shadow: rgba(0, 0, 0, 0.56) 0px 14px 60px 2px;
+            // box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+        }
+
+        .like-icon {
+            margin-top: 40px;
+            margin-left: auto;
+            display: block;
+            width: 30px;
+            height: 30px;
         }
     }
 

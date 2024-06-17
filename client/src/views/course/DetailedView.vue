@@ -15,7 +15,8 @@
                     </button> <br>
                 </div>
                 <div class="image">
-                    <img v-bind:src="course.preview_image" alt="" class="preview-image">
+                    <img class="preview-image" v-bind:src="course.preview_image" alt="">
+                    <span class="like"><img class="like-icon" src="../../components/source/non-active-like.png" alt=""></span>
                 </div>
             </div>
             <div class="additional-info">

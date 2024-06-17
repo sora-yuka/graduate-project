@@ -925,8 +925,15 @@ html, body {
   -o-object-fit: cover;
      object-fit: cover;
   border-radius: 25px;
-  -webkit-box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
-          box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.56) 0px 14px 60px 2px;
+          box-shadow: rgba(0, 0, 0, 0.56) 0px 14px 60px 2px;
+}
+.course .image .like-icon {
+  margin-top: 40px;
+  margin-left: auto;
+  display: block;
+  width: 30px;
+  height: 30px;
 }
 .course .course-info {
   width: 600px;
