@@ -26,5 +26,19 @@
         "linkedin_url": null,
         "github_url": null
     }
+},
+{
+    "model": "profiles.userprofile",
+    "pk": 3,
+    "fields": {
+        "owner": 4,
+        "username": "sorayukii",
+        "photo": "",
+        "description": null,
+        "contacts": null,
+        "youtube_url": null,
+        "linkedin_url": null,
+        "github_url": null
+    }
 }
 ]

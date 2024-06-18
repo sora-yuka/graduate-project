@@ -21,6 +21,13 @@
     }
 },
 {
+    "model": "courses.categorymodel",
+    "pk": 4,
+    "fields": {
+        "category": "ui/ux"
+    }
+},
+{
     "model": "courses.coursesmodel",
     "pk": 1,
     "fields": {
@@ -32,22 +39,7 @@
         "preview_image": "blanks/django.jpg",
         "preview_video": "",
         "created_at": "2024-05-19T11:07:11.728Z",
-        "updated_at": "2024-05-23T16:55:20.619Z"
-    }
-},
-{
-    "model": "courses.coursesmodel",
-    "pk": 2,
-    "fields": {
-        "owner": 2,
-        "title": "Narmaya guide",
-        "description": "The \"Narmaya Guide\" is a comprehensive resource for mastering Narmaya, a beloved character in Granblue Fantasy. Designed for both new and experienced players, this guide covers all aspects of optimizing Narmaya's potential in various game modes. It includes detailed breakdowns of her abilities, recommended weapon grids, and team compositions that highlight her strengths. The guide also offers strategic insights on maximizing her performance in raids, events, and solo content. With practical tips, illustrative examples, and updates reflecting the latest game patches, the \"Narmaya Guide\" equips players with the knowledge needed to fully unleash Narmaya's power. This guide is community-driven and constantly evolving to provide the most accurate and effective strategies.",
-        "level": "Intermediate",
-        "category": 3,
-        "preview_image": "preview/images/narmaya_fKHI3yD.png",
-        "preview_video": "",
-        "created_at": "2024-05-19T11:11:16.325Z",
-        "updated_at": "2024-05-24T15:55:36.263Z"
+        "updated_at": "2024-06-16T09:28:40.326Z"
     }
 },
 {
@@ -85,14 +77,14 @@
     "pk": 5,
     "fields": {
         "owner": 3,
-        "title": "GameDev for beginners",
+        "title": "Game development for beginners",
         "description": "GameDev for Beginners is an accessible and comprehensive guide to game development, designed to introduce aspiring developers to the fundamentals of creating video games. Whether you're new to coding or have some programming experience, this resource breaks down complex concepts into manageable steps, covering everything from basic game mechanics to more advanced topics like physics and AI. With practical examples and hands-on projects, GameDev for Beginners helps you build your first game from scratch while fostering creativity and problem-solving skills. It’s free and open source, supported by a community of passionate game developers eager to help you succeed.",
         "level": "Beginner",
-        "category": 3,
+        "category": 1,
         "preview_image": "preview/images/barbara.jpg",
         "preview_video": "",
         "created_at": "2024-05-19T12:21:58.166Z",
-        "updated_at": "2024-05-23T16:56:20.722Z"
+        "updated_at": "2024-06-17T18:40:48.513Z"
     }
 },
 {
@@ -142,32 +134,17 @@
 },
 {
     "model": "courses.coursesmodel",
-    "pk": 10,
-    "fields": {
-        "owner": 3,
-        "title": "Bridget guide",
-        "description": "Some people might call a yo-yo a poor choice of weapon, but they just don't have enough creativity! With speed, range, and dizzying mix-ups, this girl can run circles around any opponent!\r\n\r\nBridget is a well-rounded character who is easy to pick up and play, with high range, good mobility, a meterless reversal, and simple combos that lead into strong pressure situations. However, don't be fooled into thinking that means she's simple! Her Stop and Dash setplay projectile and Rolling Movement can be layered together and combined with her other tools in countless ways, giving her a uniquely expressive flair in her offence!\r\n\r\nTo complement this, Bridget has a fantastic suite of neutral tools. f.S and 5H reach very far, and possess both slightly disjointed hitboxes as well as follow-ups with fantastic corner carry that allow Bridget to start her offence on hit. Paired with her multi-hitting 2S to catch movement and help shore up the weakness to 6Ps and similar low profile options, she has the ability to assert dominant control over the ground. Her air control is similarly extremely strong, with j.H being one of the rare air normals to possess a significant disjoint, as well as her wide and high striking 2H.",
-        "level": "Beginner",
-        "category": 3,
-        "preview_image": "preview/images/c50382006ca10f2ac2a1b1fbb4ac1c98.jpg",
-        "preview_video": "",
-        "created_at": "2024-05-23T12:42:05.513Z",
-        "updated_at": "2024-05-23T13:21:04.885Z"
-    }
-},
-{
-    "model": "courses.coursesmodel",
     "pk": 11,
     "fields": {
         "owner": 2,
         "title": "How to create horizontal scroll bar",
-        "description": "div.scrollmenu {\r\n  background-color: #333;\r\n  overflow: auto;\r\n  white-space: nowrap;\r\n}\r\n\r\ndiv.scrollmenu a {\r\n  display: inline-block;\r\n  color: white;\r\n  text-align: center;\r\n  padding: 14px;\r\n  text-decoration: none;\r\n}\r\n\r\ndiv.scrollmenu a:hover {\r\n  background-color: #777;\r\n}",
-        "level": "Beginner",
+        "description": "Полоса прокрутки — элемент графического интерфейса пользователя, использующийся для отображения информации и элементов интерфейса, больших по размеру, чем используемый для их отображения контейнер.",
+        "level": "Intermediate",
         "category": 1,
         "preview_image": "preview/images/background.png",
         "preview_video": "",
         "created_at": "2024-05-23T17:01:13.022Z",
-        "updated_at": "2024-05-23T17:01:13.022Z"
+        "updated_at": "2024-06-16T09:41:41.223Z"
     }
 },
 {
@@ -183,6 +160,43 @@
         "preview_video": "",
         "created_at": "2024-05-23T17:01:13.022Z",
         "updated_at": "2024-05-23T17:01:13.022Z"
+    }
+},
+{
+    "model": "courses.coursesmodel",
+    "pk": 16,
+    "fields": {
+        "owner": 3,
+        "title": "How to draw an anime",
+        "description": "Dive into the vibrant world of Japanese animation with our comprehensive Anime Studies course. This course offers an in-depth exploration of anime, tracing its history, examining its cultural impact, and analyzing its unique storytelling techniques and visual styles. From the earliest works of animation to the latest trends in the industry, students will gain a thorough understanding of anime as both an art form and a cultural phenomenon.",
+        "level": "Beginner",
+        "category": 4,
+        "preview_image": "preview/images/1311796_ZlcaYdh.png",
+        "preview_video": "",
+        "created_at": "2024-06-15T18:12:29.505Z",
+        "updated_at": "2024-06-16T17:23:41.003Z"
+    }
+},
+{
+    "model": "courses.courseitemmodel",
+    "pk": 7,
+    "fields": {
+        "owner": 1,
+        "course": 7,
+        "name": "sasa lele",
+        "course_file": "course/Two_2-minute_Rules_to_Beat_Procrastination_in_2_minutes_qrTWBWS.mp4",
+        "description": "sale sale"
+    }
+},
+{
+    "model": "courses.courseitemmodel",
+    "pk": 9,
+    "fields": {
+        "owner": 3,
+        "course": 5,
+        "name": "jjj",
+        "course_file": "course/Two_2-minute_Rules_to_Beat_Procrastination_in_2_minutes_qrTWBWS_bMSvnDN.mp4",
+        "description": "dd"
     }
 }
 ]

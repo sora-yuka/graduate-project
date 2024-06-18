@@ -3,7 +3,7 @@
     "model": "account.customuser",
     "pk": 1,
     "fields": {
-        "last_login": "2024-05-20T19:03:36.590Z",
+        "last_login": "2024-06-16T17:14:36.980Z",
         "is_superuser": true,
         "first_name": "",
         "last_name": "",
@@ -47,6 +47,24 @@
         "date_joined": "2024-05-23T10:26:37.978Z",
         "email": "es@mail.com",
         "password": "pbkdf2_sha256$720000$eE33x8UzENBywTshxAdz5m$mlQB0tzWi/O5GnKtlOr8V5mTO6IaxyVvClffNkMlzUY=",
+        "is_active": true,
+        "verification_code": "",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "account.customuser",
+    "pk": 4,
+    "fields": {
+        "last_login": null,
+        "is_superuser": false,
+        "first_name": "",
+        "last_name": "",
+        "is_staff": false,
+        "date_joined": "2024-06-03T17:02:28.114Z",
+        "email": "feelingjeez@gmail.com",
+        "password": "pbkdf2_sha256$720000$V4w5Z8FjtNl1k7LPv3kRSw$UrwuVhWg5pbQd8/whluu6IyVMnSCYLhQpamLI/JQ/Wg=",
         "is_active": true,
         "verification_code": "",
         "groups": [],
